@@ -1,0 +1,7 @@
+# R packages (tested with R >= 4.3)
+readxl
+dplyr
+tidyr
+ggplot2
+metafor         # >= 4.6-0
+metaconfoundr   # >= 0.1.2

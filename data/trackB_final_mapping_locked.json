@@ -1,0 +1,224 @@
+{
+  "locked_date": "2026-06-11",
+  "scored_confounders": [
+    {
+      "construct": "Shared familial/genetic background",
+      "domain": "B1",
+      "role": "confounder",
+      "scored": true,
+      "note": "design-gated"
+    },
+    {
+      "construct": "Maternal neurodevelopmental liability",
+      "domain": "B1",
+      "role": "confounder",
+      "scored": true,
+      "note": "B1 proxy (Moderate)"
+    },
+    {
+      "construct": "Maternal psychiatric vulnerability",
+      "domain": "B1",
+      "role": "confounder",
+      "scored": true,
+      "note": "B1 proxy (Moderate)"
+    },
+    {
+      "construct": "Acute infection/fever indication",
+      "domain": "B2",
+      "role": "confounder",
+      "scored": true,
+      "note": ""
+    },
+    {
+      "construct": "Pain/headache/migraine indication",
+      "domain": "B2",
+      "role": "confounder",
+      "scored": true,
+      "note": ""
+    },
+    {
+      "construct": "Chronic maternal medical conditions",
+      "domain": "B2",
+      "role": "confounder",
+      "scored": true,
+      "note": ""
+    },
+    {
+      "construct": "Concomitant medication/treatment context",
+      "domain": "B2",
+      "role": "confounder",
+      "scored": true,
+      "note": ""
+    },
+    {
+      "construct": "Maternal metabolic/adiposity status",
+      "domain": "B2",
+      "role": "confounder",
+      "scored": true,
+      "note": ""
+    },
+    {
+      "construct": "Socioeconomic position",
+      "domain": "B3",
+      "role": "confounder",
+      "scored": true,
+      "note": ""
+    },
+    {
+      "construct": "Demographic/regional context",
+      "domain": "B3",
+      "role": "confounder",
+      "scored": true,
+      "note": ""
+    },
+    {
+      "construct": "Lifestyle/substance use",
+      "domain": "B3",
+      "role": "confounder",
+      "scored": true,
+      "note": ""
+    },
+    {
+      "construct": "Psychosocial stress",
+      "domain": "B3",
+      "role": "confounder",
+      "scored": true,
+      "note": ""
+    },
+    {
+      "construct": "Maternal demographic context",
+      "domain": "B3",
+      "role": "confounder",
+      "scored": true,
+      "note": ""
+    },
+    {
+      "construct": "Reproductive history/parity",
+      "domain": "B3",
+      "role": "confounder",
+      "scored": true,
+      "note": "absorbs pre-exposure obstetric history"
+    },
+    {
+      "construct": "Family structure",
+      "domain": "B3",
+      "role": "confounder",
+      "scored": true,
+      "note": ""
+    },
+    {
+      "construct": "Temporal context",
+      "domain": "B3",
+      "role": "confounder",
+      "scored": true,
+      "note": ""
+    }
+  ],
+  "non_core": [
+    {
+      "construct": "Perinatal mediators (GA, preterm, birth weight, delivery mode)",
+      "domain": "non-core",
+      "role": "mediator",
+      "scored": false,
+      "note": "Track A existing"
+    },
+    {
+      "construct": "Current-pregnancy obstetric complications (preeclampsia/GDM/hemorrhage)",
+      "domain": "non-core",
+      "role": "mediator",
+      "scored": false,
+      "note": "DECISION A: moved from B2 (was confounder)"
+    },
+    {
+      "construct": "Breastfeeding / lactation",
+      "domain": "non-core",
+      "role": "mediator",
+      "scored": false,
+      "note": "Track A existing"
+    },
+    {
+      "construct": "Early-child infection / microbiome / atopy",
+      "domain": "non-core",
+      "role": "mediator",
+      "scored": false,
+      "note": "CONFLICT 2: relabeled child-char -> mediator"
+    },
+    {
+      "construct": "Early developmental / regulatory phenotype",
+      "domain": "non-core",
+      "role": "mediator",
+      "scored": false,
+      "note": "CONFLICT 3: early form of outcome -> never adjust"
+    },
+    {
+      "construct": "Mechanistic chain: dose/metabolism, oxidative stress, inflammation, hormone, epigenetic, placental, fetal brain",
+      "domain": "non-core",
+      "role": "mediator",
+      "scored": false,
+      "note": "Track B blind spots; reported in figure, post-exposure"
+    },
+    {
+      "construct": "Selection / inclusion / cohort entry",
+      "domain": "non-core",
+      "role": "collider",
+      "scored": false,
+      "note": "Track A existing"
+    },
+    {
+      "construct": "Diagnostic / ascertainment",
+      "domain": "non-core",
+      "role": "collider",
+      "scored": false,
+      "note": "Track A existing"
+    },
+    {
+      "construct": "Healthcare utilization -> detection",
+      "domain": "non-core",
+      "role": "collider",
+      "scored": false,
+      "note": "CONFLICT 1 (detection half)"
+    },
+    {
+      "construct": "Child sex; age at assessment",
+      "domain": "non-core",
+      "role": "precision",
+      "scored": false,
+      "note": "Track A existing"
+    }
+  ],
+  "reported_not_scored": [
+    {
+      "construct": "Environmental / occupational exposures (air pollution, pesticides, lead)",
+      "domain": "reported",
+      "role": "confounder",
+      "scored": false,
+      "note": "BLIND SPOT (3-lab); report in Discussion/figure"
+    },
+    {
+      "construct": "Acetaminophen pharmacogenetics (GSTT1/GSTM1, CYP2E1)",
+      "domain": "reported",
+      "role": "confounder",
+      "scored": false,
+      "note": "BLIND SPOT (3-lab); the only purely-new confounder"
+    },
+    {
+      "construct": "Medication-seeking propensity",
+      "domain": "reported",
+      "role": "confounder",
+      "scored": false,
+      "note": "CONFLICT 1 (propensity half); overlaps B2/B3, ~unmeasured"
+    }
+  ],
+  "thresholds": {
+    "B1": "Strong = sibling/family-fixed-effects design (design-gated). Moderate = >=1 B1 proxy construct adjusted. Weak = none.",
+    "B2": "Strong = >=3 of 5 constructs. Moderate = 1-2. Weak = 0.  (was >=3 of 6; obstetric complications removed per Decision A)",
+    "B3": "Strong = >=4 of 8 constructs. Moderate = 1-3. Weak = 0.  (unchanged)",
+    "overall": "weakest-link: Strong only if all three Strong; Weak if any Weak; else Moderate."
+  },
+  "counts": {
+    "scored_confounders": 16,
+    "B1": 3,
+    "B2": 5,
+    "B3": 8
+  }
+}
