@@ -29,7 +29,7 @@ The same content is in [`docs/`](docs/) as HTML, Markdown, and Word. It mirrors 
 │   ├── pooled_strata_estimates.csv         # Stratified meta-analysis pooled results
 │   ├── trackB_pooled_variables.json        # 1,357 LLM-generated candidate variables (Track B input)
 │   ├── trackB_final_mapping_locked.json    # Locked construct mapping (16 core confounders)
-│   └── LLM_DAG_recall_ABC_3model.xlsx      # Table S2: per-model, per-prompt recall
+│   └── LLM-DAG_recall_ABC_3model.xlsx      # Table S2: per-model/per-prompt recall (matrix + Recall summary sheet)
 │
 ├── code/                          # Analysis scripts
 │   ├── meta_analysis_primary.R             # Main stratified meta-analysis (Figs 2-3, S3-S5, Tables S4-S5)
@@ -115,7 +115,7 @@ All data are extracted from published study reports. No individual-level partici
 | `pooled_strata_estimates.csv` | Stratified meta-analysis pooled estimates by control level |
 | `trackB_pooled_variables.json` | 1,357 unique candidate variables pooled across 3 models, 3 prompting strategies, and 2 outcomes |
 | `trackB_final_mapping_locked.json` | Final locked construct mapping with causal-role adjudication |
-| `LLM_DAG_recall_ABC_3model.xlsx` | Per-model, per-prompting-strategy variable-level recall of Track A confounder constructs |
+| `LLM-DAG_recall_ABC_3model.xlsx` | Per-model, per-prompting-strategy variable-level recall of Track A confounder constructs. The evidence matrix (which variables each model x scaffold elicited per construct) plus a `Recall summary` sheet with the computed recall (per run, per model, and construct-level consensus). |
 
 ## Correspondence
 
