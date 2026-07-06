@@ -4,9 +4,22 @@ Code and data for:
 
 > Shi X, Deng G, Du J. Why observational evidence fails to converge in behavioural health research: bias-domain triangulation of prenatal paracetamol and offspring neurodevelopment.
 
+## Reusable protocol (tutorial)
+
+A step-by-step guide to applying the bias-domain triangulation framework to any exposure–outcome question is hosted as a web tutorial:
+
+**https://xuanyshi.github.io/bias-domain-triangulation/**
+
+The same content is in [`docs/`](docs/) as HTML, Markdown, and Word. It mirrors the reusable-protocol section of the paper's Supplementary Information; the version of record is the journal article and its Supplementary Information.
+
 ## Repository structure
 
 ```
+├── docs/                          # Reusable-protocol tutorial -> GitHub Pages
+│   ├── index.html                          # Web tutorial (hosted at the URL above)
+│   ├── Supplementary_Protocol_bias_domain_triangulation.md    # Markdown source
+│   └── Supplementary_Protocol_bias_domain_triangulation.docx  # Word version
+│
 ├── data/                          # All input data (no individual-level participant data)
 │   ├── effect_estimates_and_ratings.xlsx   # 33 extracted ratio-type estimates with B1 ratings
 │   ├── main_model_covariates.xlsx          # Per-record main-model covariate sets (Track A)

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bias-Domain Triangulation, Reusable Protocol</title>
+<style>
+:root{
+  --ink:#1a1a1a; --muted:#666; --line:#e1e1e1; --rule:#2b2b2b;
+  --accent:#1f5fa6; --accent-tint:#eef3f9;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans","PingFang SC","Hiragino Sans GB",Helvetica,Arial,sans-serif;
+  --serif:Charter,"Bitstream Charter","Sitka Text",Cambria,Georgia,"Songti SC","Noto Serif CJK SC",serif;
+  --mono:"SF Mono",ui-monospace,"JetBrains Mono",Menlo,Consolas,monospace;
+  --maxw:780px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{display:grid;grid-template-columns:232px minmax(0,1fr);max-width:1180px;margin:0 auto}
+
+/* banner */
+.banner{grid-column:1 / -1;background:var(--accent);color:#fff;font-family:var(--sans);
+  font-size:12.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:9px 22px}
+
+/* sidebar */
+.side{position:sticky;top:0;align-self:start;height:100vh;overflow-y:auto;padding:32px 18px 60px;border-right:1px solid var(--line)}
+.side .brand{font-family:var(--sans);font-weight:700;font-size:12.5px;color:#1c1c1c;margin-bottom:14px}
+.toc a{display:block;font-family:var(--sans);color:var(--muted);font-size:12.5px;padding:4px 10px;border-left:2px solid transparent;margin:1px 0}
+.toc a:hover{color:#111;text-decoration:none}
+.toc a.active{color:#111;border-left-color:var(--accent);font-weight:600}
+.toc .sub{padding-left:20px;font-size:12px}
+
+/* main */
+main{padding:40px 60px 120px;max-width:calc(var(--maxw) + 120px)}
+.kicker{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+h1{font-size:29px;line-height:1.22;margin:0 0 16px;font-weight:700;letter-spacing:-.2px}
+.byline{font-family:var(--sans);font-size:13px;color:var(--muted);margin:-6px 0 18px}
+.standfirst{font-size:19px;line-height:1.5;color:#222;margin:0 0 20px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+
+/* summary points box (BMJ style) */
+.summary{border:1px solid var(--line);border-top:3px solid var(--accent);background:#fcfdfe;padding:14px 18px 8px;margin:22px 0}
+.summary h2{font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+.summary ul{margin:0;padding-left:20px}
+.summary li{margin:7px 0;font-size:15px;line-height:1.5}
+
+/* figure */
+figure{margin:22px 0;border:1px solid var(--line);padding:16px 16px 10px;background:#fff}
+figure svg{display:block;width:100%;height:auto;max-width:640px;margin:0 auto}
+figcaption{font-size:13px;line-height:1.5;color:#333;margin-top:12px;border-top:1px solid var(--line);padding-top:8px}
+figcaption b{font-weight:700}
+
+/* box (definitions) */
+.defbox{border:1px solid var(--line);background:#fafafa;padding:14px 18px;margin:20px 0}
+.defbox .bh{font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.4px;color:var(--accent);margin-bottom:8px;text-transform:uppercase}
+.defbox dl{margin:0}
+.defbox dt{font-weight:700;margin-top:8px}
+.defbox dd{margin:1px 0 0;color:#2a2a2a}
+
+/* sections */
+section{max-width:var(--maxw);padding-top:24px;margin-top:26px;border-top:1px solid var(--line)}
+h2.sec{font-size:20px;margin:6px 0 10px;font-weight:700}
+h2.sec .num{color:var(--muted);font-weight:600;margin-right:10px;font-variant-numeric:tabular-nums}
+h3{font-size:15.5px;margin:22px 0 4px;font-weight:700}
+p{margin:11px 0}
+ul,ol{padding-left:22px;margin:11px 0}
+li{margin:6px 0}
+code.inline{background:#f0f0ee;border-radius:3px;padding:1px 5px;font-size:13.5px;font-family:var(--mono)}
+.goal{margin:11px 0;font-style:italic;color:#333}
+.note{margin:11px 0;color:var(--ink)}
+.goal b,.note b{font-weight:700;font-style:normal}
+
+/* code */
+.code{position:relative;background:#f7f7f5;border:1px solid #e6e6e1;border-radius:4px;
+  padding:14px 16px;margin:12px 0;overflow:auto;font-size:12.5px;line-height:1.55;font-family:var(--mono);color:#1f1f1f}
+.code code{white-space:pre;display:block}
+.copy{position:absolute;top:7px;right:8px;background:#fff;border:1px solid var(--line);color:var(--muted);
+  border-radius:3px;font-size:11px;padding:2px 8px;cursor:pointer;opacity:0;transition:.15s;font-family:var(--sans)}
+.code:hover .copy{opacity:1}
+.copy.done{color:#111;border-color:#8a8a8a}
+.cap{font-family:var(--sans);font-size:12px;color:var(--muted);margin:2px 0 16px}
+.fold{margin:12px 0;border:1px solid var(--line);border-radius:4px;background:#fcfcfc}
+.fold>summary{cursor:pointer;font-family:var(--sans);font-size:13px;font-weight:600;color:var(--accent);padding:9px 13px;list-style:none}
+.fold>summary::-webkit-details-marker{display:none}
+.fold>summary::before{content:"\25B8  ";color:var(--muted)}
+.fold[open]>summary::before{content:"\25BE  "}
+.fold[open]>summary{border-bottom:1px solid var(--line)}
+.fold .code{margin:12px 13px;border:none;background:#f7f7f5}
+
+/* tables (booktabs) */
+.tcap{font-family:var(--sans);font-size:13px;color:#222;margin:20px 0 0}
+.tcap b{font-weight:700}
+table{border-collapse:collapse;width:100%;margin:8px 0 18px;font-size:14px;line-height:1.5}
+th,td{padding:8px 14px 8px 0;text-align:left;vertical-align:top}
+thead th{border-top:1.5px solid var(--rule);border-bottom:1px solid var(--rule);
+  font-family:var(--sans);font-size:12px;font-weight:700}
+tbody td{border-bottom:1px solid var(--line)}
+tbody tr:last-child td{border-bottom:1.5px solid var(--rule)}
+table.proto td:first-child{font-weight:700;white-space:nowrap;padding-right:18px}
+table.proto ol{margin:0;padding-left:17px}
+table.proto ol li{margin:3px 0}
+td .lv{font-weight:700}
+
+
+footer{max-width:var(--maxw);margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
+  font-family:var(--sans);font-size:12px;color:var(--muted)}
+
+@media (max-width:900px){
+  .wrap{grid-template-columns:1fr}
+  .side{position:static;height:auto;border-right:none;border-bottom:1px solid var(--line)}
+  .side .toc{columns:2;column-gap:16px}
+  main{padding:28px 22px 80px}
+}
+@media print{
+  .side{display:none}.wrap{display:block}.copy{display:none}
+  body{font-size:10.5pt}.code{background:#f4f4f2}.banner{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  section,figure,.summary,.defbox,table{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<div class="banner">Research methods &amp; reporting &nbsp;&middot;&nbsp; Reusable protocol</div>
+<aside class="side">
+  <div class="brand">Contents</div>
+  <nav class="toc">
+    <a href="#overview">At a glance (Table 1)</a>
+    <a href="#terms">Box 1 &middot; Causal-graph terms</a>
+    <a href="#s0">0 &nbsp;Scope</a>
+    <a href="#s1">1 &nbsp;Track A: adjustment audit</a>
+    <a href="#s2">2 &nbsp;Track B: background DAG</a>
+    <a href="#s2-2" class="sub">2.2 Role-induction prompt</a>
+    <a href="#s2-3" class="sub">2.3 Clustering prompt</a>
+    <a href="#s3">3 &nbsp;Integration and roles</a>
+    <a href="#s4">4 &nbsp;Define bias domains</a>
+    <a href="#s5">5 &nbsp;Score confounding control</a>
+    <a href="#s6">6 &nbsp;Meta-analysis and read-out</a>
+  </nav>
+</aside>
+
+<main>
+  <div class="kicker">How to apply bias-domain triangulation</div>
+  <h1>A reusable protocol for non-convergent observational evidence</h1>
+  <p class="byline">A step-by-step method for any exposure&ndash;outcome question. Companion to the main analysis (PROSPERO CRD420261365276).</p>
+  <p class="standfirst">When studies of the same question disagree, the cause is often hidden bias, not chance. This tutorial is a step-by-step way to find which kind of bias is driving the result. In short: list what each study adjusted for; work out separately what it should have adjusted for; sort those into a few bias types; score every study on each type; then watch whether the pooled effect shrinks toward &ldquo;no effect&rdquo; as a bias type is better controlled. If the effect disappears only when one particular bias is handled, that bias, not the exposure, is the likely explanation.</p>
+
+  <div class="summary">
+    <h2>Summary points</h2>
+    <ul>
+      <li>Studies of the same question often disagree because of hidden, patterned bias, not chance.</li>
+      <li>The method combines two independent inputs: what each study adjusted for, and what an AI-built causal map says it should have adjusted for.</li>
+      <li>Confounders are sorted into a few bias types; every study is scored on each type; and the pooled result is split by how well each type is controlled.</li>
+      <li>If the pooled effect reaches &ldquo;no effect&rdquo; only when one bias type is well controlled, that bias is the likely driver, not a real effect.</li>
+    </ul>
+  </div>
+
+  <section id="overview" style="border-top:none;margin-top:8px;padding-top:8px">
+    <h2 class="sec">The protocol at a glance</h2>
+    <p>The pipeline has six stages. Stages 1 and 2 run in parallel and stay blind to each other; that mutual blindness lets agreement between the tracks count as validation and disagreement count as a blind spot. Table 1 summarises each stage.</p>
+    <p class="tcap"><b>Table 1 | Summary of the bias-domain triangulation protocol.</b></p>
+    <table class="proto">
+      <thead><tr><th>Stage</th><th>Purpose</th><th>Process</th></tr></thead>
+      <tbody>
+        <tr><td>1. Track A<br>audit</td><td>Record what the focal literature actually controlled for, as constructs.</td>
+          <td><ol><li>Select each study's main adjusted model, the one pooled.</li><li>Extract its covariates; exclude sensitivity-, stratified-, mediation- or selection-only variables.</li><li>Harmonise raw variables into constructs.</li><li>Double-extract and adjudicate.</li></ol></td></tr>
+        <tr><td>2. Track B<br>background DAG</td><td>Derive what should be considered, independently of Track A.</td>
+          <td><ol><li>Query at least three LLMs from independent developers, temperature 0, blind to Track A.</li><li>Three scaffolds: zero-shot, generic and framework chain-of-thought.</li><li>Each variable gets one causal role and a temporal position.</li><li>Pool, de-duplicate, and induce a construct taxonomy.</li></ol></td></tr>
+        <tr><td>3. Integration</td><td>Reconcile the two tracks into one locked construct set.</td>
+          <td><ol><li>Adopt the fullest Track B taxonomy as the spine.</li><li>Cross-walk to Track A: convergent, blind-spot, or role-conflicting.</li><li>Adjudicate roles by admissibility criteria.</li><li>Separate core (scored) from non-core.</li></ol></td></tr>
+        <tr><td>4. Bias domains</td><td>Group core confounders into a few domains.</td>
+          <td><ol><li>Derive the domains per problem from the core confounders.</li><li>Separate the design-controlled latent domain from the measurement-controlled domains; split the measured set by mechanism.</li><li>Pre-register the scheme; number and partition are modelling choices.</li></ol></td></tr>
+        <tr><td>5. Scoring</td><td>Rate each estimate's control per domain.</td>
+          <td><ol><li>Count-based domains: Strong / Moderate / Weak by a pre-registered threshold.</li><li>Latent domain: a design-gated rule.</li><li>Aggregate by the weakest-link rule.</li><li>Test sensitivity to thresholds and granularity.</li></ol></td></tr>
+        <tr><td>6. Read-out</td><td>Read attenuation as a causal-structure signal.</td>
+          <td><ol><li>Random-effects pool (REML, Knapp&ndash;Hartung); leave-one-out.</li><li>Within-domain gradient toward the null.</li><li>Cross-domain comparison at the strong tier.</li><li>Read the triangulation signature.</li></ol></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="terms" style="border-top:none;margin-top:10px;padding-top:0">
+    <div class="defbox">
+      <div class="bh">Box 1 | Causal-graph terms</div>
+      <dl>
+        <dt>Confounder</dt><dd>A common cause of both exposure and outcome; adjusting blocks a back-door path. Confounders are the variables the framework scores.</dd>
+        <dt>Mediator</dt><dd>A variable on the directed path from exposure to outcome; adjusting removes part of the effect under study, so mediators are not scored.</dd>
+        <dt>Collider</dt><dd>A shared effect of two or more variables; adjusting for it, or its descendant, opens a non-causal path, so colliders are not scored.</dd>
+        <dt>Instrument</dt><dd>A cause of the exposure that affects the outcome only through the exposure; kept out of the adjustment set.</dd>
+        <dt>Latent common cause</dt><dd>An unmeasured shared cause, for example familial or genetic liability, that cannot be adjusted directly; addressed by study design or an observed proxy.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="s0">
+    <h2 class="sec"><span class="num">0</span>Scope and prerequisites</h2>
+    <p>Use this protocol when all of the following hold.</p>
+    <ol>
+      <li>The evidence is observational and reports ratio-type estimates (hazard, risk, or odds ratios) poolable on the log scale.</li>
+      <li>Repeated syntheses have not converged, or disagree in direction or magnitude, despite covering a similar literature.</li>
+      <li>The exposure is plausibly structured by background liability, clinical indication, health-seeking behaviour, or social context.</li>
+      <li>The study pool is heterogeneous in adjustment, and ideally contains a few design-based studies (sibling, family fixed effects, twin, or negative-control) to anchor a latent-liability domain.</li>
+    </ol>
+    <p class="note"><b>Inputs.</b> A defined study pool with extractable main-model adjustment sets and pooled estimates; access to at least three large language models from independent developers; a pre-registered analysis plan. <b>Outputs.</b> A locked two-source construct set with causal roles, a per-estimate bias-domain rating table, a stratified meta-analysis, and a triangulation read-out.</p>
+  </section>
+
+  <section id="s1">
+    <h2 class="sec"><span class="num">1</span>Track A: what each study adjusted for</h2>
+    <p class="goal"><b>Goal.</b> Capture what each study actually adjusted for, in comparable terms.</p>
+    <p>For each study, take only the <b>main model</b>, the one whose result goes into the meta-analysis, and list its covariates. Ignore variables used only in sensitivity or subgroup analyses. For a sibling or family-based study that reports both a population and a within-family estimate, keep both, because they sit at different points on the family-bias type.</p>
+    <p>Then group the raw variables into <b>constructs</b>. Education, income and insurance, for example, all stand for one &ldquo;socioeconomic position&rdquo; construct, so studies that adjusted for different variables can still be compared. A construct counts as controlled if the study adjusted for any reasonable stand-in for it. Two people extract independently, and any disagreement is settled against the source PDF.</p>
+  </section>
+
+  <section id="s2">
+    <h2 class="sec"><span class="num">2</span>Track B: what should have been adjusted for</h2>
+    <p class="goal"><b>Goal.</b> Work out what should be adjusted for, using AI models that never see Track A.</p>
+    <h3>2.1 Set-up</h3>
+    <p>Use at least three AI models from different developers (this avoids any single model's quirks), run them at temperature 0, and never show them Track A. Two prompts run in turn: the first labels each candidate variable's causal role, the second groups the variables into constructs.</p>
+
+    <h3 id="s2-2">2.2 Prompt 1: label each variable's role</h3>
+    <p>The block below is the same for every scaffold; only the short reasoning instruction added before the JSON line changes. The timing rules are what stop a variable that can only appear after the exposure from being mislabelled a confounder.</p>
+    <p><b>Shared block</b></p>
+    <details class="fold"><summary>Show the full shared-block prompt</summary><pre class="code"><button class="copy" aria-label="Copy">Copy</button><code>You are an expert in epidemiology and causal inference.
+
+Input:
+Exposure: {EXPOSURE, including its timing window, e.g. taking drug X during pregnancy}
+Outcome: {OUTCOME, including who and when, e.g. condition Y diagnosed in the child during childhood}
+Research question: the effect of {EXPOSURE} on the risk of {OUTCOME}.
+
+Your task:
+Generate an exhaustive candidate list of third-party variables that may be relevant to the causal
+relationship between the exposure and the outcome. Do not provide only the most obvious variables;
+think broadly and systematically across all relevant epidemiologic domains.
+
+For each variable, first locate it in time, then assign exactly one causal role.
+
+Temporal position (relative to the exposure = {EXPOSURE_WINDOW}, and the outcome = {OUTCOME_WINDOW}):
+- pre_exposure: can occur before the exposure begins.
+- post_exposure_pre_outcome: can only occur after the exposure but before the outcome.
+- post_outcome: follows the outcome.
+
+Causal roles:
+- confounder: a common cause of BOTH the exposure and the outcome. It is present before the
+  exposure and is not caused by the exposure (timing = pre_exposure).
+- mediator: a variable on the causal pathway from exposure to outcome. It is caused by the exposure
+  and in turn affects the outcome (timing = post_exposure_pre_outcome).
+- collider: a variable caused by both the exposure and the outcome, or a selection / ascertainment
+  mechanism influenced by both.
+
+Critical rule: a variable that can only arise after the exposure CANNOT be a confounder, even if
+prior studies adjusted for it. Use the temporal position to discipline the role assignment.
+
+Rules:
+- Do not include the exposure itself or the outcome itself.
+- Each variable must have exactly one role.
+- Prefer specific and measurable variables.
+
+Output only valid JSON in the following format (no prose, no markdown):
+{
+  &quot;variables&quot;: [
+    {
+      &quot;name&quot;: &quot;variable name&quot;,
+      &quot;timing&quot;: &quot;pre_exposure | post_exposure_pre_outcome | post_outcome&quot;,
+      &quot;role&quot;: &quot;confounder | mediator | collider&quot;,
+      &quot;domain&quot;: &quot;short self-chosen category, e.g. familial/genetic, indication, socioeconomic, lifestyle, perinatal, healthcare access, environmental&quot;
+    }
+  ]
+}</code></pre></details>
+    <p><b>Scaffold variants</b> (appended immediately before the <code class="inline">Output only valid JSON</code> line)</p>
+    <ul>
+      <li><b>A &middot; Zero-shot</b>: shared block only.</li>
+      <li><b>B &middot; Generic chain-of-thought</b><pre class="code"><button class="copy" aria-label="Copy">Copy</button><code>Reason through this step by step internally before answering. Do not include your reasoning in the
+response; output only the final JSON.</code></pre></li>
+      <li><b>C &middot; Framework chain-of-thought</b><pre class="code"><button class="copy" aria-label="Copy">Copy</button><code>Framework for causal reasoning, reason internally using these steps and do NOT output the steps:
+Step 1. List variables that can directly influence whether the exposure occurs.
+Step 2. List variables that can be directly affected by the exposure.
+Step 3. List variables that can directly influence whether the outcome occurs.
+Step 4. List variables that can be directly affected by the outcome.
+Step 5. Assign roles:
+        - cause of both exposure and outcome -&gt; confounder
+        - consequence of exposure AND cause of outcome -&gt; mediator
+        - consequence of both, or a selection / ascertainment mechanism -&gt; collider</code></pre></li>
+    </ul>
+    <p>Additional scaffolds (a domain checklist, and few-shot examples drawn from an unrelated exposure&ndash;outcome pair) can raise recall but were not used in the reported analysis.</p>
+
+    <h3 id="s2-3">2.3 Prompt 2: blind construct induction</h3>
+    <p>Pool the role-tagged variables across models, scaffolds, and sub-outcomes, de-duplicate to one candidate list, then have each model induce its own taxonomy from that list, still blind to Track A and to any named classification.</p>
+    <details class="fold"><summary>Show the full clustering prompt</summary><pre class="code"><button class="copy" aria-label="Copy">Copy</button><code>You are a causal epidemiologist building a taxonomy from scratch.
+
+Background causal question (context only, do not answer it):
+  Exposure = {EXPOSURE}
+  Outcome  = {OUTCOME}
+
+You are given a long list of candidate third-party variables that multiple experts independently
+proposed for this exposure-outcome question. Each variable carries a causal role (confounder /
+mediator / collider) and a temporal position relative to the exposure and the outcome.
+
+YOUR TASK
+Inductively group these variables into a parsimonious set of higher-level CONSTRUCTS, purely from
+the variables themselves. A CONSTRUCT is a single latent causal factor that several specific measured
+variables are proxies or instances of; broader than one measured variable, narrower than a whole
+thematic domain.
+
+INDEPENDENCE (STRICT)
+- Build the taxonomy ONLY from the variables given.
+- Do NOT use, name, or map onto any pre-existing classification scheme, framework, or domain labels.
+- Do not invent variables that are not in the list.
+
+GRANULARITY
+- Aim for mid-level constructs, each a distinct causal mechanism or common cause.
+- As a rough guide expect on the order of 15-35 constructs, but choose whatever number best fits;
+  merge near-synonyms aggressively, split only when two groups are genuinely causally distinct.
+- Cluster ALL variables regardless of role; mediators, colliders, and selection variables must form
+  their own constructs too.
+
+FOR EACH CONSTRUCT report: a short descriptive name; a one-sentence causal definition; dominant_role
+(confounder / mediator / collider / mixed); typical_timing (pre_exposure / post_exposure_pre_outcome
+/ post_outcome / mixed); and member_variables (every input variable assigned to exactly one construct).
+
+Output ONLY valid JSON (no prose, no markdown):
+{
+  &quot;constructs&quot;: [
+    { &quot;id&quot;: &quot;C1&quot;, &quot;name&quot;: &quot;...&quot;, &quot;definition&quot;: &quot;...&quot;, &quot;dominant_role&quot;: &quot;...&quot;,
+      &quot;typical_timing&quot;: &quot;...&quot;, &quot;member_variables&quot;: [&quot;...&quot;, &quot;...&quot;] }
+  ],
+  &quot;optional_super_groups&quot;: [ { &quot;name&quot;: &quot;...&quot;, &quot;construct_ids&quot;: [&quot;C1&quot;, &quot;C4&quot;] } ]
+}
+
+INPUT VARIABLES (name | role | timing):
+&lt;&lt;&lt; the pooled candidate variables are inserted here, one per line &gt;&gt;&gt;</code></pre></details>
+    <p class="cap">Cross-run consensus counts are withheld from the model so clustering is driven by causal meaning, not popularity; consensus is kept for later weighting. If output truncates, split the input and reconcile, or run a taxonomy-only pass followed by a cheap classification pass.</p>
+  </section>
+
+  <section id="s3">
+    <h2 class="sec"><span class="num">3</span>Integration and causal-role adjudication</h2>
+    <p class="goal"><b>Goal.</b> Reconcile the two tracks into one locked construct set, every construct carrying an agreed causal role and a domain assignment.</p>
+    <ol>
+      <li><b>Adopt a spine.</b> Take the most complete Track B taxonomy after verifying it semantically subsumes the other replicates; keep the others as alternative granularities for sensitivity analysis.</li>
+      <li><b>Cross-walk.</b> Map Track B onto Track A and label each construct convergent (both tracks), blind-spot (Track B only), or role-conflicting (different roles across tracks). Convergence is evidence of construct validity; a blind spot is a confounder theory flags but the literature rarely measures.</li>
+      <li><b>Adjudicate roles</b> against pre-specified admissibility criteria: temporality, biological or causal plausibility, back-door relevance, adjustment admissibility (not a mediator, collider, or instrument), and cross-source concordance.</li>
+      <li><b>Separate core from non-core.</b> Core constructs are pre-exposure common causes of both exposure and outcome, and only these are scored. Non-core constructs (mediators, colliders, instruments, precision covariates) stay in the matrix for transparency but are not scored. Track-B-only blind spots the literature almost never measures are reported but not scored.</li>
+    </ol>
+    <p class="note"><b>Log the refinements.</b> Adjudication often splits a causally heterogeneous label (a variable whose pre-exposure form is a confounder but whose during-exposure form is a mediator) or splits a health-utilisation label into a pre-exposure seeking-propensity confounder and a post-outcome ascertainment collider. Record each decision.</p>
+  </section>
+
+  <section id="s4">
+    <h2 class="sec"><span class="num">4</span>Defining bias domains for any problem</h2>
+    <p class="goal"><b>Goal.</b> Group the core confounders into bias domains. Domains, not single constructs, are the unit of stratification.</p>
+    <p><b>The scheme is not unique.</b> Neither the number of domains nor the way constructs are partitioned among them is fixed: it is a pre-registered modelling choice that trades attribution against power. A finer scheme localises bias to a more specific axis but spreads the estimates thinly; a coarser scheme is better powered but blunter. A handful of domains, often two to four, is a workable balance, and the choice should be tested for robustness by re-running under coarser and finer schemes (&sect;5).</p>
+    <p><b>What generalises</b> is the organising principle, not a fixed list or count: two constructs share a domain when they share both a bias-generating mechanism and the means required to close it, design or measurement. The one invariant is to separate the latent or structural common causes, addressable only by design, from the measured common causes regression can adjust; within the measured set, split by mechanism. The content of each domain is problem-specific: the latent domain is familial and genetic liability for a heritable outcome like this one, but may instead be a shared environment, a clinic or site, a region, or a secular trend, and need not appear at all for some questions.</p>
+    <p class="tcap"><b>Table 2 | Generic domain archetypes (content is problem-specific).</b></p>
+    <table>
+      <thead><tr><th>Domain archetype</th><th>What it captures</th><th>How it is closed</th><th>Control</th></tr></thead>
+      <tbody>
+        <tr><td>Latent / structural common cause</td><td>Unmeasured shared causes regression cannot reach: familial/genetic liability (heritable outcomes), shared environment, clinic/site/region, secular trend</td><td>Differenced out by design (sibling, twin, fixed effects, negative-control)</td><td>Design</td></tr>
+        <tr><td>Drivers of exposure assignment</td><td>Why the exposure occurs: indication, channeling, provider behaviour, selection, reverse causation</td><td>Measured and adjusted</td><td>Measurement</td></tr>
+        <tr><td>Background context</td><td>Broad observed background: socioeconomic position, demographics, lifestyle, psychosocial factors</td><td>Measured and adjusted with standard regression</td><td>Measurement</td></tr>
+      </tbody>
+    </table>
+    <p class="note"><b>The three rows are a common pattern, not a required count.</b> A question may use as few as two domains (latent versus measured) or more. The instantiation in this study (B1 familial/genetic, B2 indication/maternal health, B3 social-behavioural) is one scheme among several.</p>
+  </section>
+
+  <section id="s5">
+    <h2 class="sec"><span class="num">5</span>Scoring confounding control</h2>
+    <p class="goal"><b>Goal.</b> Rate each estimate Strong / Moderate / Weak within every domain, then aggregate. A rating reflects how many of a domain's back-door pathways are closed, not a raw variable count; a construct counts as closed when any adequate proxy is adjusted.</p>
+    <h3>5.1 Measurement-controllable domains (count-based)</h3>
+    <p>Count the controlled constructs and map to a level with a pre-registered threshold. A general default is a majority rule (Strong at roughly half or more); the analysis reported in the main text used &ge;3 of 5 for the indication domain and &ge;4 of 8 for the contextual domain.</p>
+    <p class="tcap"><b>Table 3 | Control levels for a count-based domain of K constructs.</b></p>
+    <table>
+      <thead><tr><th>Level</th><th>Rule</th></tr></thead>
+      <tbody>
+        <tr><td><span class="lv">Strong</span></td><td>At least the pre-registered cut (a substantial share of K) controlled</td></tr>
+        <tr><td><span class="lv">Moderate</span></td><td>At least one construct controlled, but below the Strong cut</td></tr>
+        <tr><td><span class="lv">Weak</span></td><td>No construct in the domain controlled</td></tr>
+      </tbody>
+    </table>
+    <h3>5.2 Latent domains (design-gated)</h3>
+    <p>A domain whose central construct is latent cannot be closed by regression on proxies, so it is not scored by counting.</p>
+    <p class="tcap"><b>Table 4 | Control levels for a design-gated latent domain.</b></p>
+    <table>
+      <thead><tr><th>Level</th><th>Rule</th></tr></thead>
+      <tbody>
+        <tr><td><span class="lv">Strong</span></td><td>An eligible design that differences out the latent common cause (sibling, twin, family fixed effects, negative-control)</td></tr>
+        <tr><td><span class="lv">Moderate</span></td><td>A population analysis adjusting for at least one measured proxy of the latent factor</td></tr>
+        <tr><td><span class="lv">Weak</span></td><td>Neither a design-based control nor any measured proxy</td></tr>
+      </tbody>
+    </table>
+    <h3>5.3 Aggregation and sensitivity</h3>
+    <p>Aggregate to one overall rating with a conservative weakest-link rule: Strong only if every domain is Strong; Weak if any domain is Weak; Moderate otherwise. Because every threshold and granularity is a modelling choice, repeat the rating and meta-analysis under stricter and looser thresholds and coarser and finer granularities, and state which conclusions are invariant.</p>
+  </section>
+
+  <section id="s6">
+    <h2 class="sec"><span class="num">6</span>Stratified meta-analysis and triangulation read-out</h2>
+    <p class="goal"><b>Goal.</b> Pool within control strata and read the pattern of attenuation as a causal-structure signal.</p>
+    <p>Pool with random-effects models (REML, Knapp&ndash;Hartung), combining HR, RR, and OR on the log scale; test subgroup differences with a categorical-moderator Q-test; run leave-one-out diagnostics. Then read three things in order.</p>
+    <ol>
+      <li><b>Unstratified pool.</b> The overall association, confirmed by leave-one-out to not rest on a single estimate. This is what a conventional meta-analysis reports.</li>
+      <li><b>Within-domain gradient.</b> For each domain, does the pooled estimate move toward the null as control strengthens Weak to Moderate to Strong? A monotone gradient to the null within a domain implicates that domain's bias structure.</li>
+      <li><b>Cross-domain convergence at the strong tier.</b> Compare strong-control pools across domains. If one domain's strong control reaches the null while the others do not, the domains do not converge and the evidence is more compatible with that one domain's bias structure than with a population-level effect. If all domains converged to the null, the evidence would instead favour a genuine effect once confounding is removed, or a shared residual bias.</li>
+    </ol>
+    <p class="note"><b>The triangulation signature.</b> Attenuation that tracks one bias axis specifically is interpreted differently from attenuation that appears under any kind of stronger adjustment.</p>
+  </section>
+
+  <footer>
+    Companion tutorial to the main analysis. The version of record is the journal article and its Supplementary Information. PROSPERO CRD420261365276.
+  </footer>
+</main>
+</div>
+
+<script>
+const tocLinks=[...document.querySelectorAll('.toc a')];
+const map=new Map(tocLinks.map(a=>[a.getAttribute('href').slice(1),a]));
+const obs=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){
+    tocLinks.forEach(a=>a.classList.remove('active'));
+    const a=map.get(e.target.id); if(a)a.classList.add('active');
+  }});
+},{rootMargin:'-12% 0px -78% 0px',threshold:0});
+document.querySelectorAll('section[id]').forEach(s=>obs.observe(s));
+document.querySelectorAll('.copy').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const t=btn.parentElement.querySelector('code').innerText;
+    navigator.clipboard.writeText(t).then(()=>{
+      btn.textContent='Copied';btn.classList.add('done');
+      setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('done')},1400);
+    });
+  });
+});
+</script>
+</body>
+</html>
