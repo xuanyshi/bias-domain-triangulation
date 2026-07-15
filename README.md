@@ -12,6 +12,10 @@ A step-by-step guide to applying the bias-domain triangulation framework to any 
 
 The same content is in [`docs/`](docs/) as HTML, Markdown, and Word. It mirrors the reusable-protocol section of the paper's Supplementary Information; the version of record is the journal article and its Supplementary Information.
 
+## Systematic review search strategy
+
+The full electronic search strategies (MEDLINE via PubMed and Embase, searched from inception to 26 April 2026), the eligibility criteria, and the PRISMA study-selection flow are documented in [`SEARCH_STRATEGY.md`](SEARCH_STRATEGY.md), so that the search can be reproduced directly. It mirrors Section 1 of the paper's Supplementary Information; the version of record is the journal article and its Supplementary Information. The review is registered on PROSPERO (CRD420261365276).
+
 ## Repository structure
 
 ```
