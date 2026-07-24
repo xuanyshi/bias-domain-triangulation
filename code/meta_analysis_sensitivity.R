@@ -1,9 +1,10 @@
 ###############################################################################
-# Sensitivity analysis: alternative construct granularities (Table S5a)
+# Framework-development-set sensitivity: construct granularity (Table S5a)
 #
-# Repeats the stratified meta-analysis under coarse (Gemini, 11 constructs)
-# and fine (GPT-5.5, 19 constructs) granularities.
-# B1 is design-gated and therefore identical across all granularities.
+# Repeats the historical 22-study/33-estimate development-set analysis under
+# coarse (Gemini, 11 constructs) and fine (GPT-5.5, 19 constructs)
+# granularities. These outputs are retained for Table S5a and are not the
+# current 24-article/39-estimate primary meta-analysis.
 #
 # Run from the repository root:
 #   Rscript code/meta_analysis_sensitivity.R

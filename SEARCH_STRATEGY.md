@@ -29,7 +29,7 @@ article and its Supplementary Information.
 - Studies without a relevant neurodevelopmental outcome (ASD or ADHD).
 - Case-control designs.
 - Studies reporting no adjusted effect estimate.
-- Reports based on an overlapping study population; the most complete or most recent report was retained.
+- Reports that duplicated an earlier eligible analysis without contributing an independently extractable estimate. Distinct eligible articles with partial source-population overlap were retained and handled in the meta-analytic dependence structure.
 - Reports with insufficient data for extraction.
 - Studies restricted to non-human animals.
 
@@ -55,6 +55,10 @@ Each block was expanded with the relevant controlled vocabulary (MeSH in PubMed,
 together with free-text title and abstract terms. Records limited to non-human animals were removed
 where the database interface permitted. Records from both databases were combined and de-duplicated
 by matching on PubMed identifier, DOI and normalised title.
+
+Publication surveillance continued through **23 July 2026** and identified two additional eligible
+articles: Prahm et al. and Luo et al. These articles were assessed using the same eligibility,
+extraction and bias-domain classification procedures.
 
 ---
 
@@ -91,7 +95,8 @@ MeSH, Medical Subject Headings; tiab and ti,ab, title and abstract; exp, explode
 ## 4. Study selection (PRISMA flow)
 
 Combining PubMed (n = 213) and Embase (n = 1,142) yielded 1,355 records. After removal of 193
-duplicates, 1,162 unique records were screened.
+duplicates, 1,162 unique database records were screened. Publication surveillance through
+23 July 2026 identified two additional eligible articles.
 
 | Stage | n |
 |-------|---|
@@ -99,12 +104,13 @@ duplicates, 1,162 unique records were screened.
 | Duplicates removed | 193 |
 | Records screened | 1,162 |
 | Records excluded at title and abstract screening | 1,103 |
-| Reports sought for retrieval | 59 |
-| Reports assessed for eligibility (full text) | 59 |
+| Reports sought for retrieval from the database search | 59 |
+| Additional eligible articles identified by publication surveillance | 2 |
+| Reports assessed for eligibility (full text) | 61 |
 | Reports excluded at full text | 13 |
-| **Studies included in the systematic review** | **46** |
-| Studies with sufficient detail for bias-domain classification | 44 |
-| **Studies contributing to the quantitative synthesis** | **22** (33 estimates) |
+| **Articles included in the updated systematic review** | **48** |
+| Articles with sufficient detail for bias-domain classification | 46 |
+| **Articles contributing to the quantitative synthesis** | **24** (39 estimates) |
 
 **Reasons for exclusion at full text (n = 13)**
 
@@ -119,6 +125,11 @@ duplicates, 1,162 unique records were screened.
 | No neurodevelopmental outcome | 1 |
 
 The corresponding PRISMA flow diagram is Supplementary Figure S1 of the article.
+
+Liew 2016a ASD and Prahm 2026 are separate eligible articles. Their partially overlapping Danish
+source populations are represented by one dependence cluster in the primary multilevel
+meta-analysis; sensitivity analyses exclude each article in turn and treat them as independent
+clusters.
 
 ---
 

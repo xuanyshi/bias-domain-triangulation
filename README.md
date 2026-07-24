@@ -14,7 +14,7 @@ The same content is in [`docs/`](docs/) as HTML, Markdown, and Word. It mirrors 
 
 ## Systematic review search strategy
 
-The full electronic search strategies (MEDLINE via PubMed and Embase, searched from inception to 26 April 2026), the eligibility criteria, and the PRISMA study-selection flow are documented in [`SEARCH_STRATEGY.md`](SEARCH_STRATEGY.md), so that the search can be reproduced directly. It mirrors Section 1 of the paper's Supplementary Information; the version of record is the journal article and its Supplementary Information. The review is registered on PROSPERO (CRD420261365276).
+The full electronic search strategies (MEDLINE via PubMed and Embase, searched from inception to 26 April 2026), publication surveillance through 23 July 2026, the eligibility criteria, and the updated PRISMA study-selection flow are documented in [`SEARCH_STRATEGY.md`](SEARCH_STRATEGY.md). The review is registered on PROSPERO (CRD420261365276).
 
 ## Repository structure
 
@@ -25,12 +25,18 @@ The full electronic search strategies (MEDLINE via PubMed and Embase, searched f
 │   └── Supplementary_Protocol_bias_domain_triangulation.docx  # Word version
 │
 ├── data/                          # All input data (no individual-level participant data)
-│   ├── effect_estimates_and_ratings.xlsx   # 33 extracted ratio-type estimates with B1 ratings
-│   ├── main_model_covariates.xlsx          # Per-record main-model covariate sets (Track A)
+│   ├── SourceData_meta_analysis_20260723_B1Strong.xlsx
+│   │                                         # Current 24-article, 39-estimate meta-analysis Source Data
+│   ├── SourceData_main_model_covariates_20260723_B1Strong.xlsx
+│   │                                         # Current per-record main-model covariate audit
+│   ├── Extraction_adjudication_and_interrater_reliability.xlsx
+│   │                                         # Extraction audit, agreement statistics, and final adjudication
+│   ├── effect_estimates_and_ratings.xlsx   # Historical 22-study/33-estimate development set for Table S5a
+│   ├── main_model_covariates.xlsx          # Stable-path copy of the current covariate Source Data
 │   ├── ratings_locked16.xlsx               # Study-level B1/B2/B3 ratings (primary: 16 constructs)
 │   ├── ratings_coarse.xlsx                 # Sensitivity: coarse granularity (Gemini, 11 constructs)
 │   ├── ratings_fine.xlsx                   # Sensitivity: fine granularity (GPT-5.5, 19 constructs)
-│   ├── pooled_strata_estimates.csv         # Stratified meta-analysis pooled results
+│   ├── pooled_strata_estimates.csv         # Current dependence-adjusted stratified pooled results
 │   ├── trackB_pooled_variables.json        # 1,357 LLM-generated candidate variables (Track B input)
 │   ├── trackB_final_mapping_locked.json    # Locked construct mapping (16 core confounders)
 │   └── LLM-DAG_recall_ABC_3model.xlsx      # Table S2: per-model/per-prompt recall (matrix + Recall summary sheet)
@@ -72,17 +78,17 @@ Rscript -e 'install.packages(readLines("r_packages.txt")[!grepl("^#|^$", readLin
 
 ### 2. Primary stratified meta-analysis
 
-Produces Figure 2 (confounder matrix), Figure 3 (B1 forest plot), Supplementary Figures S3--S5, Table S4, HR-only sensitivity (Table S5b), and leave-one-out diagnostics.
+Recomputes the primary multilevel random-effects model, dependence-adjusted B1/B2/B3/overall strata, working-correlation sensitivity, model-specification sensitivity, hazard/rate-ratio analysis, and leave-one-dependence-cluster-out diagnostics. The script uses CR2 cluster-robust inference with Satterthwaite degrees of freedom and verifies all computed result tables against the current Source Data workbook.
 
 ```bash
 Rscript code/meta_analysis_primary.R
 ```
 
-Outputs are written to `output/`.
+Computed CSV files and `validation_against_source_data.csv` are written to `output/`.
 
 ### 3. Sensitivity analysis (construct granularity)
 
-Repeats the stratified pooled estimates under coarse (11 constructs) and fine (19 constructs) mappings (Table S5a). B1 is design-gated, so the B1 gradient is identical across all granularities.
+Repeats the framework-development-set analysis under coarse (11 constructs) and fine (19 constructs) mappings for Table S5a. This historical 22-study/33-estimate analysis is retained for the prespecified construct-granularity comparison and is not the current 24-article/39-estimate primary meta-analysis.
 
 ```bash
 Rscript code/meta_analysis_sensitivity.R
@@ -113,10 +119,13 @@ All data are extracted from published study reports. No individual-level partici
 
 | File | Description |
 |------|-------------|
-| `effect_estimates_and_ratings.xlsx` | 33 adjusted ratio-type estimates from 22 studies (PMID, study, outcome, effect measure, point estimate, 95% CI, B1 rating) |
-| `main_model_covariates.xlsx` | Per-record main-model covariate sets (the empirical Track A inspection) |
+| `SourceData_meta_analysis_20260723_B1Strong.xlsx` | Current primary dataset: 24 independent articles, 39 adjusted ratio-type estimates, 23 dependence clusters, stratified estimates, sensitivity analyses and leave-one-cluster-out diagnostics |
+| `SourceData_main_model_covariates_20260723_B1Strong.xlsx` | Current 39-record main-model covariate audit used for the empirical Track A inspection |
+| `Extraction_adjudication_and_interrater_reliability.xlsx` | Independent extraction audit, inter-rater agreement, discrepancy resolution and final Senior-adjudicated values; its 33-estimate page is explicitly retained as an historical NHB development-set audit |
+| `effect_estimates_and_ratings.xlsx` | Historical 22-study/33-estimate framework-development set retained only for the construct-granularity analysis in Table S5a |
+| `main_model_covariates.xlsx` | Stable-path copy of the current main-model covariate Source Data |
 | `ratings_locked16.xlsx` | Study-level bias-domain ratings (B1/B2/B3) under the locked 16-construct two-source mapping |
-| `pooled_strata_estimates.csv` | Stratified meta-analysis pooled estimates by control level |
+| `pooled_strata_estimates.csv` | Current dependence-adjusted pooled estimates by bias domain and control level |
 | `trackB_pooled_variables.json` | 1,357 unique candidate variables pooled across 3 models, 3 prompting strategies, and 2 outcomes |
 | `trackB_final_mapping_locked.json` | Final locked construct mapping with causal-role adjudication |
 | `LLM-DAG_recall_ABC_3model.xlsx` | Per-model, per-prompting-strategy variable-level recall of Track A confounder constructs. The evidence matrix (which variables each model x scaffold elicited per construct) plus a `Recall summary` sheet with the computed recall (per run, per model, and construct-level consensus). |

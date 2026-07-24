@@ -4,4 +4,5 @@ dplyr
 tidyr
 ggplot2
 metafor         # >= 4.6-0
+clubSandwich    # >= 0.5.11
 metaconfoundr   # >= 0.1.2
