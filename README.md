@@ -2,7 +2,7 @@
 
 Code and data for:
 
-> Shi X, Deng G, Du J. Why observational evidence fails to converge in behavioural health research: bias-domain triangulation of prenatal paracetamol and offspring neurodevelopment.
+> Shi X, Deng G, Du J. Bias-domain triangulation of non-convergent observational evidence in mental health research.
 
 ## Reusable protocol (tutorial)
 
@@ -36,7 +36,7 @@ The full electronic search strategies (MEDLINE via PubMed and Embase, searched f
 │   ├── ratings_locked16.xlsx               # Study-level B1/B2/B3 ratings (primary: 16 constructs)
 │   ├── ratings_coarse.xlsx                 # Sensitivity: coarse granularity (Gemini, 11 constructs)
 │   ├── ratings_fine.xlsx                   # Sensitivity: fine granularity (GPT-5.5, 19 constructs)
-│   ├── pooled_strata_estimates.csv         # Current dependence-adjusted stratified pooled results
+│   ├── pooled_strata_estimates.csv         # Current NHB-method stratified pooled results
 │   ├── trackB_pooled_variables.json        # 1,357 LLM-generated candidate variables (Track B input)
 │   ├── trackB_final_mapping_locked.json    # Locked construct mapping (16 core confounders)
 │   └── LLM-DAG_recall_ABC_3model.xlsx      # Table S2: per-model/per-prompt recall (matrix + Recall summary sheet)
@@ -78,13 +78,13 @@ Rscript -e 'install.packages(readLines("r_packages.txt")[!grepl("^#|^$", readLin
 
 ### 2. Primary stratified meta-analysis
 
-Recomputes the primary multilevel random-effects model, dependence-adjusted B1/B2/B3/overall strata, working-correlation sensitivity, model-specification sensitivity, hazard/rate-ratio analysis, and leave-one-dependence-cluster-out diagnostics. The script uses CR2 cluster-robust inference with Satterthwaite degrees of freedom and verifies all computed result tables against the current Source Data workbook.
+Recomputes the primary analysis using the method applied in the NHB submission: REML random-effects models with Knapp–Hartung inference, categorical moderator Q-tests for B1/B2/B3/overall strata, an HR/aHR-only sensitivity analysis, and leave-one-effect-out diagnostics. The current analysis contains 39 adjusted estimates from 24 independent articles; the locked 16-construct mapping and rating thresholds are unchanged.
 
 ```bash
 Rscript code/meta_analysis_primary.R
 ```
 
-Computed CSV files and `validation_against_source_data.csv` are written to `output/`.
+Computed CSV and JSON result files and the publication figures are written to `output/`; the tracked pooled-strata table is updated in `data/`.
 
 ### 3. Sensitivity analysis (construct granularity)
 
@@ -119,13 +119,13 @@ All data are extracted from published study reports. No individual-level partici
 
 | File | Description |
 |------|-------------|
-| `SourceData_meta_analysis_20260723_B1Strong.xlsx` | Current primary dataset: 24 independent articles, 39 adjusted ratio-type estimates, 23 dependence clusters, stratified estimates, sensitivity analyses and leave-one-cluster-out diagnostics |
+| `SourceData_meta_analysis_20260723_B1Strong.xlsx` | Current primary dataset: 24 independent articles, 39 adjusted ratio-type estimates, NHB-method stratified estimates, HR/aHR-only sensitivity analysis and leave-one-effect-out diagnostics |
 | `SourceData_main_model_covariates_20260723_B1Strong.xlsx` | Current 39-record main-model covariate audit used for the empirical Track A inspection |
 | `Extraction_adjudication_and_interrater_reliability.xlsx` | Independent extraction audit, inter-rater agreement, discrepancy resolution and final Senior-adjudicated values; its 33-estimate page is explicitly retained as an historical NHB development-set audit |
 | `effect_estimates_and_ratings.xlsx` | Historical 22-study/33-estimate framework-development set retained only for the construct-granularity analysis in Table S5a |
 | `main_model_covariates.xlsx` | Stable-path copy of the current main-model covariate Source Data |
 | `ratings_locked16.xlsx` | Study-level bias-domain ratings (B1/B2/B3) under the locked 16-construct two-source mapping |
-| `pooled_strata_estimates.csv` | Current dependence-adjusted pooled estimates by bias domain and control level |
+| `pooled_strata_estimates.csv` | Current REML/Knapp–Hartung pooled estimates by bias domain and control level |
 | `trackB_pooled_variables.json` | 1,357 unique candidate variables pooled across 3 models, 3 prompting strategies, and 2 outcomes |
 | `trackB_final_mapping_locked.json` | Final locked construct mapping with causal-role adjudication |
 | `LLM-DAG_recall_ABC_3model.xlsx` | Per-model, per-prompting-strategy variable-level recall of Track A confounder constructs. The evidence matrix (which variables each model x scaffold elicited per construct) plus a `Recall summary` sheet with the computed recall (per run, per model, and construct-level consensus). |
