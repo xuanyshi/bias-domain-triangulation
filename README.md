@@ -14,7 +14,7 @@ The same content is in [`docs/`](docs/) as HTML, Markdown, and Word. It mirrors 
 
 ## Systematic review search strategy
 
-The full electronic search strategies (MEDLINE via PubMed and Embase, searched from inception to 26 April 2026), publication surveillance through 23 July 2026, the eligibility criteria, and the updated PRISMA study-selection flow are documented in [`SEARCH_STRATEGY.md`](SEARCH_STRATEGY.md). The review is registered on PROSPERO (CRD420261365276).
+The full electronic search strategies (MEDLINE via PubMed and Embase, searched from inception to 1 July 2026), the eligibility criteria, and the PRISMA study-selection flow are documented in [`SEARCH_STRATEGY.md`](SEARCH_STRATEGY.md). The review is registered on PROSPERO (CRD420261365276).
 
 ## Repository structure
 
