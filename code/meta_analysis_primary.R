@@ -29,7 +29,7 @@ base_dir <- getwd()
 source_path <- file.path(
   base_dir,
   "data",
-  "SourceData_meta_analysis_20260723_B1Strong.xlsx"
+  "SourceData_meta_analysis_20260727_B1Strong.xlsx"
 )
 out_dir <- file.path(base_dir, "output")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
@@ -255,7 +255,7 @@ p_matrix <- ggplot(matrix_long, aes(x = domain, y = study_display)) +
   ) +
   labs(
     title = "Confounder matrix by bias domain",
-    subtitle = "30 article-design combinations; 24 articles; locked 16-construct mapping",
+    subtitle = NULL,
     x = NULL,
     y = NULL,
     fill = "Control quality"
@@ -349,7 +349,10 @@ make_forest <- function(data, rating_column, domain_label, filename) {
     par(mar = c(5, 4, 2.2, 2))
     forest(
       x = ordered$yi,
+      # Use SE for study weights, but preserve the published CI endpoints in the plot.
       sei = ordered$sei,
+      ci.lb = log(ordered$ci_lower),
+      ci.ub = log(ordered$ci_upper),
       slab = ordered$label,
       rows = plot_rows,
       ylim = c(overall_row - 2.2, top_row),

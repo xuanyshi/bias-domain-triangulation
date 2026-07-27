@@ -1,12 +1,8 @@
 ###############################################################################
-# Framework-development-set sensitivity: construct granularity (Table S5a)
-#
-# Repeats the historical 22-study/33-estimate development-set analysis under
-# coarse (Gemini, 11 constructs) and fine (GPT-5.5, 19 constructs)
-# granularities. These outputs are retained for Table S5a and are not the
-# current 24-article/39-estimate primary meta-analysis.
+# Current-39 sensitivity analyses: construct granularity and rating thresholds
 #
 # Run from the repository root:
+#   python3 code/sensitivity_granularity.py
 #   Rscript code/meta_analysis_sensitivity.R
 ###############################################################################
 
@@ -14,104 +10,143 @@ library(readxl)
 library(dplyr)
 library(metafor)
 
-base_dir     <- getwd()
-records_path <- file.path(base_dir, "data", "effect_estimates_and_ratings.xlsx")
-out_dir      <- file.path(base_dir, "output", "sensitivity")
+base_dir <- getwd()
+effect_path <- file.path(base_dir, "data", "SourceData_meta_analysis_20260727_B1Strong.xlsx")
+ratings_path <- file.path(base_dir, "output", "sensitivity", "ratings_sensitivity_current39.csv")
+out_dir <- file.path(base_dir, "output", "sensitivity")
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 
-run_sensitivity <- function(ratings_path, granularity_label) {
+effects <- read_excel(effect_path, sheet = "Effect estimates") %>%
+  mutate(
+    record_id = as.character(record_id),
+    pmid = as.character(pmid),
+    effect = as.numeric(effect),
+    ci_lower = as.numeric(ci_lower),
+    ci_upper = as.numeric(ci_upper),
+    yi = log(effect),
+    sei = (log(ci_upper) - log(ci_lower)) / (2 * qnorm(0.975))
+  )
 
-  cat("\n###", granularity_label, "###\n")
+ratings <- read.csv(ratings_path, stringsAsFactors = FALSE) %>%
+  mutate(
+    record_id = as.character(record_id),
+    pmid = as.character(pmid)
+  )
 
-  ratings_raw <- read_excel(ratings_path)
-  extract_pmid <- function(s) {
-    m <- regmatches(s, gregexpr("[0-9]{7,}", s))
-    sapply(m, function(x) if (length(x) == 0) NA_character_ else tail(x, 1))
-  }
+records <- effects %>%
+  select(record_id, pmid, study, condition, effect, ci_lower, ci_upper, yi, sei) %>%
+  left_join(ratings, by = c("record_id", "pmid", "study", "condition"))
 
-  ratings <- ratings_raw %>%
-    filter(!B1_rating %in% c("N/A", NA)) %>%
-    mutate(
-      pmid_str = extract_pmid(study),
-      B1_qual = case_when(B1_rating == "Strong" ~ 2L, B1_rating == "Moderate" ~ 1L,
-                          B1_rating == "Weak" ~ 0L),
-      B2_qual = case_when(B2_rating == "Strong" ~ 2L, B2_rating == "Moderate" ~ 1L,
-                          B2_rating == "Weak" ~ 0L),
-      B3_qual = case_when(B3_rating == "Strong" ~ 2L, B3_rating == "Moderate" ~ 1L,
-                          B3_rating == "Weak" ~ 0L))
-
-  rating_lookup <- ratings %>%
-    select(pmid_str, study, B1_rating, B2_rating, B3_rating, B1_qual, B2_qual, B3_qual) %>%
-    rename(rating_study_raw = study)
-  rating_lookup$author_year <- tolower(trimws(gsub(
-    "^(new |adhd |asd |New )+", "",
-    sub("\\s+\\d{7,}.*", "",
-        sub("\\s+(jamapsychiatry|JAMA|IJE|PPE|Pharma|JCP|AJE|PDS|Autism Research|JAMA Pediatr|Nature mental health|frontiers|bmc psych|plos one|Jama Pediatrics|brainsci|Pediatrics|peditric research|pediatric research|J affect discord|Int J Environ|Toxilogical|J Psychiatr Res|European Psychiatry|human reproduction|J Obstet Gynaecol Can|Neurotoxicol Teratol).*", "",
-            rating_lookup$rating_study_raw, ignore.case = TRUE)))))
-
-  records <- read_excel(records_path, sheet = "All_Records_Evalues") %>%
-    mutate(pmid = as.character(pmid))
-
-  records <- records %>%
-    left_join(
-      rating_lookup %>% filter(!is.na(pmid_str)) %>%
-        select(pmid_str, B2_rating, B3_rating, B2_qual, B3_qual),
-      by = c("pmid" = "pmid_str"))
-
-  unmatched_idx <- which(is.na(records$B2_rating))
-  if (length(unmatched_idx) > 0) {
-    for (i in unmatched_idx) {
-      rec_key <- tolower(records$study[i])
-      match_row <- rating_lookup %>%
-        filter(grepl(rec_key, author_year, fixed = TRUE) |
-               grepl(sub(" .*", "", rec_key), author_year))
-      if (nrow(match_row) == 1) {
-        records$B2_rating[i] <- match_row$B2_rating
-        records$B3_rating[i] <- match_row$B3_rating
-        records$B2_qual[i]   <- match_row$B2_qual
-        records$B3_qual[i]   <- match_row$B3_qual
-      }
-    }
-  }
-
-  records <- records %>%
-    mutate(yi = log(effect),
-           sei = (log(ci_upper) - log(ci_lower)) / (2 * qnorm(0.975)))
-
-  sibling_studies <- c("Ahlqvist 2024", "Gustavson 2021", "Okubo 2025", "Lee 2026")
-  records <- records %>%
-    mutate(B1 = ifelse(study %in% sibling_studies & B1 == "Weak", "Moderate", B1),
-           B1 = ifelse(study == "Pleau 2026" & B1 == "Weak", "Moderate", B1),
-           B2_rating = ifelse(study == "Lee 2026" & is.na(B2_rating), "Moderate", B2_rating),
-           B3_rating = ifelse(study == "Lee 2026" & is.na(B3_rating), "Strong", B3_rating))
-
-  run_domain <- function(data, domain_col, domain_label) {
-    data$domain_rating <- data[[domain_col]]
-    data <- data %>% filter(!is.na(domain_rating))
-    for (lvl in c("Strong", "Moderate", "Weak")) {
-      sub <- data %>% filter(domain_rating == lvl)
-      if (nrow(sub) == 0) next
-      if (nrow(sub) == 1) {
-        cat("  ", domain_label, lvl, "(n=1):",
-            formatC(sub$effect, format = "f", digits = 2), "\n")
-      } else {
-        fit <- rma(yi = yi, sei = sei, data = sub, method = "REML", test = "knha")
-        cat("  ", domain_label, lvl, "(n=", nrow(sub), "):",
-            formatC(exp(fit$beta), format = "f", digits = 2),
-            "[", formatC(exp(fit$ci.lb), format = "f", digits = 2),
-            ";", formatC(exp(fit$ci.ub), format = "f", digits = 2), "]\n")
-      }
-    }
-  }
-
-  run_domain(records, "B1", "B1")
-  run_domain(records, "B2_rating", "B2")
-  run_domain(records, "B3_rating", "B3")
+if (nrow(records) != 39 || anyNA(records$B1_rating)) {
+  stop("Current-39 join failed or produced missing ratings.")
 }
 
-run_sensitivity(file.path(base_dir, "data", "ratings_coarse.xlsx"),
-                "Coarse (Gemini, 11 constructs)")
-run_sensitivity(file.path(base_dir, "data", "ratings_fine.xlsx"),
-                "Fine (GPT-5.5, 19 constructs)")
+pool_stratum <- function(data) {
+  if (nrow(data) == 1) {
+    return(data.frame(
+      n_estimates = 1L,
+      n_articles = length(unique(data$pmid)),
+      estimate = data$effect,
+      ci_lower = data$ci_lower,
+      ci_upper = data$ci_upper,
+      p_value = NA_real_,
+      I2 = NA_real_,
+      tau2 = NA_real_
+    ))
+  }
+  fit <- rma(yi = yi, sei = sei, data = data, method = "REML", test = "knha")
+  data.frame(
+    n_estimates = nrow(data),
+    n_articles = length(unique(data$pmid)),
+    estimate = exp(as.numeric(fit$beta)),
+    ci_lower = exp(fit$ci.lb),
+    ci_upper = exp(fit$ci.ub),
+    p_value = fit$pval,
+    I2 = fit$I2,
+    tau2 = fit$tau2
+  )
+}
 
-cat("\nSensitivity analysis complete.\n")
+moderator_p <- function(data, rating_column) {
+  data$rating <- factor(data[[rating_column]], levels = c("Weak", "Moderate", "Strong"))
+  data <- data[!is.na(data$rating), ]
+  data$rating <- droplevels(data$rating)
+  if (length(unique(data$rating)) < 2) {
+    return(NA_real_)
+  }
+  fit <- rma(yi = yi, sei = sei, mods = ~ rating, data = data, method = "REML", test = "knha")
+  fit$QMp
+}
+
+run_specification <- function(data, family, specification, b2_column, b3_column) {
+  domain_columns <- c(B1 = "B1_rating", B2 = b2_column, B3 = b3_column)
+  output <- list()
+  for (domain in names(domain_columns)) {
+    rating_column <- domain_columns[[domain]]
+    p_mod <- moderator_p(data, rating_column)
+    for (level in c("Strong", "Moderate", "Weak")) {
+      stratum <- data[data[[rating_column]] == level, ]
+      if (nrow(stratum) == 0) {
+        next
+      }
+      pooled <- pool_stratum(stratum)
+      pooled$analysis_family <- family
+      pooled$specification <- specification
+      pooled$domain <- domain
+      pooled$level <- level
+      pooled$moderator_p <- p_mod
+      output[[length(output) + 1]] <- pooled
+    }
+  }
+  bind_rows(output) %>%
+    select(
+      analysis_family, specification, domain, level,
+      n_estimates, n_articles, estimate, ci_lower, ci_upper,
+      p_value, I2, tau2, moderator_p
+    )
+}
+
+granularity <- bind_rows(
+  run_specification(records, "Construct granularity", "Coarse (11 constructs)",
+                    "coarse_B2_rating", "coarse_B3_rating"),
+  run_specification(records, "Construct granularity", "Medium (16 constructs; primary)",
+                    "medium_B2_rating", "medium_B3_rating"),
+  run_specification(records, "Construct granularity", "Fine (19 constructs)",
+                    "fine_B2_rating", "fine_B3_rating")
+)
+
+thresholds <- bind_rows(
+  run_specification(records, "Rating threshold", "Looser (B2 >=2/5; B3 >=3/8)",
+                    "looser_B2_rating", "looser_B3_rating"),
+  run_specification(records, "Rating threshold", "Primary (B2 >=3/5; B3 >=4/8)",
+                    "primary_B2_rating", "primary_B3_rating"),
+  run_specification(records, "Rating threshold", "Stricter (B2 >=4/5; B3 >=5/8)",
+                    "stricter_B2_rating", "stricter_B3_rating")
+)
+
+write.csv(
+  granularity,
+  file.path(out_dir, "granularity_sensitivity_current39.csv"),
+  row.names = FALSE,
+  na = ""
+)
+write.csv(
+  thresholds,
+  file.path(out_dir, "threshold_sensitivity_current39.csv"),
+  row.names = FALSE,
+  na = ""
+)
+
+summary_rows <- bind_rows(granularity, thresholds) %>%
+  filter(level == "Strong") %>%
+  arrange(analysis_family, specification, domain)
+write.csv(
+  summary_rows,
+  file.path(out_dir, "sensitivity_strong_strata_current39.csv"),
+  row.names = FALSE,
+  na = ""
+)
+
+print(summary_rows %>%
+        mutate(across(c(estimate, ci_lower, ci_upper, moderator_p), ~ round(.x, 4))))
+cat("\nCurrent-39 sensitivity analyses complete.\n")

@@ -3,5 +3,7 @@ readxl
 dplyr
 tidyr
 ggplot2
-metafor         # >= 4.6-0
-metaconfoundr   # >= 0.1.2
+metafor
+patchwork
+jsonlite
+metaconfoundr

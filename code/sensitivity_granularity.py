@@ -1,91 +1,221 @@
 #!/usr/bin/env python3
-"""Granularity sensitivity: re-rate B2/B3 at COARSE (~11, Gemini-like) and FINE (~19, gpt-like)
-granularities, by deterministically MERGING / SPLITTING the verified medium-16 construct assignments.
-Builds meta-ready ratings drop-ins (clone old schema, swap B2/B3 by PMID). B1 stays canonical (Apr-26)."""
-import os, sys, re, openpyxl, shutil
+"""Build current-39 ratings for construct-granularity and threshold sensitivity.
+
+The medium/primary ratings are the adjudicated ratings in the current source
+data. Coarse and fine ratings are deterministic merges/splits of the locked
+16-construct mapping. Looser and stricter alternatives change only the
+count-based B2/B3 Strong cut-points.
+"""
+
+import csv
+import os
+import re
+import sys
 from collections import defaultdict
 
+import openpyxl
+
 HERE = os.path.dirname(os.path.abspath(__file__))
-RATINGS_DIR = HERE
-sys.path.insert(0, RATINGS_DIR)
-from ratings_locked16 import classify, SRC, B2 as MED_B2, B3 as MED_B3
+REPO = os.path.dirname(HERE)
+DATA = os.path.join(REPO, "data")
+OUT_DIR = os.path.join(REPO, "output", "sensitivity")
+META_PATH = os.path.join(DATA, "SourceData_meta_analysis_20260727_B1Strong.xlsx")
+COV_PATH = os.path.join(DATA, "SourceData_main_model_covariates_20260723_B1Strong.xlsx")
+OUT_PATH = os.path.join(OUT_DIR, "ratings_sensitivity_current39.csv")
+AUDIT_PATH = os.path.join(OUT_DIR, "construct_counts_current39.csv")
 
-OLD = os.path.join(os.path.dirname(HERE), "data", "ratings_locked16.xlsx")
-NUM = {"Strong": 3, "Moderate": 2, "Weak": 1}
-def pm(s):
-    m = re.findall(r"\d{7,8}", str(s)); return m[-1] if m else None
+sys.path.insert(0, HERE)
+from ratings_locked16 import B2 as MEDIUM_B2  # noqa: E402
+from ratings_locked16 import B3 as MEDIUM_B3  # noqa: E402
+from ratings_locked16 import classify  # noqa: E402
 
-# COARSE: merge medium constructs (Gemini-like ~11)
-COARSE = {
- "infection_fever": "acute_indication", "pain_headache": "acute_indication",
- "chronic_conditions": "chronic_metabolic", "metabolic_adiposity": "chronic_metabolic",
- "concomitant_meds": "comeds",
- "ses": "ses_demographic", "demographic_regional": "ses_demographic",
- "lifestyle_substance": "lifestyle", "psychosocial_stress": "psychosocial",
- "maternal_demographic": "demo_reproductive", "reproductive_parity": "demo_reproductive",
- "family_structure": "demo_reproductive", "temporal": "temporal",
+
+COARSE_MAP = {
+    "infection_fever": "acute_indication",
+    "pain_headache": "acute_indication",
+    "chronic_conditions": "chronic_metabolic",
+    "metabolic_adiposity": "chronic_metabolic",
+    "concomitant_meds": "concomitant_treatment",
+    "ses": "socioeconomic_demographic",
+    "demographic_regional": "socioeconomic_demographic",
+    "lifestyle_substance": "lifestyle",
+    "psychosocial_stress": "psychosocial",
+    "maternal_demographic": "demographic_reproductive",
+    "reproductive_parity": "demographic_reproductive",
+    "family_structure": "demographic_reproductive",
+    "temporal": "temporal",
 }
-COARSE_B2 = {"acute_indication", "chronic_metabolic", "comeds"}                 # 3
-COARSE_B3 = {"ses_demographic", "lifestyle", "psychosocial", "demo_reproductive", "temporal"}  # 5
 
-def fine_of(med, var):
-    """Split medium -> fine (gpt-like ~19) using sub-keywords on the variable."""
-    v = " " + re.sub(r"[^a-z]+", " ", var.lower()).strip() + " "
-    if med == "chronic_conditions":
-        return "immune_respiratory" if re.search(r"asthma|autoimmune|rheumatoid|allerg|atop|lupus|\bsle\b|inflammatory bowel", v) else "chronic_other"
-    if med == "lifestyle_substance":
-        return "diet" if re.search(r"\bdiet\b|caffeine|coffee|nutrition|organic", v) else "substance"
-    if med == "reproductive_parity":
-        return "fertility_planning" if re.search(r"planned|fertility|previous", v) else "parity"
-    return med
-FINE_B2 = {"infection_fever", "pain_headache", "immune_respiratory", "chronic_other", "metabolic_adiposity", "concomitant_meds"}  # 6
-FINE_B3 = {"ses", "demographic_regional", "substance", "diet", "psychosocial_stress", "maternal_demographic", "parity", "fertility_planning", "family_structure", "temporal"}  # 10
+COARSE_TOTAL = {"B2": 3, "B3": 5}
+MEDIUM_TOTAL = {"B2": 5, "B3": 8}
+FINE_TOTAL = {"B2": 6, "B3": 10}
+PRIMARY_STRONG = {"B2": 3, "B3": 4}
+LOOSER_STRONG = {"B2": 2, "B3": 3}
+STRICTER_STRONG = {"B2": 4, "B3": 5}
 
-# thresholds: Strong = >=half, Moderate = >=1, Weak = 0
-THRESH = {"coarse": {"B2": 2, "B3": 3}, "medium": {"B2": 3, "B3": 4}, "fine": {"B2": 3, "B3": 5}}
-def level(n, strong): return "Strong" if n >= strong else ("Moderate" if n >= 1 else "Weak")
 
-# accumulate per study, per granularity
-nd = list(openpyxl.load_workbook(SRC, data_only=True)["Node Detail"].iter_rows(values_only=True))[1:]
-sets = {g: {"B2": defaultdict(set), "B3": defaultdict(set)} for g in ("coarse", "medium", "fine")}
-for r in nd:
-    study, var = r[0], str(r[1])
-    med, scored, why = classify(var)
-    if not scored: continue
-    if med in MED_B2:
-        sets["medium"]["B2"][study].add(med)
-        sets["coarse"]["B2"][study].add(COARSE[med])
-        sets["fine"]["B2"][study].add(fine_of(med, var))
-    elif med in MED_B3:
-        sets["medium"]["B3"][study].add(med)
-        sets["coarse"]["B3"][study].add(COARSE[med])
-        sets["fine"]["B3"][study].add(fine_of(med, var))
+def read_sheet(path, sheet):
+    ws = openpyxl.load_workbook(path, read_only=True, data_only=True)[sheet]
+    rows = list(ws.iter_rows(values_only=True))
+    header = [str(x) for x in rows[0]]
+    return [dict(zip(header, row)) for row in rows[1:] if any(x is not None for x in row)]
 
-studies = sorted({r[0] for r in nd if r[0]})
-ratings = {g: {} for g in sets}   # g -> pmid -> (B2_level, B3_level)
-for g in sets:
-    for s in studies:
-        p = pm(s)
-        if not p: continue
-        n2, n3 = len(sets[g]["B2"][s]), len(sets[g]["B3"][s])
-        ratings[g][p] = (level(n2, THRESH[g]["B2"]), level(n3, THRESH[g]["B3"]))
 
-# build coarse & fine ratings drop-ins (clone old schema, swap B2/B3 by PMID)
-from collections import Counter
-out_dir = os.path.join(os.path.dirname(HERE), "output")
-os.makedirs(out_dir, exist_ok=True)
-for g in ("coarse", "fine"):
-    OUT = os.path.join(out_dir, f"ratings_{g}.xlsx"); shutil.copy(OLD, OUT)
-    wb = openpyxl.load_workbook(OUT); ws = wb["Domain Ratings"]; h = [c.value for c in ws[1]]
-    iB2, iB2n, iB3, iB3n, ist = h.index("B2_rating"), h.index("B2_numeric"), h.index("B3_rating"), h.index("B3_numeric"), h.index("study")
-    nsw = 0
-    for row in ws.iter_rows(min_row=2):
-        if not row[ist].value: continue
-        p = pm(row[ist].value)
-        if p in ratings[g]:
-            b2, b3 = ratings[g][p]
-            row[iB2].value = b2; row[iB2n].value = NUM[b2]; row[iB3].value = b3; row[iB3n].value = NUM[b3]; nsw += 1
-    wb.save(OUT)
-    d2 = Counter(ratings[g][p][0] for p in ratings[g]); d3 = Counter(ratings[g][p][1] for p in ratings[g])
-    print(f"[{g}] swapped {nsw} rows | B2 {dict(d2)} | B3 {dict(d3)}")
-print("medium (reference):", {p: ratings['medium'][p] for p in list(ratings['medium'])[:1]}, "...")
+def split_variables(value):
+    return [x.strip() for x in str(value or "").split(";") if x and x.strip()]
+
+
+def fine_of(medium_construct, variable):
+    v = " " + re.sub(r"[^a-z]+", " ", variable.lower()).strip() + " "
+    if medium_construct == "chronic_conditions":
+        if re.search(r"asthma|autoimmune|rheumatoid|allerg|atop|lupus|\bsle\b|inflammatory bowel", v):
+            return "immune_respiratory"
+        return "chronic_other"
+    if medium_construct == "lifestyle_substance":
+        if re.search(r"\bdiet\b|caffeine|coffee|nutrition|organic", v):
+            return "diet"
+        return "substance"
+    if medium_construct == "reproductive_parity":
+        if re.search(r"planned|fertility|previous", v):
+            return "fertility_planning"
+        return "parity"
+    return medium_construct
+
+
+def level(count, strong_cut):
+    if count >= strong_cut:
+        return "Strong"
+    if count >= 1:
+        return "Moderate"
+    return "Weak"
+
+
+def classify_row(row):
+    sets = {
+        "coarse": {"B2": set(), "B3": set()},
+        "medium": {"B2": set(), "B3": set()},
+        "fine": {"B2": set(), "B3": set()},
+    }
+    for variable in split_variables(row["main_model_variables"]):
+        medium_construct, scored, _ = classify(variable)
+        if not scored:
+            continue
+        domain = "B2" if medium_construct in MEDIUM_B2 else "B3" if medium_construct in MEDIUM_B3 else None
+        if domain is None:
+            continue
+        sets["medium"][domain].add(medium_construct)
+        sets["coarse"][domain].add(COARSE_MAP[medium_construct])
+        sets["fine"][domain].add(fine_of(medium_construct, variable))
+    return sets
+
+
+def copy_sets(source):
+    return {
+        granularity: {domain: set(values) for domain, values in domains.items()}
+        for granularity, domains in source.items()
+    }
+
+
+def main():
+    meta = read_sheet(META_PATH, "Effect estimates")
+    covariates = read_sheet(COV_PATH, "Main_model_audit")
+    if len(meta) != 39 or len(covariates) != 39:
+        raise RuntimeError(f"Expected 39 current estimates; found meta={len(meta)}, covariates={len(covariates)}")
+
+    meta_by_id = {str(row["record_id"]): row for row in meta}
+    cov_by_id = {str(row["record_id"]): row for row in covariates}
+    if set(meta_by_id) != set(cov_by_id):
+        missing_meta = sorted(set(cov_by_id) - set(meta_by_id))
+        missing_cov = sorted(set(meta_by_id) - set(cov_by_id))
+        raise RuntimeError(f"Record mismatch: missing_meta={missing_meta}; missing_covariates={missing_cov}")
+
+    sets_by_id = {record_id: classify_row(cov_by_id[record_id]) for record_id in meta_by_id}
+
+    # The Okubo within-family rows use the same measured adjustment set as their
+    # population counterparts; the family stratum changes B1, not B2/B3.
+    for outcome in ("ADHD", "ASD"):
+        sibling_id = f"40898607_{outcome}_sib"
+        population_id = f"40898607_{outcome}_pop"
+        sets_by_id[sibling_id] = copy_sets(sets_by_id[population_id])
+
+    rows = []
+    audits = []
+    for record_id, meta_row in meta_by_id.items():
+        sets = sets_by_id[record_id]
+        coarse_b2_n = len(sets["coarse"]["B2"])
+        coarse_b3_n = len(sets["coarse"]["B3"])
+        medium_b2_n = len(sets["medium"]["B2"])
+        medium_b3_n = len(sets["medium"]["B3"])
+        fine_b2_n = len(sets["fine"]["B2"])
+        fine_b3_n = len(sets["fine"]["B3"])
+
+        coarse_b2 = level(coarse_b2_n, 2)
+        coarse_b3 = level(coarse_b3_n, 3)
+        fine_b2 = level(fine_b2_n, 3)
+        fine_b3 = level(fine_b3_n, 5)
+
+        # This study's inverse-probability weighting included indication-related
+        # variables that are not itemised in the compact covariate string.
+        if record_id == "36937866_ADHD":
+            coarse_b2 = fine_b2 = "Moderate"
+
+        looser_b2 = level(medium_b2_n, LOOSER_STRONG["B2"])
+        looser_b3 = level(medium_b3_n, LOOSER_STRONG["B3"])
+        stricter_b2 = level(medium_b2_n, STRICTER_STRONG["B2"])
+        stricter_b3 = level(medium_b3_n, STRICTER_STRONG["B3"])
+        if record_id == "36937866_ADHD":
+            looser_b2 = stricter_b2 = "Moderate"
+
+        rows.append(
+            {
+                "record_id": record_id,
+                "pmid": str(meta_row["pmid"]),
+                "study": meta_row["study"],
+                "condition": meta_row["condition"],
+                "B1_rating": meta_row["B1_rating"],
+                "coarse_B2_rating": coarse_b2,
+                "coarse_B3_rating": coarse_b3,
+                "medium_B2_rating": meta_row["B2_rating"],
+                "medium_B3_rating": meta_row["B3_rating"],
+                "fine_B2_rating": fine_b2,
+                "fine_B3_rating": fine_b3,
+                "looser_B2_rating": looser_b2,
+                "looser_B3_rating": looser_b3,
+                "primary_B2_rating": meta_row["B2_rating"],
+                "primary_B3_rating": meta_row["B3_rating"],
+                "stricter_B2_rating": stricter_b2,
+                "stricter_B3_rating": stricter_b3,
+            }
+        )
+        audits.append(
+            {
+                "record_id": record_id,
+                "study": meta_row["study"],
+                "condition": meta_row["condition"],
+                "coarse_B2_n": coarse_b2_n,
+                "coarse_B3_n": coarse_b3_n,
+                "medium_B2_n": medium_b2_n,
+                "medium_B3_n": medium_b3_n,
+                "fine_B2_n": fine_b2_n,
+                "fine_B3_n": fine_b3_n,
+                "medium_B2_constructs": "; ".join(sorted(sets["medium"]["B2"])),
+                "medium_B3_constructs": "; ".join(sorted(sets["medium"]["B3"])),
+            }
+        )
+
+    os.makedirs(OUT_DIR, exist_ok=True)
+    with open(OUT_PATH, "w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+    with open(AUDIT_PATH, "w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(audits[0]))
+        writer.writeheader()
+        writer.writerows(audits)
+
+    print(f"Wrote {len(rows)} ratings: {OUT_PATH}")
+    print(f"Wrote {len(audits)} construct-count audit rows: {AUDIT_PATH}")
+
+
+if __name__ == "__main__":
+    main()
