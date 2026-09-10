@@ -14,7 +14,7 @@
   function visibleEdges(){return relatedEdges().filter(e=>!$('pending-only').checked||!R.complete(state.edges[e.id]));}
   function status(e){const r=state.edges[e.id];return r.decision? r.decision+(R.complete(r)?'':' · 待补信息'):'未审核';}
   function renderNodes(){const q=$('search').value.trim().toLowerCase(),domain=$('domain').value;const container=$('node-list');container.replaceChildren();$('anchor-list').replaceChildren();const filtered=D.nodes.filter(n=>(!domain||(domain==='other'?!['B1','B2','B3','B4'].includes(n.domain):n.domain===domain))&&(!q||[n.name,n.zh,...n.labels.map(v=>v.label)].join(' ').toLowerCase().includes(q)));
-    for(const n of filtered){const anchor=D.nodes.indexOf(n)<2;const b=el('button',undefined,'node-button');b.type='button';b.setAttribute('aria-current',String(n.id===nodeId));b.append(el('span',n.zh));const all=incident(n.id);b.append(el('span',anchor?`${n.id===D.nodes[0].id?'暴露':'结局'}定义 · ${R.nodeComplete(state,n.id)?'已审':'未审'}`:n.s1Only?`S1 构念 · ${R.nodeComplete(state,n.id)?'已审':'待审'}`:`${all.filter(e=>R.complete(state.edges[e.id])).length}/${all.length} 条已审`,'meta'));if(anchor)b.classList.add('anchor-button');b.onclick=()=>selectNode(n.id);(anchor?$('anchor-list'):container).append(b);}if(!filtered.length)container.append(el('p','没有匹配节点。','hint'));
+    for(const n of filtered){const anchor=D.nodes.indexOf(n)<2;const b=el('button',undefined,'node-button');b.type='button';b.setAttribute('aria-current',String(n.id===nodeId));b.append(el('span',n.zh));const all=incident(n.id);const meta=el('span',undefined,'meta');meta.append(el('span',n.domain,'domain-badge'),document.createTextNode(' · '+(anchor?`${n.id===D.nodes[0].id?'暴露':'结局'}定义 · ${R.nodeComplete(state,n.id)?'已审':'未审'}`:n.s1Only?`S1 构念 · ${R.nodeComplete(state,n.id)?'已审':'待审'}`:`${all.filter(e=>R.complete(state.edges[e.id])).length}/${all.length} 条已审`)));b.append(meta);if(anchor)b.classList.add('anchor-button');b.onclick=()=>selectNode(n.id);(anchor?$('anchor-list'):container).append(b);}if(!filtered.length)container.append(el('p','没有匹配节点。','hint'));
   }
   function selectNode(id){nodeId=id;if(D.nodes.indexOf(ns[id])<2)document.querySelector('.sidebar-options').open=true;if(D.nodes.indexOf(ns[id])<2||ns[id].s1Only){$('supplementary-section').open=true;$('node-details').open=true;}const es=visibleEdges();edgeId=es[0]?.id||null;$('variables').open=false;renderNodes();renderNode();renderEdges();renderGraph();}
   function renderNode(){const n=ns[nodeId];$('node-title').textContent=n.zh;$('node-details-title').textContent='当前节点定义与变量 · '+(R.nodeComplete(state,nodeId)?'已审':'待审');$('node-en').textContent=n.scope;$('node-domain').textContent=n.s1Order?`Table S1 · 构念 ${n.s1Order} · ${n.domain} · ${n.role}`:n.id+' · '+n.role;document.querySelectorAll('[name=node-decision]').forEach(x=>x.checked=x.value===state.nodeReviews[nodeId]);$('node-feedback').open=state.nodeReviews[nodeId]==='有问题';$('node-scope').textContent='当前范围：'+n.scope;$('node-note').hidden=!n.note;$('node-note').textContent=n.note;$('node-comment').value=state.nodes[nodeId];$('variables-title').textContent=n.labels.length?`查看已提取的原始变量标签（${n.labels.length} 个，未合并同义表达）`:'变量映射：当前未收录对应标签';$('variable-list').replaceChildren();for(const item of n.labels){const v=el('div',undefined,'variable');v.append(el('span',item.label));const detail=el('details');detail.append(el('summary',`来源 · ${item.sources.length} 篇`));for(const url of item.sources){const a=el('a','PMID '+url.split('/').filter(Boolean).pop());a.href=url;a.target='_blank';a.rel='noopener';detail.append(a);}v.append(detail);$('variable-list').append(v);}if(!n.labels.length)$('variable-list').append(el('p','未收录不表示该构念没有可测量变量。','hint'));}
@@ -37,7 +37,7 @@
     const shown=new Set([exposure,outcome,nodeId,...es.flatMap(e=>[e.from,e.to])]);
     const ids=D.nodes.filter(n=>shown.has(n.id)).map(n=>n.id);
     const middle=ids.filter(id=>id!==exposure&&id!==outcome);
-    const positions={},width=1140,boxWidth=280,boxHeight=104,rowGap=132;
+    const positions={},width=1140,boxWidth=280,boxHeight=132,rowGap=132;
     const height=middle.length?430:244;
     const centerY=middle.length?330:144;
     positions[exposure]={x:170,y:centerY};positions[outcome]={x:970,y:centerY};
@@ -57,9 +57,10 @@
       const color=colors[state.edges[e.id].decision],g=svgEl('g',{class:'graph-edge'+(e.id===edgeId?' selected':''),'aria-label':`${e.id} ${ns[e.from].zh} 指向 ${ns[e.to].zh}，${status(e)}`});g.append(svgEl('title',{},`${e.id}: ${ns[e.from].name} → ${ns[e.to].name} · ${status(e)}`),svgEl('path',{d,class:'hit'}),svgEl('path',{d,class:'visible',stroke:color,'marker-end':'url(#arrow'+color.slice(1)+')'}));g.append(svgEl('text',{x:labelX,y:labelY,'text-anchor':'middle'},e.id));clickable(g,()=>{goEdge(e.id);$('edge-select').focus({preventScroll:true});$('edge-select').scrollIntoView({behavior:'smooth',block:'center'});});s.append(g);}
     for(const id of ids){
       const n=ns[id],p=positions[id],zhLines=wrapGraphText(n.zh,16),enLines=wrapGraphText(n.name,36,true);
-      const g=svgEl('g',{class:'graph-node'+(id===nodeId?' selected':'')+(id===exposure?' exposure-node':id===outcome?' outcome-node':''),'aria-label':`查看节点：${n.zh}`});
-      g.append(svgEl('title',{},n.name),svgEl('rect',{x:p.x-boxWidth/2,y:p.y-boxHeight/2,width:boxWidth,height:boxHeight,rx:9}));
-      const textHeight=zhLines.length*22+enLines.length*17+7,top=p.y-textHeight/2+16;
+      const g=svgEl('g',{class:'graph-node'+(id===nodeId?' selected':'')+(id===exposure?' exposure-node':id===outcome?' outcome-node':''),'aria-label':`查看节点：${n.zh}，领域 ${n.domain}`});
+      g.append(svgEl('title',{},n.name+' · '+n.domain),svgEl('rect',{x:p.x-boxWidth/2,y:p.y-boxHeight/2,width:boxWidth,height:boxHeight,rx:9}));
+      g.append(svgEl('text',{x:p.x,y:p.y-boxHeight/2+21,'text-anchor':'middle',class:'node-domain-label'},n.domain));
+      const textHeight=zhLines.length*22+enLines.length*17+7,top=p.y-textHeight/2+29;
       zhLines.forEach((line,i)=>g.append(svgEl('text',{x:p.x,y:top+i*22,'text-anchor':'middle',class:'node-zh'},line)));
       enLines.forEach((line,i)=>g.append(svgEl('text',{x:p.x,y:top+zhLines.length*22+5+i*17,'text-anchor':'middle',class:'node-en'},line)));
       clickable(g,()=>selectNode(id));s.append(g);
