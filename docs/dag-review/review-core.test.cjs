@@ -5,8 +5,8 @@ const vm=require('node:vm');
 const R=require('./review-core.js');
 const context={window:{}};vm.runInNewContext(fs.readFileSync(__dirname+'/data.js','utf8'),context);
 const D=JSON.parse(JSON.stringify(context.window.DAG_DATA));
-test('Source graph has 27 nodes, 50 unique directed edges and no cycle',()=>{
- assert.equal(D.nodes.length,27);assert.equal(D.edges.length,50);
+test('S1 review has 31 nodes and preserves the 50 original directed edges without cycles',()=>{
+ assert.equal(D.nodes.length,31);assert.equal(D.edges.length,50);
  assert.equal(new Set(D.edges.map(e=>`${e.from}->${e.to}`)).size,50);
  const visited=new Set(),stack=new Set();function visit(id){assert(!stack.has(id));if(visited.has(id))return;stack.add(id);for(const e of D.edges.filter(e=>e.from===id)){assert(D.nodes.some(n=>n.id===e.to));visit(e.to);}stack.delete(id);visited.add(id);}D.nodes.forEach(n=>visit(n.id));
  assert.equal(D.nodes.find(n=>n.name==='Current-pregnancy obstetric complications').domain,'non-core');
@@ -39,7 +39,7 @@ test('Round 2 preserves immutable first-round values through JSON and CSV round 
  const second=R.beginRound(t,{...pack(),packageId:'package-2'},D);assert.equal(second.firstRound.edges.E001.decision,'不确定');assert.equal(second.proposalReviews['P-test'].decision,'保留');
 });
 test('Proposals stay outside baseline graph and require definition, time, links, reason, and split target',()=>{
- const p=proposed();assert(R.proposalComplete(p));for(const key of ['name','definition','timing','connections','reason','target'])assert(!R.proposalComplete({...p,[key]:''}));const s=R.blank(D);s.proposals.push(p);assert.equal(R.exported(s,D).graph.edges.length,50);assert.equal(R.exported(s,D).graph.nodes.length,27);assert.equal(R.normalize(s,D).proposals.length,1);
+ const p=proposed();assert(R.proposalComplete(p));for(const key of ['name','definition','timing','connections','reason','target'])assert(!R.proposalComplete({...p,[key]:''}));const s=R.blank(D);s.proposals.push(p);assert.equal(R.exported(s,D).graph.edges.length,50);assert.equal(R.exported(s,D).graph.nodes.length,31);assert.equal(R.normalize(s,D).proposals.length,1);
 });
 test('Panel agreement distinguishes missing, out-of-expertise, uncertainty and majority',()=>{
  const rs=[R.blank(D),R.blank(D),R.blank(D)];rs.forEach((r,i)=>r.reviewer='E'+i);const keep={decision:'保留',change:'',reason:''};rs[0].edges.E001={...keep};rs[1].edges.E001={...keep};assert.equal(R.summarize(rs,D)[0].status,'待收齐');rs[2].edges.E001={decision:'超出专长',change:'',reason:''};assert.equal(R.summarize(rs,D)[0].status,'一致支持');rs[2].edges.E001={decision:'不确定',change:'',reason:'仍存疑'};assert.equal(R.summarize(rs,D)[0].status,'需复核');rs[2].edges.E001={decision:'修改',change:'删除',reason:'依据不同'};assert.equal(R.summarize(rs,D)[0].status,'需复核');assert.equal(R.summarize(rs.slice(0,2),D,3)[0].status,'待收齐');rs[1].edges.E001={decision:'超出专长',change:'',reason:''};rs[2].edges.E001={decision:'超出专长',change:'',reason:''};assert.equal(R.summarize(rs,D)[0].status,'评估覆盖不足');assert.equal(R.summarize(rs,D)[0].coverageSufficient,false);
@@ -52,7 +52,7 @@ test('First-round statistics do not change when a reviewer resolves a second-rou
 });
 function finishedReview(){const s=R.blank(D);s.reviewer='Expert 1';for(const e of D.edges)s.edges[e.id]={decision:'保留',change:'',reason:''};for(const n of D.nodes)s.nodeReviews[n.id]='未发现问题';for(const k of Object.keys(R.domains))s.domains[k]={decision:'保留',change:'',reason:''};return s;}
 test('Both formal exports reject incomplete reviews and missing required details',()=>{
- const empty=R.blank(D);assert.deepEqual(R.exportStatus(empty,D).pending,{edges:50,nodes:27,domains:4,proposals:0,proposalReviews:0});
+ const empty=R.blank(D);assert.deepEqual(R.exportStatus(empty,D).pending,{edges:50,nodes:31,domains:4,proposals:0,proposalReviews:0});
  const changes=[s=>s.reviewer=' ',s=>s.edges.E050=R.answer(),s=>s.nodeReviews['dag-27']='',s=>s.domains.B4=R.answer(),s=>s.edges.E001={decision:'不确定',change:'',reason:' '},s=>s.edges.E001={decision:'修改',change:'',reason:'删除依据'},s=>{s.nodeReviews['dag-03']='有问题';s.nodes['dag-03']=' ';},s=>s.domains.B2={decision:'修改',change:'调整评级规则',reason:''},s=>s.proposals.push({...proposed(),reason:''})];
  for(const s of [empty,...changes.map(change=>{const s=finishedReview();change(s);return s;})]){const before=JSON.stringify(s);assert(!R.exportStatus(s,D).ready);for(const format of ['json','csv'])assert.throws(()=>R.exportReview(s,D,format),/尚未完成/);assert.equal(JSON.stringify(s),before);}
 });
@@ -67,4 +67,19 @@ test('Round 2 cannot export while a requested proposal review is missing or inco
  s.proposalReviews['P-test']={decision:'不确定',change:'',reason:' '};assert(!R.exportStatus(s,D).ready);
  s.proposalReviews['P-test'].reason='需要进一步的时间依据';assert(R.exportStatus(s,D).ready);assert.equal(R.exportReview(s,D).firstRound.round,1);
  delete s.proposalReviews['P-test'];assert(!R.exportStatus(s,D).ready);assert.throws(()=>R.exportReview(s,D));
+});
+test('All S1 constructs have unique rows; the four additional constructs have no invented edges',()=>{
+ const constructs=D.nodes.filter(n=>n.s1Order);assert.equal(constructs.length,29);assert.deepEqual(constructs.map(n=>n.s1Order),Array.from({length:29},(_,i)=>i+1));
+ const extras=constructs.filter(n=>n.s1Only);assert.deepEqual(extras.map(n=>n.constructId),['N04','N05','N06','N09']);for(const n of extras)assert(!D.edges.some(e=>e.from===n.id||e.to===n.id));
+});
+test('Known prior baseline migrates without losing judgments and locks export for four new nodes',()=>{
+ const oldD=R.previousData(D),old=R.blank(oldD);old.reviewer='Expert 1';for(const e of oldD.edges)old.edges[e.id]={decision:'保留',change:'',reason:''};for(const n of oldD.nodes)old.nodeReviews[n.id]='未发现问题';for(const k of Object.keys(R.domains))old.domains[k]={decision:'保留',change:'',reason:''};old.nodes['dag-03']='保留原意见';
+ const before=JSON.stringify(old),s=R.normalize(old,D);assert.equal(JSON.stringify(old),before);assert.equal(s.version,D.version);assert.deepEqual(s.edges,old.edges);assert.equal(s.nodes['dag-03'],'保留原意见');assert.deepEqual(s.baselineSnapshot,old);assert.equal(R.exportStatus(s,D).pending.nodes,4);assert.throws(()=>R.exportReview(s,D));
+ for(const n of D.nodes.filter(n=>n.s1Only))s.nodeReviews[n.id]='无法判断';assert.deepEqual(R.normalize(R.exportReview(s,D),D),s);assert.deepEqual(s.baselineSnapshot,old);
+ assert.throws(()=>R.normalize({...old,graphHash:'unexpected'},D));const broken=structuredClone(old);delete broken.nodes['dag-03'];assert.throws(()=>R.normalize(broken,D));
+});
+test('Prior round-two records and packages migrate while the original snapshot stays intact',()=>{
+ const oldD=R.previousData(D),old=R.blank(oldD);old.reviewer='E1';old.edges.E001={decision:'不确定',change:'',reason:'首轮意见'};
+ const oldPack={...pack(),version:oldD.version,graphHash:oldD.graphHash};const second=R.beginRound(old,oldPack,oldD);second.edges.E001={decision:'保留',change:'',reason:'复核后保留'};const before=JSON.stringify(second);const s=R.normalize(second,D);
+ assert.equal(s.firstRound.edges.E001.reason,'首轮意见');assert.equal(s.edges.E001.reason,'复核后保留');assert.deepEqual(s.baselineSnapshot,second);assert.equal(JSON.stringify(second),before);assert.equal(s.context.version,D.version);assert.equal(R.reviewPackage(oldPack,D).version,D.version);assert.deepEqual(R.normalize(R.exported(s,D),D),s);
 });

@@ -4,7 +4,7 @@ Static GitHub Pages pages with no backend, analytics or external runtime librari
 
 ## Expert workflow
 
-1. Use a stable reviewer identifier and record expertise. Review the frozen baseline's 27 nodes and 50 edges independently. Graph-level domain and role labels are deferred to the rules view; raw label examples remain expandable. The candidate graph is visible, so this is not de novo blinded DAG construction.
+1. Use a stable reviewer identifier and record expertise. Review all 29 Table S1 constructs plus exposure and outcome (31 nodes), alongside the 50 original manuscript edges. Graph-level domain and role labels are deferred to the rules view; raw label examples remain expandable. The candidate graph is visible, so this is not de novo blinded DAG construction.
 2. Review the four domain definitions and scoring rules in the separate B1–B4 view. B3 is displayed as Sociodemographic/lifestyle. Rules were transcribed from MainText 2026-09-04 Table 1, with the timing-dependent B4 boundary from Supplementary Information 2026-09-04 v3.
 3. Submit structured proposals for new constructs, split nodes, additional within-construct variables, or missing arrows. Define timing, connections and rationale. These stay outside the baseline graph and scoring system until adjudicated. The app does not implement or certify revised graphs.
 4. Export JSON for return to the research team. CSV includes edge, node, domain, proposal and overall responses. JSON is needed to continue the workflow.
@@ -26,7 +26,7 @@ Open `team.html`. Import the latest JSON for each expert (default planned panel 
 
 ## Provenance and migration
 
-The graph itself remains dataset `2026-09-09.v1`; the questionnaire and record schema are v2. Storage uses a new v2 key and can migrate v1 drafts without overwriting the old key. Legacy “同意” becomes “保留”; old modification comments are retained with subtype “其他”. New node/domain judgments start blank. Mismatched graph versions/hashes and malformed review packages are rejected before replacing current state.
+The S1-based dataset is `2026-09-10.s1-v2`; the questionnaire and record schema remain v2. All 29 Table S1 constructs are represented, with the two exposure/outcome anchors. The four S1-only constructs have no prespecified edges. Storage uses a key for the new baseline and migrates the recognized `2026-09-09.v1` baseline without overwriting its old key. The original normalized record, including any first-round snapshot, is retained in `baselineSnapshot`; the four added node judgments start blank. Old expert JSON files, review packages and team records from that exact baseline remain readable. Legacy “同意” becomes “保留”; old modification comments are retained with subtype “其他”. New node/domain judgments start blank. Other graph versions/hashes and malformed review packages are rejected before replacing current state.
 
 The original DAG image SHA-256 is `a78a4ddb3ee95d09edb52398648b58ba75c80c5c204bf2a7517b50479cb3f6d9`. Extracted covariate labels retain aliases and model/design terms; they are not a complete or adjudicated membership list. Current-pregnancy obstetric complications remain non-core / timing-dependent in the source dictionary.
 
@@ -41,12 +41,12 @@ Run logic/data tests: `node --test docs/dag-review/review-core.test.cjs`. Browse
 
 ## Dedicated overview
 
-`overview.html` displays the original manuscript DAG image (`original-dag.png`) without redrawing its layout. The image links to its full-resolution file. The review page itself renders at most three edges. Exposure and outcome entries review their definitions and the main exposure–outcome edge; other relationships remain accessible through their associated nodes. No baseline edges are removed.
+`overview.html` displays the original manuscript DAG image (`original-dag.png`) without redrawing its layout. The image links to its full-resolution file. The original image remains a historical 27-node/50-edge view, with an explicit note that four Table S1 constructs are not drawn. The review page renders at most three original edges; S1-only construct views show no arrows and open node review directly. Exposure and outcome entries review their definitions and the main exposure–outcome edge; other relationships remain accessible through their associated nodes. No baseline edges are removed.
 
 ## Simplified expert interface
 
-The default view shows variable selection, the focused triangle, four decision options and next/export actions. Reasons expand for modification or uncertainty. Node-definition review, domain rules and proposals live under Supplementary review; import/export variants, expertise and team links live under More. Completion prompts still distinguish the 50 arrows from outstanding node/domain reviews. Existing storage keys and review fields are unchanged.
+The default view shows variable selection, the focused triangle, four decision options and next/export actions. Reasons expand for modification or uncertainty. Node-definition review, domain rules and proposals live under Supplementary review; import/export variants, expertise and team links live under More. Completion prompts still distinguish the 50 arrows from outstanding node/domain reviews. Existing judgment fields are unchanged; storage keys follow the dataset version.
 
 ## Completed reviews only
 
-Expert JSON and CSV exports require a reviewer identifier, all 50 edge judgments, 27 node judgments, and four domain-rule judgments. Required reasons and modification types must be complete. In round 2, every proposal in the review package must also have a complete judgment; any saved proposals must have all required fields. Uncertainty and out-of-expertise remain valid responses under the existing completion rules. General comments and new proposals are optional. Both export buttons are disabled until these conditions are met, and the export action validates them again. Incomplete drafts remain in browser local storage. “继续未完成项” opens the next outstanding item.
+Expert JSON and CSV exports require a reviewer identifier, all 50 edge judgments, 31 node judgments, and four domain-rule judgments. Required reasons and modification types must be complete. In round 2, every proposal in the review package must also have a complete judgment; any saved proposals must have all required fields. Uncertainty and out-of-expertise remain valid responses under the existing completion rules. General comments and new proposals are optional. Both export buttons are disabled until these conditions are met, and the export action validates them again. Incomplete drafts remain in browser local storage. “继续未完成项” opens the next outstanding item.

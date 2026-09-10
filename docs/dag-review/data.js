@@ -1,7 +1,7 @@
 window.DAG_DATA = {
-  "version": "2026-09-09.v1",
-  "graphHash": "6393191f73e222072947e4bc8a4a1f2495db99e4aca3c628dcfbc1fcc91f1e81",
-  "source": "Manuscript DAG (50 arrows); Supplementary Information 2026-09-04 v3, Table S1; extracted covariate-label mapping 2026-09-04.",
+  "version": "2026-09-10.s1-v2",
+  "graphHash": "4d57e018cefebc57f41f16ed978624073bbc970ed820851c40aec3ef3860c0a1",
+  "source": "Supplementary Information 2026-09-04 v3, Table S1: all 29 constructs plus exposure and outcome. The original manuscript supplies 50 directed edges; four S1-only constructs have no prespecified edges. Extracted covariate-label mapping 2026-09-04.",
   "nodes": [
     {
       "id": "dag-01",
@@ -74,7 +74,10 @@ window.DAG_DATA = {
           ]
         }
       ],
-      "note": "下列标签含家庭分层、聚类等设计或模型术语，不能逐一视为临床变量。"
+      "note": "下列标签含家庭分层、聚类等设计或模型术语，不能逐一视为临床变量。",
+      "s1Order": 1,
+      "s1Status": "Both (convergent)",
+      "s1Consensus": "(3/3)"
     },
     {
       "id": "dag-04",
@@ -143,7 +146,10 @@ window.DAG_DATA = {
           ]
         }
       ],
-      "note": ""
+      "note": "",
+      "s1Order": 2,
+      "s1Status": "Both (convergent)",
+      "s1Consensus": "(3/3)"
     },
     {
       "id": "dag-05",
@@ -283,7 +289,10 @@ window.DAG_DATA = {
           ]
         }
       ],
-      "note": ""
+      "note": "",
+      "s1Order": 3,
+      "s1Status": "Both (convergent)",
+      "s1Consensus": "(3/3)"
     },
     {
       "id": "dag-06",
@@ -372,7 +381,10 @@ window.DAG_DATA = {
           ]
         }
       ],
-      "note": ""
+      "note": "",
+      "s1Order": 4,
+      "s1Status": "Both (convergent)",
+      "s1Consensus": "(3/3)"
     },
     {
       "id": "dag-07",
@@ -454,7 +466,10 @@ window.DAG_DATA = {
           ]
         }
       ],
-      "note": ""
+      "note": "",
+      "s1Order": 5,
+      "s1Status": "Both (convergent)",
+      "s1Consensus": "(3/3)"
     },
     {
       "id": "dag-08",
@@ -547,7 +562,10 @@ window.DAG_DATA = {
           ]
         }
       ],
-      "note": ""
+      "note": "",
+      "s1Order": 6,
+      "s1Status": "Both (convergent)",
+      "s1Consensus": "(3/3)"
     },
     {
       "id": "dag-09",
@@ -788,7 +806,10 @@ window.DAG_DATA = {
           ]
         }
       ],
-      "note": ""
+      "note": "",
+      "s1Order": 7,
+      "s1Status": "Both (convergent)",
+      "s1Consensus": "(3/3)"
     },
     {
       "id": "dag-10",
@@ -858,7 +879,10 @@ window.DAG_DATA = {
           ]
         }
       ],
-      "note": ""
+      "note": "",
+      "s1Order": 8,
+      "s1Status": "Both (convergent)",
+      "s1Consensus": "(3/3)"
     },
     {
       "id": "dag-11",
@@ -974,7 +998,10 @@ window.DAG_DATA = {
           ]
         }
       ],
-      "note": ""
+      "note": "",
+      "s1Order": 9,
+      "s1Status": "Both (convergent)",
+      "s1Consensus": "(3/3)"
     },
     {
       "id": "dag-12",
@@ -1056,7 +1083,10 @@ window.DAG_DATA = {
           ]
         }
       ],
-      "note": ""
+      "note": "",
+      "s1Order": 10,
+      "s1Status": "Both (convergent)",
+      "s1Consensus": "(3/3)"
     },
     {
       "id": "dag-13",
@@ -1147,7 +1177,10 @@ window.DAG_DATA = {
           ]
         }
       ],
-      "note": ""
+      "note": "",
+      "s1Order": 11,
+      "s1Status": "Both (convergent)",
+      "s1Consensus": "(3/3)"
     },
     {
       "id": "dag-14",
@@ -1169,7 +1202,10 @@ window.DAG_DATA = {
           ]
         }
       ],
-      "note": ""
+      "note": "",
+      "s1Order": 12,
+      "s1Status": "Both (convergent)",
+      "s1Consensus": "(3/3)"
     },
     {
       "id": "dag-15",
@@ -1227,7 +1263,10 @@ window.DAG_DATA = {
           ]
         }
       ],
-      "note": ""
+      "note": "",
+      "s1Order": 13,
+      "s1Status": "Both (convergent)",
+      "s1Consensus": "(3/3)"
     },
     {
       "id": "dag-16",
@@ -1286,7 +1325,10 @@ window.DAG_DATA = {
           ]
         }
       ],
-      "note": ""
+      "note": "",
+      "s1Order": 14,
+      "s1Status": "Both (convergent)",
+      "s1Consensus": "(3/3)"
     },
     {
       "id": "dag-17",
@@ -1321,7 +1363,10 @@ window.DAG_DATA = {
           ]
         }
       ],
-      "note": ""
+      "note": "",
+      "s1Order": 15,
+      "s1Status": "Both (convergent)",
+      "s1Consensus": "(3/3)"
     },
     {
       "id": "dag-18",
@@ -1378,167 +1423,10 @@ window.DAG_DATA = {
           ]
         }
       ],
-      "note": ""
-    },
-    {
-      "id": "dag-19",
-      "name": "Environmental / occupational exposures",
-      "zh": "环境及职业暴露",
-      "domain": "Blind-spot",
-      "role": "Confounder",
-      "scope": "Environmental / occupational exposures (air pollution, pesticides, lead)",
-      "rationale": "Systematically unadjusted; reported, not scored",
-      "constructId": "",
-      "labels": [],
-      "note": ""
-    },
-    {
-      "id": "dag-20",
-      "name": "Acetaminophen pharmacogenetics",
-      "zh": "对乙酰氨基酚药物遗传因素",
-      "domain": "Blind-spot",
-      "role": "Confounder",
-      "scope": "Acetaminophen pharmacogenetics (GSTT1/GSTM1, CYP2E1)",
-      "rationale": "Only purely-new confounder; unmeasured; reported",
-      "constructId": "",
-      "labels": [],
-      "note": ""
-    },
-    {
-      "id": "dag-21",
-      "name": "Medication-seeking propensity",
-      "zh": "用药寻求倾向",
-      "domain": "Blind-spot / split",
-      "role": "Confounder when pre-exposure; timing-dependent when antenatal",
-      "scope": "Medication-seeking propensity / antenatal-care use",
-      "rationale": "Separates exposure propensity and antenatal care from offspring outcome-detection utilisation",
-      "constructId": "N13",
-      "labels": [
-        {
-          "label": "antenatal_hospital_visits",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/41973453/"
-          ]
-        },
-        {
-          "label": "antenatal_visits",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/38592388/"
-          ]
-        },
-        {
-          "label": "drug_coverage",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/41238184/"
-          ]
-        },
-        {
-          "label": "emergency_visit",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/41238184/"
-          ]
-        },
-        {
-          "label": "healthcare_visits_pre_preg",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/38592388/"
-          ]
-        },
-        {
-          "label": "hospital_visits_year_before_pregnancy",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/41973453/"
-          ]
-        },
-        {
-          "label": "insurance_coverage",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/36170224/"
-          ]
-        },
-        {
-          "label": "obstetrician_followup",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/41238184/"
-          ]
-        },
-        {
-          "label": "prepreg_health_checkup",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/40898607/"
-          ]
-        },
-        {
-          "label": "prescriptions_year_before_pregnancy",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/41973453/"
-          ]
-        }
-      ],
-      "note": "需区分用药前的就医或用药倾向与孕期产检，具体作用取决于发生时间。"
-    },
-    {
-      "id": "dag-22",
-      "name": "Child sex; age at assessment",
-      "zh": "儿童性别及评估年龄",
-      "domain": "non-core",
-      "role": "Precision",
-      "scope": "Child sex; age at assessment",
-      "rationale": "Precision / measurement-timing, not a confounder",
-      "constructId": "N10",
-      "labels": [
-        {
-          "label": "age_at_testing",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/27353198/"
-          ]
-        },
-        {
-          "label": "child_age",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/31509360/"
-          ]
-        },
-        {
-          "label": "child_age_at_visit",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/40964537/"
-          ]
-        },
-        {
-          "label": "child_sex",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/24566677/",
-            "https://pubmed.ncbi.nlm.nih.gov/26688372/",
-            "https://pubmed.ncbi.nlm.nih.gov/27353198/",
-            "https://pubmed.ncbi.nlm.nih.gov/28031314/",
-            "https://pubmed.ncbi.nlm.nih.gov/29970852/",
-            "https://pubmed.ncbi.nlm.nih.gov/31509360/",
-            "https://pubmed.ncbi.nlm.nih.gov/31664451/",
-            "https://pubmed.ncbi.nlm.nih.gov/32986124/",
-            "https://pubmed.ncbi.nlm.nih.gov/34679367/",
-            "https://pubmed.ncbi.nlm.nih.gov/37431475/",
-            "https://pubmed.ncbi.nlm.nih.gov/38592388/",
-            "https://pubmed.ncbi.nlm.nih.gov/40964537/",
-            "https://pubmed.ncbi.nlm.nih.gov/41801232/",
-            "https://pubmed.ncbi.nlm.nih.gov/41973453/",
-            "https://pubmed.ncbi.nlm.nih.gov/42371637/"
-          ]
-        },
-        {
-          "label": "infant sex",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/36937866/"
-          ]
-        },
-        {
-          "label": "tester",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/28031314/"
-          ]
-        }
-      ],
-      "note": "当前合并儿童性别和评估年龄，请判断是否需要拆分。"
+      "note": "",
+      "s1Order": 16,
+      "s1Status": "Both (convergent)",
+      "s1Consensus": "(2/3)"
     },
     {
       "id": "dag-23",
@@ -1667,7 +1555,10 @@ window.DAG_DATA = {
           ]
         }
       ],
-      "note": ""
+      "note": "",
+      "s1Order": 17,
+      "s1Status": "Both (convergent)",
+      "s1Consensus": "(3/3)"
     },
     {
       "id": "dag-24",
@@ -1707,7 +1598,10 @@ window.DAG_DATA = {
           ]
         }
       ],
-      "note": "目前列为 non-core、Timing-dependent。需按暴露窗口判断发生顺序，图中箭头仍待专家审核。"
+      "note": "目前列为 non-core、Timing-dependent。需按暴露窗口判断发生顺序，图中箭头仍待专家审核。",
+      "s1Order": 18,
+      "s1Status": "Estimate-specific classification",
+      "s1Consensus": "(3/3)"
     },
     {
       "id": "dag-25",
@@ -1726,7 +1620,58 @@ window.DAG_DATA = {
           ]
         }
       ],
-      "note": ""
+      "note": "",
+      "s1Order": 19,
+      "s1Status": "Both (convergent)",
+      "s1Consensus": "(3/3)"
+    },
+    {
+      "id": "dag-28",
+      "name": "Early-child infection / microbiome / atopy",
+      "zh": "儿童早期感染、微生物组及过敏",
+      "constructId": "N04",
+      "labels": [],
+      "s1Only": true,
+      "note": "Table S1 已列入此构念，原始 DAG 未单独绘制。请审核定义与归属；如需连接，请通过“新增箭头”提出建议。",
+      "scope": "Early-child infection / microbiome / atopy",
+      "domain": "B4",
+      "role": "Mediator",
+      "rationale": "Post-birth; relabelled from child characteristic",
+      "s1Order": 20,
+      "s1Status": "Reclassified",
+      "s1Consensus": "(3/3)"
+    },
+    {
+      "id": "dag-29",
+      "name": "Early developmental / regulatory phenotype",
+      "zh": "早期发育及调节表型",
+      "constructId": "N05",
+      "labels": [],
+      "s1Only": true,
+      "note": "Table S1 已列入此构念，原始 DAG 未单独绘制。请审核定义与归属；如需连接，请通过“新增箭头”提出建议。",
+      "scope": "Early developmental / regulatory phenotype",
+      "domain": "B4",
+      "role": "Mediator",
+      "rationale": "Early form of the outcome; never adjust",
+      "s1Order": 21,
+      "s1Status": "Reclassified",
+      "s1Consensus": "(3/3)"
+    },
+    {
+      "id": "dag-30",
+      "name": "Mechanistic chain (oxidative stress, inflammation, hormonal, epigenetic, placental, fetal brain)",
+      "zh": "生物学机制链",
+      "constructId": "N06",
+      "labels": [],
+      "s1Only": true,
+      "note": "Table S1 已列入此构念，原始 DAG 未单独绘制。请审核定义与归属；如需连接，请通过“新增箭头”提出建议。",
+      "scope": "Mechanistic chain (oxidative stress, inflammation, hormonal, epigenetic, placental, fetal brain)",
+      "domain": "B4",
+      "role": "Mediator",
+      "rationale": "Background biological pathway; post-exposure",
+      "s1Order": 22,
+      "s1Status": "Track B (articulated)",
+      "s1Consensus": "(3/3)"
     },
     {
       "id": "dag-26",
@@ -1738,7 +1683,10 @@ window.DAG_DATA = {
       "rationale": "General participation or live-birth selection is recorded separately unless the pooled model conditions on the node or a descendant",
       "constructId": "",
       "labels": [],
-      "note": ""
+      "note": "",
+      "s1Order": 23,
+      "s1Status": "Both (convergent)",
+      "s1Consensus": "(3/3)"
     },
     {
       "id": "dag-27",
@@ -1750,7 +1698,198 @@ window.DAG_DATA = {
       "rationale": "Outcome-detection mechanism; classified as B4 Yes only when the model includes the variable or conditioning operation",
       "constructId": "",
       "labels": [],
-      "note": ""
+      "note": "",
+      "s1Order": 24,
+      "s1Status": "Both (convergent)",
+      "s1Consensus": "(3/3)"
+    },
+    {
+      "id": "dag-31",
+      "name": "Healthcare utilisation leading to outcome detection",
+      "zh": "影响结局检出的医疗服务利用",
+      "constructId": "N09",
+      "labels": [],
+      "s1Only": true,
+      "note": "Table S1 已列入此构念，原始 DAG 未单独绘制。请审核定义与归属；如需连接，请通过“新增箭头”提出建议。",
+      "scope": "Healthcare utilisation leading to outcome detection",
+      "domain": "B4",
+      "role": "Collider / descendant",
+      "rationale": "Restricted to outcome ascertainment; prenatal or antenatal visits do not instantiate this construct",
+      "s1Order": 25,
+      "s1Status": "Reclassified",
+      "s1Consensus": "(3/3)"
+    },
+    {
+      "id": "dag-22",
+      "name": "Child sex; age at assessment",
+      "zh": "儿童性别及评估年龄",
+      "domain": "non-core",
+      "role": "Precision",
+      "scope": "Child sex; age at assessment",
+      "rationale": "Precision / measurement-timing, not a confounder",
+      "constructId": "N10",
+      "labels": [
+        {
+          "label": "age_at_testing",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/27353198/"
+          ]
+        },
+        {
+          "label": "child_age",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/31509360/"
+          ]
+        },
+        {
+          "label": "child_age_at_visit",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/40964537/"
+          ]
+        },
+        {
+          "label": "child_sex",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/24566677/",
+            "https://pubmed.ncbi.nlm.nih.gov/26688372/",
+            "https://pubmed.ncbi.nlm.nih.gov/27353198/",
+            "https://pubmed.ncbi.nlm.nih.gov/28031314/",
+            "https://pubmed.ncbi.nlm.nih.gov/29970852/",
+            "https://pubmed.ncbi.nlm.nih.gov/31509360/",
+            "https://pubmed.ncbi.nlm.nih.gov/31664451/",
+            "https://pubmed.ncbi.nlm.nih.gov/32986124/",
+            "https://pubmed.ncbi.nlm.nih.gov/34679367/",
+            "https://pubmed.ncbi.nlm.nih.gov/37431475/",
+            "https://pubmed.ncbi.nlm.nih.gov/38592388/",
+            "https://pubmed.ncbi.nlm.nih.gov/40964537/",
+            "https://pubmed.ncbi.nlm.nih.gov/41801232/",
+            "https://pubmed.ncbi.nlm.nih.gov/41973453/",
+            "https://pubmed.ncbi.nlm.nih.gov/42371637/"
+          ]
+        },
+        {
+          "label": "infant sex",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/36937866/"
+          ]
+        },
+        {
+          "label": "tester",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/28031314/"
+          ]
+        }
+      ],
+      "note": "当前合并儿童性别和评估年龄，请判断是否需要拆分。",
+      "s1Order": 26,
+      "s1Status": "Both (convergent)",
+      "s1Consensus": "n/a"
+    },
+    {
+      "id": "dag-19",
+      "name": "Environmental / occupational exposures",
+      "zh": "环境及职业暴露",
+      "domain": "Blind-spot",
+      "role": "Confounder",
+      "scope": "Environmental / occupational exposures (air pollution, pesticides, lead)",
+      "rationale": "Systematically unadjusted; reported, not scored",
+      "constructId": "",
+      "labels": [],
+      "note": "",
+      "s1Order": 27,
+      "s1Status": "Track B (3/3 labs)",
+      "s1Consensus": "(3/3)"
+    },
+    {
+      "id": "dag-20",
+      "name": "Acetaminophen pharmacogenetics",
+      "zh": "对乙酰氨基酚药物遗传因素",
+      "domain": "Blind-spot",
+      "role": "Confounder",
+      "scope": "Acetaminophen pharmacogenetics (GSTT1/GSTM1, CYP2E1)",
+      "rationale": "Only purely-new confounder; unmeasured; reported",
+      "constructId": "",
+      "labels": [],
+      "note": "",
+      "s1Order": 28,
+      "s1Status": "Track B (2/3 models)",
+      "s1Consensus": "(2/3)"
+    },
+    {
+      "id": "dag-21",
+      "name": "Medication-seeking propensity",
+      "zh": "用药寻求倾向",
+      "domain": "Blind-spot / split",
+      "role": "Confounder when pre-exposure; timing-dependent when antenatal",
+      "scope": "Medication-seeking propensity / antenatal-care use",
+      "rationale": "Separates exposure propensity and antenatal care from offspring outcome-detection utilisation",
+      "constructId": "N13",
+      "labels": [
+        {
+          "label": "antenatal_hospital_visits",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/41973453/"
+          ]
+        },
+        {
+          "label": "antenatal_visits",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/38592388/"
+          ]
+        },
+        {
+          "label": "drug_coverage",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/41238184/"
+          ]
+        },
+        {
+          "label": "emergency_visit",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/41238184/"
+          ]
+        },
+        {
+          "label": "healthcare_visits_pre_preg",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/38592388/"
+          ]
+        },
+        {
+          "label": "hospital_visits_year_before_pregnancy",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/41973453/"
+          ]
+        },
+        {
+          "label": "insurance_coverage",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/36170224/"
+          ]
+        },
+        {
+          "label": "obstetrician_followup",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/41238184/"
+          ]
+        },
+        {
+          "label": "prepreg_health_checkup",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/40898607/"
+          ]
+        },
+        {
+          "label": "prescriptions_year_before_pregnancy",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/41973453/"
+          ]
+        }
+      ],
+      "note": "需区分用药前的就医或用药倾向与孕期产检，具体作用取决于发生时间。",
+      "s1Order": 29,
+      "s1Status": "Reclassified",
+      "s1Consensus": "(3/3)"
     }
   ],
   "edges": [
@@ -2004,5 +2143,38 @@ window.DAG_DATA = {
       "from": "dag-22",
       "to": "dag-02"
     }
-  ]
+  ],
+  "previousBaseline": {
+    "version": "2026-09-09.v1",
+    "graphHash": "6393191f73e222072947e4bc8a4a1f2495db99e4aca3c628dcfbc1fcc91f1e81",
+    "nodeIds": [
+      "dag-01",
+      "dag-02",
+      "dag-03",
+      "dag-04",
+      "dag-05",
+      "dag-06",
+      "dag-07",
+      "dag-08",
+      "dag-09",
+      "dag-10",
+      "dag-11",
+      "dag-12",
+      "dag-13",
+      "dag-14",
+      "dag-15",
+      "dag-16",
+      "dag-17",
+      "dag-18",
+      "dag-19",
+      "dag-20",
+      "dag-21",
+      "dag-22",
+      "dag-23",
+      "dag-24",
+      "dag-25",
+      "dag-26",
+      "dag-27"
+    ]
+  }
 };
