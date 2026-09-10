@@ -89,3 +89,13 @@ test('Prior round-two records and packages migrate while the original snapshot s
  const oldPack={...pack(),version:oldD.version,graphHash:oldD.graphHash};const second=R.beginRound(old,oldPack,oldD);second.edges.E001={decision:'保留',change:'',reason:'复核后保留'};const before=JSON.stringify(second);const s=R.normalize(second,D);
  assert.equal(s.firstRound.edges.E001.reason,'首轮意见');assert.equal(s.edges.E001.reason,'复核后保留');assert.deepEqual(s.baselineSnapshot,second);assert.equal(JSON.stringify(second),before);assert.equal(s.context.version,D.version);assert.equal(R.reviewPackage(oldPack,D).version,D.version);assert.deepEqual(R.normalize(R.exported(s,D),D),s);
 });
+
+test('Review progress separates unanswered, pending details and completed decisions',()=>{
+ const changed={decision:'修改',change:'',reason:''},uncertain={decision:'不确定',change:'',reason:''},outside={decision:'超出专长',change:'',reason:''};
+ const records=[R.answer(),changed,uncertain,outside,{decision:'保留',change:'',reason:''}];
+ assert.deepEqual(R.reviewProgress(records),{total:5,completed:2,pending:2,unreviewed:1});
+ changed.reason='时间顺序需要反向';assert.equal(R.reviewProgress(records).pending,2);
+ changed.change='反向';uncertain.reason='需查时间资料';assert.deepEqual(R.reviewProgress(records),{total:5,completed:4,pending:0,unreviewed:1});
+ changed.reason=' ';assert.equal(R.reviewProgress(records).pending,1);
+ records[3]=R.answer();assert.deepEqual(R.reviewProgress(records),{total:5,completed:2,pending:1,unreviewed:2});
+});

@@ -31,3 +31,10 @@
 .node-panel[data-domain^="B"] .eyebrow{color:var(--domain-ink)}
 #domain-reviews>.panel[data-domain]{border-top:3px solid var(--domain-ink)}
 #domain-reviews>.panel[data-domain] h2{color:var(--domain-ink)}
+
+#edge-review-status{margin:4px 0 12px;font-size:13px}#edge-review-status.needs-detail{color:#925515}
+
+.simple-review .graph-node text.node-zh{font-size:24px;font-weight:500;fill:#18332a}
+.simple-review .graph-node text.node-en{font-size:18px;fill:#40594e}
+.simple-review .graph-node text.node-domain-label{font-size:16px;font-weight:700}
+.simple-review .graph-edge text{font-size:20px;font-weight:600;fill:#29463a;stroke:#fff;stroke-width:6px}
