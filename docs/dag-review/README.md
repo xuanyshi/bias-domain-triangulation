@@ -41,7 +41,7 @@ Run logic/data tests: `node --test docs/dag-review/review-core.test.cjs`. Browse
 
 ## Dedicated overview
 
-`overview.html` provides a viewport-sized, zoomable and pannable 27-node/50-edge overview. Selecting a node highlights its incident edges; selecting an edge provides a direct hash link into the review page. The review page itself renders at most three edges. Exposure and outcome entries review their definitions and the main exposure–outcome edge; other relationships remain accessible through their associated nodes. No baseline edges are removed.
+`overview.html` displays the original manuscript DAG image (`original-dag.png`) without redrawing its layout. The image links to its full-resolution file. The review page itself renders at most three edges. Exposure and outcome entries review their definitions and the main exposure–outcome edge; other relationships remain accessible through their associated nodes. No baseline edges are removed.
 
 ## Simplified expert interface
 
