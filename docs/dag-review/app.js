@@ -40,12 +40,12 @@
     const positions={},width=1140,boxWidth=280,boxHeight=104,rowGap=132;
     const height=full?Math.max(310,middle.length*rowGap+136):Math.max(430,middle.length*rowGap+298);
     const selectedMiddle=middle.indexOf(nodeId);
-    const centerY=!full?116:middle.length===1?154:selectedMiddle>=0?108+selectedMiddle*rowGap:height/2;
+    const centerY=!full?height-100:middle.length===1?154:selectedMiddle>=0?108+selectedMiddle*rowGap:height/2;
     positions[exposure]={x:170,y:centerY};positions[outcome]={x:970,y:centerY};
-    middle.forEach((id,i)=>positions[id]={x:570,y:full?(middle.length===1?centerY:108+i*rowGap):330+i*rowGap});
-    const s=svgEl('svg',{viewBox:`0 0 ${width} ${height}`,class:full?'full':'',role:'group','aria-label':full?'完整 DAG：暴露在左、相关变量居中、结局在右':'三角关联图：暴露在左上，结局在右上，相关变量位于下方'});const defs=svgEl('defs');const colors={'保留':'#21644a','修改':'#9a591d','不确定':'#9a591d','超出专长':'#536e9a','':'#98a89e'};for(const color of new Set(Object.values(colors))){const marker=svgEl('marker',{id:'arrow'+color.slice(1),viewBox:'0 0 10 10',refX:'9',refY:'5',markerWidth:'7',markerHeight:'7',orient:'auto-start-reverse',markerUnits:'userSpaceOnUse'});marker.append(svgEl('path',{d:'M 0 0 L 10 5 L 0 10 z',fill:color}));defs.append(marker);}s.append(defs);
+    middle.forEach((id,i)=>positions[id]={x:570,y:full?(middle.length===1?centerY:108+i*rowGap):116+i*rowGap});
+    const s=svgEl('svg',{viewBox:`0 0 ${width} ${height}`,class:full?'full':'',role:'group','aria-label':full?'完整 DAG：暴露在左、相关变量居中、结局在右':'三角关联图：相关变量位于上方中央，暴露在左下，结局在右下'});const defs=svgEl('defs');const colors={'保留':'#21644a','修改':'#9a591d','不确定':'#9a591d','超出专长':'#536e9a','':'#60766a'};for(const color of new Set(Object.values(colors))){const marker=svgEl('marker',{id:'arrow'+color.slice(1),viewBox:'0 0 10 10',refX:'10',refY:'5',markerWidth:'16',markerHeight:'16',orient:'auto-start-reverse',markerUnits:'userSpaceOnUse'});marker.append(svgEl('path',{d:'M 0 0 L 10 5 L 0 10 z',fill:color}));defs.append(marker);}s.append(defs);
     for(const [x,label,en] of [[170,'暴露','EXPOSURE'],[570,'相关变量','RELATED VARIABLES'],[970,'结局','OUTCOME']]){
-      const headingY=!full&&x===570?248:27;
+      const headingY=!full&&x!==570?centerY-89:27;
       s.append(svgEl('text',{x,y:headingY,'text-anchor':'middle',class:'lane-heading'},label),svgEl('text',{x,y:headingY+19,'text-anchor':'middle',class:'lane-caption'},en));
     }
     if(full)s.append(svgEl('rect',{x:410,y:64,width:320,height:height-78,rx:12,class:'middle-lane'}));
