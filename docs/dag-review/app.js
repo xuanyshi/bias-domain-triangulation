@@ -24,12 +24,54 @@
   const svgNS='http://www.w3.org/2000/svg';
   function svgEl(tag,attrs={},text){const n=document.createElementNS(svgNS,tag);for(const[k,v]of Object.entries(attrs))n.setAttribute(k,v);if(text!==undefined)n.textContent=text;return n;}
   function clickable(e,fn){e.setAttribute('tabindex','0');e.setAttribute('role','button');e.addEventListener('click',fn);e.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();fn();}});}
-  function renderGraph(){const es=full?D.edges:incident(), ids=full?D.nodes.map(n=>n.id):[...new Set([nodeId,...es.flatMap(e=>[e.from,e.to])])];const positions={};const width=1000,height=full?1140:Math.max(280,(ids.length-1)*100+60);if(full){D.nodes.slice(2,21).forEach((n,i)=>positions[n.id]={x:145,y:40+i*58});positions[D.nodes[0].id]={x:510,y:360};positions[D.nodes[1].id]={x:510,y:760};D.nodes.slice(21).forEach((n,i)=>positions[n.id]={x:855,y:140+i*165});}else{positions[nodeId]={x:235,y:height/2};ids.filter(id=>id!==nodeId).forEach((id,i)=>positions[id]={x:750,y:60+i*100});}
-    const s=svgEl('svg',{viewBox:`0 0 ${width} ${height}`,class:full?'full':'',role:'group','aria-label':full?'完整 DAG：27 个节点、50 条箭头':'当前节点的直接相邻关系'});const defs=svgEl('defs');const colors={'保留':'#21644a','修改':'#9a591d','不确定':'#9a591d','超出专长':'#536e9a','':'#98a89e'};for(const color of new Set(Object.values(colors))){const marker=svgEl('marker',{id:'arrow'+color.slice(1),viewBox:'0 0 10 10',refX:'9',refY:'5',markerWidth:'7',markerHeight:'7',orient:'auto-start-reverse',markerUnits:'userSpaceOnUse'});marker.append(svgEl('path',{d:'M 0 0 L 10 5 L 0 10 z',fill:color}));defs.append(marker);}s.append(defs);
-    for(const e of es){const a=positions[e.from],b=positions[e.to];const w=full?240:330,h=full?42:60;let x1,y1,x2,y2,d;if(a.x===b.x){x1=a.x;y1=a.y+h/2;x2=b.x;y2=b.y-h/2;d=`M${x1},${y1} L${x2},${y2}`;}else{const sign=b.x>a.x?1:-1;x1=a.x+sign*w/2;y1=a.y;x2=b.x-sign*w/2;y2=b.y;const mid=(x1+x2)/2;d=`M${x1},${y1} C${mid},${y1} ${mid},${y2} ${x2},${y2}`;}
-      const color=colors[state.edges[e.id].decision],g=svgEl('g',{class:'graph-edge'+(e.id===edgeId?' selected':''),'aria-label':`${e.id} ${ns[e.from].zh} 指向 ${ns[e.to].zh}，${status(e)}`});g.append(svgEl('title',{},`${e.id}: ${ns[e.from].name} → ${ns[e.to].name} · ${status(e)}`),svgEl('path',{d,class:'hit'}),svgEl('path',{d,class:'visible',stroke:color,'marker-end':'url(#arrow'+color.slice(1)+')'}));if(!full)g.append(svgEl('text',{x:(x1+x2)/2,y:(y1+y2)/2-9,'text-anchor':'middle'},e.id));clickable(g,()=>{goEdge(e.id);$('edge-select').focus({preventScroll:true});$('edge-select').scrollIntoView({behavior:'smooth',block:'center'});});s.append(g);}
-    for(const id of ids){const n=ns[id],p=positions[id],w=full?240:330,h=full?42:60;const g=svgEl('g',{class:'graph-node'+(id===nodeId?' selected':''),'aria-label':`查看节点：${n.zh}`});g.append(svgEl('title',{},n.name),svgEl('rect',{x:p.x-w/2,y:p.y-h/2,width:w,height:h,rx:7}),svgEl('text',{x:p.x,y:p.y+(full?5:-3),'text-anchor':'middle'},n.zh));if(!full)g.append(svgEl('text',{x:p.x,y:p.y+19,class:'small','text-anchor':'middle'},n.id));clickable(g,()=>selectNode(id));s.append(g);}
-    $('graph').replaceChildren(s);$('graph-title').textContent=full?'完整 DAG':'当前节点的关联图';$('graph-caption').textContent=full?'27 个节点 · 50 条箭头；保留原图方向':'仅显示与所选节点直接相连的 '+es.length+' 条箭头；完整路径见总图';$('focus-view').setAttribute('aria-pressed',String(!full));$('full-view').setAttribute('aria-pressed',String(full));
+  let lastGraphView='';
+  function wrapGraphText(text,limit,words=false){
+    const parts=words?text.split(/\s+/):Array.from(text),lines=[];let line='';
+    for(const part of parts){const next=line+(words&&line?' ':'')+part;if(next.length>limit&&line){lines.push(line);line=part;}else line=next;}
+    if(line)lines.push(line);return lines;
+  }
+  function renderGraph(){
+    const exposure=D.nodes[0].id,outcome=D.nodes[1].id;
+    const es=full?D.edges:incident();
+    const shown=new Set([exposure,outcome,nodeId,...es.flatMap(e=>[e.from,e.to])]);
+    const ids=full?D.nodes.map(n=>n.id):D.nodes.filter(n=>shown.has(n.id)).map(n=>n.id);
+    const middle=ids.filter(id=>id!==exposure&&id!==outcome);
+    const positions={},width=1140,boxWidth=280,boxHeight=104,rowGap=132;
+    const height=Math.max(310,middle.length*rowGap+136);
+    const selectedMiddle=middle.indexOf(nodeId);
+    const centerY=middle.length===1?154:full&&selectedMiddle>=0?108+selectedMiddle*rowGap:height/2;
+    positions[exposure]={x:170,y:centerY};positions[outcome]={x:970,y:centerY};
+    middle.forEach((id,i)=>positions[id]={x:570,y:middle.length===1?centerY:108+i*rowGap});
+    const s=svgEl('svg',{viewBox:`0 0 ${width} ${height}`,class:full?'full':'',role:'group','aria-label':full?'完整 DAG：暴露在左、相关变量居中、结局在右':'节点关联图：暴露在左、相关变量居中、结局在右'});const defs=svgEl('defs');const colors={'保留':'#21644a','修改':'#9a591d','不确定':'#9a591d','超出专长':'#536e9a','':'#98a89e'};for(const color of new Set(Object.values(colors))){const marker=svgEl('marker',{id:'arrow'+color.slice(1),viewBox:'0 0 10 10',refX:'9',refY:'5',markerWidth:'7',markerHeight:'7',orient:'auto-start-reverse',markerUnits:'userSpaceOnUse'});marker.append(svgEl('path',{d:'M 0 0 L 10 5 L 0 10 z',fill:color}));defs.append(marker);}s.append(defs);
+    for(const [x,label,en] of [[170,'暴露','EXPOSURE'],[570,'相关变量','RELATED VARIABLES'],[970,'结局','OUTCOME']]){
+      s.append(svgEl('text',{x,y:27,'text-anchor':'middle',class:'lane-heading'},label),svgEl('text',{x,y:46,'text-anchor':'middle',class:'lane-caption'},en));
+    }
+    s.append(svgEl('rect',{x:410,y:64,width:320,height:height-78,rx:12,class:'middle-lane'}));
+    for(const e of es){
+      const a=positions[e.from],b=positions[e.to];
+      const sign=b.x>a.x?1:-1,x1=a.x+sign*boxWidth/2,y1=a.y,x2=b.x-sign*boxWidth/2,y2=b.y;
+      let d,labelX=(x1+x2)/2,labelY=(y1+y2)/2-10;
+      if(e.from===exposure&&e.to===outcome){
+        const bypassY=height-24;
+        d=`M${a.x},${a.y+boxHeight/2} C${a.x},${bypassY} ${a.x},${bypassY} ${a.x+80},${bypassY} L${b.x-80},${bypassY} C${b.x},${bypassY} ${b.x},${bypassY} ${b.x},${b.y+boxHeight/2}`;
+        labelX=570;labelY=bypassY-10;
+      }else{
+        const mid=(x1+x2)/2;d=`M${x1},${y1} C${mid},${y1} ${mid},${y2} ${x2},${y2}`;
+      }
+      const color=colors[state.edges[e.id].decision],g=svgEl('g',{class:'graph-edge'+(e.id===edgeId?' selected':''),'aria-label':`${e.id} ${ns[e.from].zh} 指向 ${ns[e.to].zh}，${status(e)}`});g.append(svgEl('title',{},`${e.id}: ${ns[e.from].name} → ${ns[e.to].name} · ${status(e)}`),svgEl('path',{d,class:'hit'}),svgEl('path',{d,class:'visible',stroke:color,'marker-end':'url(#arrow'+color.slice(1)+')'}));if(!full)g.append(svgEl('text',{x:labelX,y:labelY,'text-anchor':'middle'},e.id));clickable(g,()=>{goEdge(e.id);$('edge-select').focus({preventScroll:true});$('edge-select').scrollIntoView({behavior:'smooth',block:'center'});});s.append(g);}
+    for(const id of ids){
+      const n=ns[id],p=positions[id],zhLines=wrapGraphText(n.zh,16),enLines=wrapGraphText(n.name,36,true);
+      const g=svgEl('g',{class:'graph-node'+(id===nodeId?' selected':'')+(id===exposure?' exposure-node':id===outcome?' outcome-node':''),'aria-label':`查看节点：${n.zh}`});
+      g.append(svgEl('title',{},n.name),svgEl('rect',{x:p.x-boxWidth/2,y:p.y-boxHeight/2,width:boxWidth,height:boxHeight,rx:9}));
+      const textHeight=zhLines.length*22+enLines.length*17+7,top=p.y-textHeight/2+16;
+      zhLines.forEach((line,i)=>g.append(svgEl('text',{x:p.x,y:top+i*22,'text-anchor':'middle',class:'node-zh'},line)));
+      enLines.forEach((line,i)=>g.append(svgEl('text',{x:p.x,y:top+zhLines.length*22+5+i*17,'text-anchor':'middle',class:'node-en'},line)));
+      clickable(g,()=>selectNode(id));s.append(g);
+    }
+    const graphView=(full?'full:':'focus:')+nodeId,previousScroll=$('graph').scrollTop;
+    $('graph').replaceChildren(s);
+    if(graphView!==lastGraphView){lastGraphView=graphView;requestAnimationFrame(()=>{if(lastGraphView===graphView)$('graph').scrollTop=Math.max(0,centerY*s.getBoundingClientRect().width/width-$('graph').clientHeight/2);});}else $('graph').scrollTop=previousScroll;
+$('graph-title').textContent=full?'完整 DAG':'当前节点的关联图';$('graph-caption').textContent=full?'27 个节点 · 50 条箭头；箭头方向沿用原图':'显示所选节点关联的 '+es.length+' 条箭头；中间位置仅用于排版，不代表中介作用';$('focus-view').setAttribute('aria-pressed',String(!full));$('full-view').setAttribute('aria-pressed',String(full));
   }
   function download(content,type,ext){const url=URL.createObjectURL(new Blob([content],{type}));const a=el('a');a.href=url;a.download=`DAG-review-${D.version}-${new Date().toISOString().slice(0,10)}.${ext}`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
   $('export-json').onclick=()=>{if(!state.reviewer.trim()){notice('请先填写审核人 / 稳定编号，便于研究组区分不同专家及轮次。');$('reviewer').focus();return;}download(JSON.stringify(R.exported(state,D),null,2),'application/json','json');notice('已导出完整记录，可重新导入继续审核。请将下载文件发回研究组；未审核项保留为空。');};
