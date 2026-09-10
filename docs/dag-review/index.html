@@ -19,7 +19,7 @@
   <aside class="sidebar"><h2>选择节点</h2><label class="sr-only" for="search">搜索节点或原始变量标签</label><input id="search" type="search" placeholder="搜索节点 / 变量标签"><label class="sr-only" for="domain">筛选领域</label><select id="domain"><option value="">所有节点 · 27</option><option value="B1">B1 · Familial / genetic</option><option value="B2">B2 · Indication / clinical</option><option value="B3">B3 · Sociodemographic/lifestyle</option><option value="B4">B4 · 暴露后 / 选择机制</option><option value="other">其他节点</option></select><div id="node-list"></div></aside>
   <section class="content">
     <section class="panel graph-panel" aria-label="DAG 图">
-      <div class="panelhead"><div><span class="eyebrow">当前待审核结构</span><h2 id="graph-title">节点关联图</h2></div><div class="segmented"><button id="focus-view" aria-pressed="true">三角关联图</button><button id="full-view" aria-pressed="false">总图 · 27 节点</button></div></div>
+      <div class="panelhead"><div><span class="eyebrow">当前待审核结构</span><h2 id="graph-title">节点关联图</h2></div><div class="segmented"><button id="focus-view" aria-pressed="true">三角关联图</button><a class="overview-link" href="overview.html" target="_blank" rel="noopener">打开独立总图 ↗</a></div></div>
       <p class="hint">点击节点查看范围；点击箭头填写意见。颜色表示审核状态：<span class="legend agree">保留</span><span class="legend change">修改 / 不确定</span><span class="legend skip">超出专长</span>；灰色为未审。</p>
       <div id="graph" class="graph-scroll"></div>
       <div class="graphfoot"><span id="graph-caption"></span><a href="original-dag.png" target="_blank" rel="noopener">查看原始总图 ↗</a></div>

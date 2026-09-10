@@ -38,3 +38,7 @@ References for the review design:
 This review is undertaken after the existing analysis. Preserve the original analysis, record the review date, and report review-driven changes and sensitivity analyses separately.
 
 Run logic/data tests: `node --test docs/dag-review/review-core.test.cjs`. Browser interaction/visual QA is separate and was not part of this update's requested testing.
+
+## Dedicated overview
+
+`overview.html` provides a viewport-sized, zoomable and pannable 27-node/50-edge overview. Selecting a node highlights its incident edges; selecting an edge provides a direct hash link into the review page. The review page itself renders at most three edges. Exposure and outcome entries review their definitions and the main exposure–outcome edge; other relationships remain accessible through their associated nodes. No baseline edges are removed.
