@@ -46,3 +46,7 @@ Run logic/data tests: `node --test docs/dag-review/review-core.test.cjs`. Browse
 ## Simplified expert interface
 
 The default view shows variable selection, the focused triangle, four decision options and next/export actions. Reasons expand for modification or uncertainty. Node-definition review, domain rules and proposals live under Supplementary review; import/export variants, expertise and team links live under More. Completion prompts still distinguish the 50 arrows from outstanding node/domain reviews. Existing storage keys and review fields are unchanged.
+
+## Completed reviews only
+
+Expert JSON and CSV exports require a reviewer identifier, all 50 edge judgments, 27 node judgments, and four domain-rule judgments. Required reasons and modification types must be complete. In round 2, every proposal in the review package must also have a complete judgment; any saved proposals must have all required fields. Uncertainty and out-of-expertise remain valid responses under the existing completion rules. General comments and new proposals are optional. Both export buttons are disabled until these conditions are met, and the export action validates them again. Incomplete drafts remain in browser local storage. “继续未完成项” opens the next outstanding item.

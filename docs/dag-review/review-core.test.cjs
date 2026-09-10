@@ -50,3 +50,21 @@ test('Malformed review packages and snapshots fail without changing the current 
 test('First-round statistics do not change when a reviewer resolves a second-round dispute',()=>{
  const s=R.blank(D);s.edges.E001={decision:'修改',change:'删除',reason:'理由'};const t=R.beginRound(s,pack(),D);t.edges.E001={decision:'保留',change:'',reason:''};assert.equal(R.summarize([t],D,3,1)[0]['修改'],1);assert.equal(R.summarize([t],D,3,2)[0]['保留'],1);
 });
+function finishedReview(){const s=R.blank(D);s.reviewer='Expert 1';for(const e of D.edges)s.edges[e.id]={decision:'保留',change:'',reason:''};for(const n of D.nodes)s.nodeReviews[n.id]='未发现问题';for(const k of Object.keys(R.domains))s.domains[k]={decision:'保留',change:'',reason:''};return s;}
+test('Both formal exports reject incomplete reviews and missing required details',()=>{
+ const empty=R.blank(D);assert.deepEqual(R.exportStatus(empty,D).pending,{edges:50,nodes:27,domains:4,proposals:0,proposalReviews:0});
+ const changes=[s=>s.reviewer=' ',s=>s.edges.E050=R.answer(),s=>s.nodeReviews['dag-27']='',s=>s.domains.B4=R.answer(),s=>s.edges.E001={decision:'不确定',change:'',reason:' '},s=>s.edges.E001={decision:'修改',change:'',reason:'删除依据'},s=>{s.nodeReviews['dag-03']='有问题';s.nodes['dag-03']=' ';},s=>s.domains.B2={decision:'修改',change:'调整评级规则',reason:''},s=>s.proposals.push({...proposed(),reason:''})];
+ for(const s of [empty,...changes.map(change=>{const s=finishedReview();change(s);return s;})]){const before=JSON.stringify(s);assert(!R.exportStatus(s,D).ready);for(const format of ['json','csv'])assert.throws(()=>R.exportReview(s,D,format),/尚未完成/);assert.equal(JSON.stringify(s),before);}
+});
+test('Completed export accepts uncertainty and out-of-expertise without requiring agreement',()=>{
+ const s=finishedReview();s.edges.E001={decision:'不确定',change:'',reason:'时间关系尚待确认'};s.edges.E002={decision:'超出专长',change:'',reason:''};s.nodeReviews['dag-03']='无法判断';s.domains.B4={decision:'修改',change:'限定时间或条件',reason:'按暴露窗口区分'};
+ assert(R.exportStatus(s,D).ready);assert.deepEqual(R.normalize(R.exportReview(s,D),D),s);assert(R.exportReview(s,D,'csv').includes('时间关系尚待确认'));
+ // Clearing a previously finished answer must lock export again.
+ s.edges.E002=R.answer();assert(!R.exportStatus(s,D).ready);assert.throws(()=>R.exportReview(s,D,'csv'),/尚未完成/);
+});
+test('Round 2 cannot export while a requested proposal review is missing or incomplete',()=>{
+ const s=R.beginRound(finishedReview(),pack(),D);assert.equal(R.exportStatus(s,D).pending.proposalReviews,1);for(const format of ['json','csv'])assert.throws(()=>R.exportReview(s,D,format));
+ s.proposalReviews['P-test']={decision:'不确定',change:'',reason:' '};assert(!R.exportStatus(s,D).ready);
+ s.proposalReviews['P-test'].reason='需要进一步的时间依据';assert(R.exportStatus(s,D).ready);assert.equal(R.exportReview(s,D).firstRound.round,1);
+ delete s.proposalReviews['P-test'];assert(!R.exportStatus(s,D).ready);assert.throws(()=>R.exportReview(s,D));
+});
