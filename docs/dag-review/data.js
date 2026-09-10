@@ -1,7 +1,7 @@
 window.DAG_DATA = {
-  "version": "2026-09-10.meta-scope-v3",
-  "graphHash": "c718d724d14956a2fcd6f757bb387456c98370c6b200a477f4ae23179ad9c79e",
-  "source": "Current manuscript (2026-09-04): all 39 estimates and 26 estimates retained after B4 exclusion. Review includes only constructs represented in the final model-level covariate/design trace; Table S1 defines their domains and roles. Existing manuscript edges are restricted to these nodes.",
+  "version": "2026-09-10.s1-domains-v4",
+  "graphHash": "e594383e8d00da83b2bbd2c2be94561066e5e4c406608e0c8b4f643c128814d4",
+  "source": "Current manuscript (2026-09-04), Table S1: B1–B4 constructs represented in the pooled-model trace. Review covers 16 scored confounders and 2 B4 constructs, plus exposure and outcome. Non-core and blind-spot constructs are outside this review scope.",
   "nodes": [
     {
       "id": "dag-01",
@@ -4898,127 +4898,6 @@ window.DAG_DATA = {
       }
     },
     {
-      "id": "dag-24",
-      "name": "Current-pregnancy obstetric complications",
-      "zh": "本次妊娠并发症",
-      "domain": "non-core",
-      "role": "Timing-dependent",
-      "scope": "Current-pregnancy obstetric complications (preeclampsia/GDM/haemorrhage)",
-      "rationale": "Not assigned to B4 because timing depends on the exposure window",
-      "constructId": "N02",
-      "labels": [
-        {
-          "label": "antepartum_hemorrhage",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/41238184/"
-          ],
-          "analysisUse": {
-            "all": 1,
-            "b4Yes": 1,
-            "b4No": 0,
-            "recordIds": [
-              "41238184_ADHD"
-            ]
-          },
-          "controlRoutes": [
-            "Timing-dependent pregnancy variable"
-          ],
-          "mappingStatus": [
-            "Excluded from B1-B3"
-          ]
-        },
-        {
-          "label": "gestational_diabetes",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/30923825/",
-            "https://pubmed.ncbi.nlm.nih.gov/41238184/",
-            "https://pubmed.ncbi.nlm.nih.gov/42371637/"
-          ],
-          "analysisUse": {
-            "all": 6,
-            "b4Yes": 5,
-            "b4No": 1,
-            "recordIds": [
-              "30923825_ADHD",
-              "41238184_ADHD",
-              "42371637_ADHD_pop",
-              "42371637_ADHD_sib",
-              "42371637_ASD_pop",
-              "42371637_ASD_sib"
-            ]
-          },
-          "controlRoutes": [
-            "Timing-dependent pregnancy variable"
-          ],
-          "mappingStatus": [
-            "Excluded from B1-B3"
-          ]
-        },
-        {
-          "label": "gestational_hypertension",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/41238184/",
-            "https://pubmed.ncbi.nlm.nih.gov/42371637/"
-          ],
-          "analysisUse": {
-            "all": 5,
-            "b4Yes": 5,
-            "b4No": 0,
-            "recordIds": [
-              "41238184_ADHD",
-              "42371637_ADHD_pop",
-              "42371637_ADHD_sib",
-              "42371637_ASD_pop",
-              "42371637_ASD_sib"
-            ]
-          },
-          "controlRoutes": [
-            "Timing-dependent pregnancy variable"
-          ],
-          "mappingStatus": [
-            "Excluded from B1-B3"
-          ]
-        },
-        {
-          "label": "preeclampsia",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/30923825/"
-          ],
-          "analysisUse": {
-            "all": 1,
-            "b4Yes": 0,
-            "b4No": 1,
-            "recordIds": [
-              "30923825_ADHD"
-            ]
-          },
-          "controlRoutes": [
-            "Timing-dependent pregnancy variable"
-          ],
-          "mappingStatus": [
-            "Excluded from B1-B3"
-          ]
-        }
-      ],
-      "note": "目前列为 non-core、Timing-dependent。需按暴露窗口判断发生顺序，图中箭头仍待专家审核。 本页仅显示当前纳入模型记录中的变量标签及设计项；出现次数不代表控制充分。",
-      "s1Order": 18,
-      "s1Status": "Estimate-specific classification",
-      "s1Consensus": "(3/3)",
-      "analysisUse": {
-        "all": 6,
-        "b4Yes": 5,
-        "b4No": 1,
-        "recordIds": [
-          "30923825_ADHD",
-          "41238184_ADHD",
-          "42371637_ADHD_pop",
-          "42371637_ADHD_sib",
-          "42371637_ASD_pop",
-          "42371637_ASD_sib"
-        ]
-      }
-    },
-    {
       "id": "dag-25",
       "name": "Breastfeeding / lactation",
       "zh": "母乳喂养",
@@ -5059,440 +4938,6 @@ window.DAG_DATA = {
         "b4No": 0,
         "recordIds": [
           "29970852_ADHD"
-        ]
-      }
-    },
-    {
-      "id": "dag-22",
-      "name": "Child sex; age at assessment",
-      "zh": "儿童性别及评估年龄",
-      "domain": "non-core",
-      "role": "Precision",
-      "scope": "Child sex; age at assessment",
-      "rationale": "Precision / measurement-timing, not a confounder",
-      "constructId": "N10",
-      "labels": [
-        {
-          "label": "age_at_testing",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/27353198/"
-          ],
-          "analysisUse": {
-            "all": 1,
-            "b4Yes": 1,
-            "b4No": 0,
-            "recordIds": [
-              "27353198_ADHD"
-            ]
-          },
-          "controlRoutes": [
-            "Measured adjustment"
-          ],
-          "mappingStatus": [
-            "Excluded from core counts"
-          ]
-        },
-        {
-          "label": "child_age",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/31509360/"
-          ],
-          "analysisUse": {
-            "all": 1,
-            "b4Yes": 1,
-            "b4No": 0,
-            "recordIds": [
-              "31509360_ADHD"
-            ]
-          },
-          "controlRoutes": [
-            "Measured adjustment"
-          ],
-          "mappingStatus": [
-            "Excluded from core counts"
-          ]
-        },
-        {
-          "label": "child_age_at_visit",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/40964537/"
-          ],
-          "analysisUse": {
-            "all": 1,
-            "b4Yes": 1,
-            "b4No": 0,
-            "recordIds": [
-              "40964537_ADHD"
-            ]
-          },
-          "controlRoutes": [
-            "Measured adjustment"
-          ],
-          "mappingStatus": [
-            "Excluded from core counts"
-          ]
-        },
-        {
-          "label": "child_sex",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/24566677/",
-            "https://pubmed.ncbi.nlm.nih.gov/26688372/",
-            "https://pubmed.ncbi.nlm.nih.gov/27353198/",
-            "https://pubmed.ncbi.nlm.nih.gov/28031314/",
-            "https://pubmed.ncbi.nlm.nih.gov/29970852/",
-            "https://pubmed.ncbi.nlm.nih.gov/31509360/",
-            "https://pubmed.ncbi.nlm.nih.gov/31664451/",
-            "https://pubmed.ncbi.nlm.nih.gov/32986124/",
-            "https://pubmed.ncbi.nlm.nih.gov/34679367/",
-            "https://pubmed.ncbi.nlm.nih.gov/37431475/",
-            "https://pubmed.ncbi.nlm.nih.gov/38592388/",
-            "https://pubmed.ncbi.nlm.nih.gov/40964537/",
-            "https://pubmed.ncbi.nlm.nih.gov/41801232/",
-            "https://pubmed.ncbi.nlm.nih.gov/41973453/",
-            "https://pubmed.ncbi.nlm.nih.gov/42371637/"
-          ],
-          "analysisUse": {
-            "all": 27,
-            "b4Yes": 12,
-            "b4No": 15,
-            "recordIds": [
-              "24566677_ADHD",
-              "26688372_ASD",
-              "27353198_ADHD",
-              "28031314_ADHD",
-              "29970852_ADHD",
-              "31509360_ADHD",
-              "31664451_ADHD",
-              "31664451_ASD",
-              "32986124_ADHD",
-              "34679367_ADHD",
-              "37431475_ADHD_pop",
-              "37431475_ADHD_sib",
-              "38592388_ADHD_pop",
-              "38592388_ADHD_sib",
-              "38592388_ASD_pop",
-              "38592388_ASD_sib",
-              "40964537_ADHD",
-              "41801232_ADHD_pop",
-              "41801232_ADHD_sib",
-              "41801232_ASD_pop",
-              "41801232_ASD_sib",
-              "41973453_ASD_pop",
-              "41973453_ASD_sib",
-              "42371637_ADHD_pop",
-              "42371637_ADHD_sib",
-              "42371637_ASD_pop",
-              "42371637_ASD_sib"
-            ]
-          },
-          "controlRoutes": [
-            "Measured adjustment",
-            "Propensity-score model input"
-          ],
-          "mappingStatus": [
-            "Excluded from core counts"
-          ]
-        },
-        {
-          "label": "tester",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/28031314/"
-          ],
-          "analysisUse": {
-            "all": 1,
-            "b4Yes": 0,
-            "b4No": 1,
-            "recordIds": [
-              "28031314_ADHD"
-            ]
-          },
-          "controlRoutes": [
-            "Measured adjustment"
-          ],
-          "mappingStatus": [
-            "Excluded from core counts"
-          ]
-        }
-      ],
-      "note": "当前合并儿童性别和评估年龄，请判断是否需要拆分。 本页仅显示当前纳入模型记录中的变量标签及设计项；出现次数不代表控制充分。",
-      "s1Order": 26,
-      "s1Status": "Both (convergent)",
-      "s1Consensus": "n/a",
-      "analysisUse": {
-        "all": 27,
-        "b4Yes": 12,
-        "b4No": 15,
-        "recordIds": [
-          "24566677_ADHD",
-          "26688372_ASD",
-          "27353198_ADHD",
-          "28031314_ADHD",
-          "29970852_ADHD",
-          "31509360_ADHD",
-          "31664451_ADHD",
-          "31664451_ASD",
-          "32986124_ADHD",
-          "34679367_ADHD",
-          "37431475_ADHD_pop",
-          "37431475_ADHD_sib",
-          "38592388_ADHD_pop",
-          "38592388_ADHD_sib",
-          "38592388_ASD_pop",
-          "38592388_ASD_sib",
-          "40964537_ADHD",
-          "41801232_ADHD_pop",
-          "41801232_ADHD_sib",
-          "41801232_ASD_pop",
-          "41801232_ASD_sib",
-          "41973453_ASD_pop",
-          "41973453_ASD_sib",
-          "42371637_ADHD_pop",
-          "42371637_ADHD_sib",
-          "42371637_ASD_pop",
-          "42371637_ASD_sib"
-        ]
-      }
-    },
-    {
-      "id": "dag-21",
-      "name": "Medication-seeking propensity",
-      "zh": "用药寻求倾向",
-      "domain": "Blind-spot / split",
-      "role": "Confounder when pre-exposure; timing-dependent when antenatal",
-      "scope": "Medication-seeking propensity / antenatal-care use",
-      "rationale": "Separates exposure propensity and antenatal care from offspring outcome-detection utilisation",
-      "constructId": "N13",
-      "labels": [
-        {
-          "label": "antenatal_hospital_visits",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/41973453/"
-          ],
-          "analysisUse": {
-            "all": 2,
-            "b4Yes": 0,
-            "b4No": 2,
-            "recordIds": [
-              "41973453_ASD_pop",
-              "41973453_ASD_sib"
-            ]
-          },
-          "controlRoutes": [
-            "Healthcare utilisation / detection context"
-          ],
-          "mappingStatus": [
-            "Reported non-core"
-          ]
-        },
-        {
-          "label": "antenatal_visits",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/38592388/"
-          ],
-          "analysisUse": {
-            "all": 4,
-            "b4Yes": 0,
-            "b4No": 4,
-            "recordIds": [
-              "38592388_ADHD_pop",
-              "38592388_ADHD_sib",
-              "38592388_ASD_pop",
-              "38592388_ASD_sib"
-            ]
-          },
-          "controlRoutes": [
-            "Reported non-core healthcare use"
-          ],
-          "mappingStatus": [
-            "Excluded from B1-B3"
-          ]
-        },
-        {
-          "label": "drug_coverage",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/41238184/"
-          ],
-          "analysisUse": {
-            "all": 1,
-            "b4Yes": 1,
-            "b4No": 0,
-            "recordIds": [
-              "41238184_ADHD"
-            ]
-          },
-          "controlRoutes": [
-            "Reported non-core healthcare use"
-          ],
-          "mappingStatus": [
-            "Excluded from B1-B3"
-          ]
-        },
-        {
-          "label": "emergency_visit",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/41238184/"
-          ],
-          "analysisUse": {
-            "all": 1,
-            "b4Yes": 1,
-            "b4No": 0,
-            "recordIds": [
-              "41238184_ADHD"
-            ]
-          },
-          "controlRoutes": [
-            "Reported non-core healthcare use"
-          ],
-          "mappingStatus": [
-            "Excluded from B1-B3"
-          ]
-        },
-        {
-          "label": "healthcare_visits_pre_preg",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/38592388/"
-          ],
-          "analysisUse": {
-            "all": 4,
-            "b4Yes": 0,
-            "b4No": 4,
-            "recordIds": [
-              "38592388_ADHD_pop",
-              "38592388_ADHD_sib",
-              "38592388_ASD_pop",
-              "38592388_ASD_sib"
-            ]
-          },
-          "controlRoutes": [
-            "Reported non-core healthcare use"
-          ],
-          "mappingStatus": [
-            "Excluded from B1-B3"
-          ]
-        },
-        {
-          "label": "hospital_visits_year_before_pregnancy",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/41973453/"
-          ],
-          "analysisUse": {
-            "all": 2,
-            "b4Yes": 0,
-            "b4No": 2,
-            "recordIds": [
-              "41973453_ASD_pop",
-              "41973453_ASD_sib"
-            ]
-          },
-          "controlRoutes": [
-            "Healthcare utilisation / detection context"
-          ],
-          "mappingStatus": [
-            "Reported non-core"
-          ]
-        },
-        {
-          "label": "insurance_coverage",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/36170224/"
-          ],
-          "analysisUse": {
-            "all": 1,
-            "b4Yes": 0,
-            "b4No": 1,
-            "recordIds": [
-              "36170224_ADHD"
-            ]
-          },
-          "controlRoutes": [
-            "Measured adjustment"
-          ],
-          "mappingStatus": [
-            "Reported non-core"
-          ]
-        },
-        {
-          "label": "obstetrician_followup",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/41238184/"
-          ],
-          "analysisUse": {
-            "all": 1,
-            "b4Yes": 1,
-            "b4No": 0,
-            "recordIds": [
-              "41238184_ADHD"
-            ]
-          },
-          "controlRoutes": [
-            "Reported non-core healthcare use"
-          ],
-          "mappingStatus": [
-            "Excluded from B1-B3"
-          ]
-        },
-        {
-          "label": "prepreg_health_checkup",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/40898607/"
-          ],
-          "analysisUse": {
-            "all": 2,
-            "b4Yes": 0,
-            "b4No": 2,
-            "recordIds": [
-              "40898607_ADHD_pop",
-              "40898607_ASD_pop"
-            ]
-          },
-          "controlRoutes": [
-            "Propensity-score model input"
-          ],
-          "mappingStatus": [
-            "Excluded from B1-B3"
-          ]
-        },
-        {
-          "label": "prescriptions_year_before_pregnancy",
-          "sources": [
-            "https://pubmed.ncbi.nlm.nih.gov/41973453/"
-          ],
-          "analysisUse": {
-            "all": 2,
-            "b4Yes": 0,
-            "b4No": 2,
-            "recordIds": [
-              "41973453_ASD_pop",
-              "41973453_ASD_sib"
-            ]
-          },
-          "controlRoutes": [
-            "Healthcare utilisation / detection context"
-          ],
-          "mappingStatus": [
-            "Reported non-core"
-          ]
-        }
-      ],
-      "note": "需区分用药前的就医或用药倾向与孕期产检，具体作用取决于发生时间。 本页仅显示当前纳入模型记录中的变量标签及设计项；出现次数不代表控制充分。",
-      "s1Order": 29,
-      "s1Status": "Reclassified",
-      "s1Consensus": "(3/3)",
-      "analysisUse": {
-        "all": 10,
-        "b4Yes": 1,
-        "b4No": 9,
-        "recordIds": [
-          "36170224_ADHD",
-          "38592388_ADHD_pop",
-          "38592388_ADHD_sib",
-          "38592388_ASD_pop",
-          "38592388_ASD_sib",
-          "40898607_ADHD_pop",
-          "40898607_ASD_pop",
-          "41238184_ADHD",
-          "41973453_ASD_pop",
-          "41973453_ASD_sib"
         ]
       }
     }
@@ -5659,16 +5104,6 @@ window.DAG_DATA = {
       "to": "dag-02"
     },
     {
-      "id": "E037",
-      "from": "dag-21",
-      "to": "dag-01"
-    },
-    {
-      "id": "E038",
-      "from": "dag-21",
-      "to": "dag-02"
-    },
-    {
       "id": "E039",
       "from": "dag-01",
       "to": "dag-02"
@@ -5684,16 +5119,6 @@ window.DAG_DATA = {
       "to": "dag-02"
     },
     {
-      "id": "E042",
-      "from": "dag-01",
-      "to": "dag-24"
-    },
-    {
-      "id": "E043",
-      "from": "dag-24",
-      "to": "dag-02"
-    },
-    {
       "id": "E044",
       "from": "dag-01",
       "to": "dag-25"
@@ -5702,16 +5127,11 @@ window.DAG_DATA = {
       "id": "E045",
       "from": "dag-25",
       "to": "dag-02"
-    },
-    {
-      "id": "E050",
-      "from": "dag-22",
-      "to": "dag-02"
     }
   ],
   "previousBaseline": {
-    "version": "2026-09-10.s1-v2",
-    "graphHash": "4d57e018cefebc57f41f16ed978624073bbc970ed820851c40aec3ef3860c0a1",
+    "version": "2026-09-10.meta-scope-v3",
+    "graphHash": "c718d724d14956a2fcd6f757bb387456c98370c6b200a477f4ae23179ad9c79e",
     "edges": [
       {
         "id": "E001",
@@ -5874,26 +5294,6 @@ window.DAG_DATA = {
         "to": "dag-02"
       },
       {
-        "id": "E033",
-        "from": "dag-19",
-        "to": "dag-01"
-      },
-      {
-        "id": "E034",
-        "from": "dag-19",
-        "to": "dag-02"
-      },
-      {
-        "id": "E035",
-        "from": "dag-20",
-        "to": "dag-01"
-      },
-      {
-        "id": "E036",
-        "from": "dag-20",
-        "to": "dag-02"
-      },
-      {
         "id": "E037",
         "from": "dag-21",
         "to": "dag-01"
@@ -5939,31 +5339,521 @@ window.DAG_DATA = {
         "to": "dag-02"
       },
       {
-        "id": "E046",
-        "from": "dag-01",
-        "to": "dag-26"
-      },
-      {
-        "id": "E047",
-        "from": "dag-02",
-        "to": "dag-26"
-      },
-      {
-        "id": "E048",
-        "from": "dag-01",
-        "to": "dag-27"
-      },
-      {
-        "id": "E049",
-        "from": "dag-02",
-        "to": "dag-27"
-      },
-      {
         "id": "E050",
         "from": "dag-22",
         "to": "dag-02"
       }
     ],
+    "previousBaseline": {
+      "version": "2026-09-10.s1-v2",
+      "graphHash": "4d57e018cefebc57f41f16ed978624073bbc970ed820851c40aec3ef3860c0a1",
+      "edges": [
+        {
+          "id": "E001",
+          "from": "dag-03",
+          "to": "dag-01"
+        },
+        {
+          "id": "E002",
+          "from": "dag-03",
+          "to": "dag-02"
+        },
+        {
+          "id": "E003",
+          "from": "dag-04",
+          "to": "dag-01"
+        },
+        {
+          "id": "E004",
+          "from": "dag-04",
+          "to": "dag-02"
+        },
+        {
+          "id": "E005",
+          "from": "dag-05",
+          "to": "dag-01"
+        },
+        {
+          "id": "E006",
+          "from": "dag-05",
+          "to": "dag-02"
+        },
+        {
+          "id": "E007",
+          "from": "dag-06",
+          "to": "dag-01"
+        },
+        {
+          "id": "E008",
+          "from": "dag-06",
+          "to": "dag-02"
+        },
+        {
+          "id": "E009",
+          "from": "dag-07",
+          "to": "dag-01"
+        },
+        {
+          "id": "E010",
+          "from": "dag-07",
+          "to": "dag-02"
+        },
+        {
+          "id": "E011",
+          "from": "dag-08",
+          "to": "dag-01"
+        },
+        {
+          "id": "E012",
+          "from": "dag-08",
+          "to": "dag-02"
+        },
+        {
+          "id": "E013",
+          "from": "dag-09",
+          "to": "dag-01"
+        },
+        {
+          "id": "E014",
+          "from": "dag-09",
+          "to": "dag-02"
+        },
+        {
+          "id": "E015",
+          "from": "dag-10",
+          "to": "dag-01"
+        },
+        {
+          "id": "E016",
+          "from": "dag-10",
+          "to": "dag-02"
+        },
+        {
+          "id": "E017",
+          "from": "dag-11",
+          "to": "dag-01"
+        },
+        {
+          "id": "E018",
+          "from": "dag-11",
+          "to": "dag-02"
+        },
+        {
+          "id": "E019",
+          "from": "dag-12",
+          "to": "dag-01"
+        },
+        {
+          "id": "E020",
+          "from": "dag-12",
+          "to": "dag-02"
+        },
+        {
+          "id": "E021",
+          "from": "dag-13",
+          "to": "dag-01"
+        },
+        {
+          "id": "E022",
+          "from": "dag-13",
+          "to": "dag-02"
+        },
+        {
+          "id": "E023",
+          "from": "dag-14",
+          "to": "dag-01"
+        },
+        {
+          "id": "E024",
+          "from": "dag-14",
+          "to": "dag-02"
+        },
+        {
+          "id": "E025",
+          "from": "dag-15",
+          "to": "dag-01"
+        },
+        {
+          "id": "E026",
+          "from": "dag-15",
+          "to": "dag-02"
+        },
+        {
+          "id": "E027",
+          "from": "dag-16",
+          "to": "dag-01"
+        },
+        {
+          "id": "E028",
+          "from": "dag-16",
+          "to": "dag-02"
+        },
+        {
+          "id": "E029",
+          "from": "dag-17",
+          "to": "dag-01"
+        },
+        {
+          "id": "E030",
+          "from": "dag-17",
+          "to": "dag-02"
+        },
+        {
+          "id": "E031",
+          "from": "dag-18",
+          "to": "dag-01"
+        },
+        {
+          "id": "E032",
+          "from": "dag-18",
+          "to": "dag-02"
+        },
+        {
+          "id": "E033",
+          "from": "dag-19",
+          "to": "dag-01"
+        },
+        {
+          "id": "E034",
+          "from": "dag-19",
+          "to": "dag-02"
+        },
+        {
+          "id": "E035",
+          "from": "dag-20",
+          "to": "dag-01"
+        },
+        {
+          "id": "E036",
+          "from": "dag-20",
+          "to": "dag-02"
+        },
+        {
+          "id": "E037",
+          "from": "dag-21",
+          "to": "dag-01"
+        },
+        {
+          "id": "E038",
+          "from": "dag-21",
+          "to": "dag-02"
+        },
+        {
+          "id": "E039",
+          "from": "dag-01",
+          "to": "dag-02"
+        },
+        {
+          "id": "E040",
+          "from": "dag-01",
+          "to": "dag-23"
+        },
+        {
+          "id": "E041",
+          "from": "dag-23",
+          "to": "dag-02"
+        },
+        {
+          "id": "E042",
+          "from": "dag-01",
+          "to": "dag-24"
+        },
+        {
+          "id": "E043",
+          "from": "dag-24",
+          "to": "dag-02"
+        },
+        {
+          "id": "E044",
+          "from": "dag-01",
+          "to": "dag-25"
+        },
+        {
+          "id": "E045",
+          "from": "dag-25",
+          "to": "dag-02"
+        },
+        {
+          "id": "E046",
+          "from": "dag-01",
+          "to": "dag-26"
+        },
+        {
+          "id": "E047",
+          "from": "dag-02",
+          "to": "dag-26"
+        },
+        {
+          "id": "E048",
+          "from": "dag-01",
+          "to": "dag-27"
+        },
+        {
+          "id": "E049",
+          "from": "dag-02",
+          "to": "dag-27"
+        },
+        {
+          "id": "E050",
+          "from": "dag-22",
+          "to": "dag-02"
+        }
+      ],
+      "nodeIds": [
+        "dag-01",
+        "dag-02",
+        "dag-03",
+        "dag-04",
+        "dag-05",
+        "dag-06",
+        "dag-07",
+        "dag-08",
+        "dag-09",
+        "dag-10",
+        "dag-11",
+        "dag-12",
+        "dag-13",
+        "dag-14",
+        "dag-15",
+        "dag-16",
+        "dag-17",
+        "dag-18",
+        "dag-23",
+        "dag-24",
+        "dag-25",
+        "dag-28",
+        "dag-29",
+        "dag-30",
+        "dag-26",
+        "dag-27",
+        "dag-31",
+        "dag-22",
+        "dag-19",
+        "dag-20",
+        "dag-21"
+      ],
+      "nodes": [
+        {
+          "id": "dag-01",
+          "name": "Prenatal acetaminophen",
+          "zh": "孕期对乙酰氨基酚使用",
+          "domain": "Exposure"
+        },
+        {
+          "id": "dag-02",
+          "name": "Offspring ASD/ADHD",
+          "zh": "子代 ASD / ADHD",
+          "domain": "Outcome"
+        },
+        {
+          "id": "dag-03",
+          "name": "Shared familial/genetic background",
+          "zh": "家族共享环境及遗传背景",
+          "domain": "B1"
+        },
+        {
+          "id": "dag-04",
+          "name": "Maternal neurodevelopmental liability",
+          "zh": "母亲神经发育易感性",
+          "domain": "B1"
+        },
+        {
+          "id": "dag-05",
+          "name": "Maternal psychiatric vulnerability",
+          "zh": "母亲精神心理易感性",
+          "domain": "B1"
+        },
+        {
+          "id": "dag-06",
+          "name": "Acute infection / fever indication",
+          "zh": "急性感染或发热适应证",
+          "domain": "B2"
+        },
+        {
+          "id": "dag-07",
+          "name": "Pain / headache / migraine indication",
+          "zh": "疼痛、头痛或偏头痛适应证",
+          "domain": "B2"
+        },
+        {
+          "id": "dag-08",
+          "name": "Chronic maternal medical conditions",
+          "zh": "母亲慢性疾病",
+          "domain": "B2"
+        },
+        {
+          "id": "dag-09",
+          "name": "Concomitant medication / treatment context",
+          "zh": "合并用药及治疗背景",
+          "domain": "B2"
+        },
+        {
+          "id": "dag-10",
+          "name": "Maternal metabolic / adiposity status",
+          "zh": "母亲代谢及肥胖状态",
+          "domain": "B2"
+        },
+        {
+          "id": "dag-11",
+          "name": "Socioeconomic position",
+          "zh": "社会经济地位",
+          "domain": "B3"
+        },
+        {
+          "id": "dag-12",
+          "name": "Demographic / regional context",
+          "zh": "人口及地区背景",
+          "domain": "B3"
+        },
+        {
+          "id": "dag-13",
+          "name": "Lifestyle / substance use",
+          "zh": "生活方式及物质使用",
+          "domain": "B3"
+        },
+        {
+          "id": "dag-14",
+          "name": "Psychosocial stress",
+          "zh": "心理社会压力",
+          "domain": "B3"
+        },
+        {
+          "id": "dag-15",
+          "name": "Maternal demographic context",
+          "zh": "父母年龄等人口学特征",
+          "domain": "B3"
+        },
+        {
+          "id": "dag-16",
+          "name": "Reproductive history / parity",
+          "zh": "生育史及产次",
+          "domain": "B3"
+        },
+        {
+          "id": "dag-17",
+          "name": "Family structure",
+          "zh": "家庭结构",
+          "domain": "B3"
+        },
+        {
+          "id": "dag-18",
+          "name": "Temporal context",
+          "zh": "日历时期背景",
+          "domain": "B3"
+        },
+        {
+          "id": "dag-23",
+          "name": "Perinatal mediators",
+          "zh": "围产期中介因素",
+          "domain": "B4"
+        },
+        {
+          "id": "dag-24",
+          "name": "Current-pregnancy obstetric complications",
+          "zh": "本次妊娠并发症",
+          "domain": "non-core"
+        },
+        {
+          "id": "dag-25",
+          "name": "Breastfeeding / lactation",
+          "zh": "母乳喂养",
+          "domain": "B4"
+        },
+        {
+          "id": "dag-28",
+          "name": "Early-child infection / microbiome / atopy",
+          "zh": "儿童早期感染、微生物组及过敏",
+          "domain": "B4"
+        },
+        {
+          "id": "dag-29",
+          "name": "Early developmental / regulatory phenotype",
+          "zh": "早期发育及调节表型",
+          "domain": "B4"
+        },
+        {
+          "id": "dag-30",
+          "name": "Mechanistic chain (oxidative stress, inflammation, hormonal, epigenetic, placental, fetal brain)",
+          "zh": "生物学机制链",
+          "domain": "B4"
+        },
+        {
+          "id": "dag-26",
+          "name": "Selection / inclusion / cohort entry",
+          "zh": "选择、纳入及队列进入",
+          "domain": "B4"
+        },
+        {
+          "id": "dag-27",
+          "name": "Diagnostic / ascertainment",
+          "zh": "诊断及结局识别",
+          "domain": "B4"
+        },
+        {
+          "id": "dag-31",
+          "name": "Healthcare utilisation leading to outcome detection",
+          "zh": "影响结局检出的医疗服务利用",
+          "domain": "B4"
+        },
+        {
+          "id": "dag-22",
+          "name": "Child sex; age at assessment",
+          "zh": "儿童性别及评估年龄",
+          "domain": "non-core"
+        },
+        {
+          "id": "dag-19",
+          "name": "Environmental / occupational exposures",
+          "zh": "环境及职业暴露",
+          "domain": "Blind-spot"
+        },
+        {
+          "id": "dag-20",
+          "name": "Acetaminophen pharmacogenetics",
+          "zh": "对乙酰氨基酚药物遗传因素",
+          "domain": "Blind-spot"
+        },
+        {
+          "id": "dag-21",
+          "name": "Medication-seeking propensity",
+          "zh": "用药寻求倾向",
+          "domain": "Blind-spot / split"
+        }
+      ],
+      "previousBaseline": {
+        "version": "2026-09-09.v1",
+        "graphHash": "6393191f73e222072947e4bc8a4a1f2495db99e4aca3c628dcfbc1fcc91f1e81",
+        "nodeIds": [
+          "dag-01",
+          "dag-02",
+          "dag-03",
+          "dag-04",
+          "dag-05",
+          "dag-06",
+          "dag-07",
+          "dag-08",
+          "dag-09",
+          "dag-10",
+          "dag-11",
+          "dag-12",
+          "dag-13",
+          "dag-14",
+          "dag-15",
+          "dag-16",
+          "dag-17",
+          "dag-18",
+          "dag-19",
+          "dag-20",
+          "dag-21",
+          "dag-22",
+          "dag-23",
+          "dag-24",
+          "dag-25",
+          "dag-26",
+          "dag-27"
+        ]
+      }
+    },
     "nodeIds": [
       "dag-01",
       "dag-02",
@@ -5986,15 +5876,7 @@ window.DAG_DATA = {
       "dag-23",
       "dag-24",
       "dag-25",
-      "dag-28",
-      "dag-29",
-      "dag-30",
-      "dag-26",
-      "dag-27",
-      "dag-31",
       "dag-22",
-      "dag-19",
-      "dag-20",
       "dag-21"
     ],
     "nodes": [
@@ -6125,58 +6007,10 @@ window.DAG_DATA = {
         "domain": "B4"
       },
       {
-        "id": "dag-28",
-        "name": "Early-child infection / microbiome / atopy",
-        "zh": "儿童早期感染、微生物组及过敏",
-        "domain": "B4"
-      },
-      {
-        "id": "dag-29",
-        "name": "Early developmental / regulatory phenotype",
-        "zh": "早期发育及调节表型",
-        "domain": "B4"
-      },
-      {
-        "id": "dag-30",
-        "name": "Mechanistic chain (oxidative stress, inflammation, hormonal, epigenetic, placental, fetal brain)",
-        "zh": "生物学机制链",
-        "domain": "B4"
-      },
-      {
-        "id": "dag-26",
-        "name": "Selection / inclusion / cohort entry",
-        "zh": "选择、纳入及队列进入",
-        "domain": "B4"
-      },
-      {
-        "id": "dag-27",
-        "name": "Diagnostic / ascertainment",
-        "zh": "诊断及结局识别",
-        "domain": "B4"
-      },
-      {
-        "id": "dag-31",
-        "name": "Healthcare utilisation leading to outcome detection",
-        "zh": "影响结局检出的医疗服务利用",
-        "domain": "B4"
-      },
-      {
         "id": "dag-22",
         "name": "Child sex; age at assessment",
         "zh": "儿童性别及评估年龄",
         "domain": "non-core"
-      },
-      {
-        "id": "dag-19",
-        "name": "Environmental / occupational exposures",
-        "zh": "环境及职业暴露",
-        "domain": "Blind-spot"
-      },
-      {
-        "id": "dag-20",
-        "name": "Acetaminophen pharmacogenetics",
-        "zh": "对乙酰氨基酚药物遗传因素",
-        "domain": "Blind-spot"
       },
       {
         "id": "dag-21",
@@ -6184,238 +6018,25 @@ window.DAG_DATA = {
         "zh": "用药寻求倾向",
         "domain": "Blind-spot / split"
       }
-    ],
-    "previousBaseline": {
-      "version": "2026-09-09.v1",
-      "graphHash": "6393191f73e222072947e4bc8a4a1f2495db99e4aca3c628dcfbc1fcc91f1e81",
-      "nodeIds": [
-        "dag-01",
-        "dag-02",
-        "dag-03",
-        "dag-04",
-        "dag-05",
-        "dag-06",
-        "dag-07",
-        "dag-08",
-        "dag-09",
-        "dag-10",
-        "dag-11",
-        "dag-12",
-        "dag-13",
-        "dag-14",
-        "dag-15",
-        "dag-16",
-        "dag-17",
-        "dag-18",
-        "dag-19",
-        "dag-20",
-        "dag-21",
-        "dag-22",
-        "dag-23",
-        "dag-24",
-        "dag-25",
-        "dag-26",
-        "dag-27"
-      ]
-    }
+    ]
   },
   "analysisScope": {
-    "name": "Current manuscript pooled-model scope",
+    "name": "Table S1 B1–B4 review within current pooled-model scope",
     "mainText": "MainText_20260904.docx",
     "supplement": "Supplementary_Information_20260904_v3.docx",
     "mappingSource": "Covariate construct trace, final verification edition 2026-09-04",
     "allEstimates": 39,
     "b4YesEstimates": 13,
     "b4NoEstimates": 26,
-    "allConstructs": 21,
-    "b4NoConstructs": 19,
-    "note": "The manuscript pools all 39 estimates, then excludes 13 coded B4=Yes. Counts describe archived model labels and design terms, not adequate causal control. The latest model-level trace is used for Prahm label details; effect estimates, ratings and B4 flags are unchanged."
+    "allConstructs": 18,
+    "b4NoConstructs": 16,
+    "note": "The manuscript pools all 39 estimates, then excludes 13 coded B4=Yes. Counts describe archived model labels and design terms, not adequate causal control. The latest model-level trace is used for Prahm label details; effect estimates, ratings and B4 flags are unchanged.",
+    "reviewDomains": [
+      "B1",
+      "B2",
+      "B3",
+      "B4"
+    ]
   },
-  "unmappedVariables": [
-    {
-      "label": "acetaminophen(look-back)",
-      "sources": [
-        "https://pubmed.ncbi.nlm.nih.gov/40898607/"
-      ],
-      "analysisUse": {
-        "all": 2,
-        "b4Yes": 0,
-        "b4No": 2,
-        "recordIds": [
-          "40898607_ADHD_pop",
-          "40898607_ASD_pop"
-        ]
-      },
-      "controlRoutes": [
-        "Propensity-score model input"
-      ],
-      "mappingStatus": [
-        "Excluded from core counts"
-      ]
-    },
-    {
-      "label": "apap_before&after_pregnancy",
-      "sources": [
-        "https://pubmed.ncbi.nlm.nih.gov/37431475/"
-      ],
-      "analysisUse": {
-        "all": 2,
-        "b4Yes": 0,
-        "b4No": 2,
-        "recordIds": [
-          "37431475_ADHD_pop",
-          "37431475_ADHD_sib"
-        ]
-      },
-      "controlRoutes": [
-        "Propensity-score model input"
-      ],
-      "mappingStatus": [
-        "Excluded from core counts"
-      ]
-    },
-    {
-      "label": "apap_first_trimester",
-      "sources": [
-        "https://pubmed.ncbi.nlm.nih.gov/41238184/"
-      ],
-      "analysisUse": {
-        "all": 1,
-        "b4Yes": 1,
-        "b4No": 0,
-        "recordIds": [
-          "41238184_ADHD"
-        ]
-      },
-      "controlRoutes": [
-        "Exposure / negative-control term"
-      ],
-      "mappingStatus": [
-        "Excluded from core counts"
-      ]
-    },
-    {
-      "label": "apap_postnatal",
-      "sources": [
-        "https://pubmed.ncbi.nlm.nih.gov/30923825/"
-      ],
-      "analysisUse": {
-        "all": 1,
-        "b4Yes": 0,
-        "b4No": 1,
-        "recordIds": [
-          "30923825_ADHD"
-        ]
-      },
-      "controlRoutes": [
-        "Exposure / negative-control term"
-      ],
-      "mappingStatus": [
-        "S1 crosswalk requires review"
-      ]
-    },
-    {
-      "label": "apap_pre_pregnancy",
-      "sources": [
-        "https://pubmed.ncbi.nlm.nih.gov/30923825/"
-      ],
-      "analysisUse": {
-        "all": 1,
-        "b4Yes": 0,
-        "b4No": 1,
-        "recordIds": [
-          "30923825_ADHD"
-        ]
-      },
-      "controlRoutes": [
-        "Exposure / negative-control term"
-      ],
-      "mappingStatus": [
-        "S1 crosswalk requires review"
-      ]
-    },
-    {
-      "label": "gastric_bypass",
-      "sources": [
-        "https://pubmed.ncbi.nlm.nih.gov/41973453/"
-      ],
-      "analysisUse": {
-        "all": 2,
-        "b4Yes": 0,
-        "b4No": 2,
-        "recordIds": [
-          "41973453_ASD_pop",
-          "41973453_ASD_sib"
-        ]
-      },
-      "controlRoutes": [
-        "Measured adjustment"
-      ],
-      "mappingStatus": [
-        "Insufficient specificity for core credit"
-      ]
-    },
-    {
-      "label": "other",
-      "sources": [
-        "https://pubmed.ncbi.nlm.nih.gov/37431475/"
-      ],
-      "analysisUse": {
-        "all": 2,
-        "b4Yes": 0,
-        "b4No": 2,
-        "recordIds": [
-          "37431475_ADHD_pop",
-          "37431475_ADHD_sib"
-        ]
-      },
-      "controlRoutes": [
-        "Propensity-score model input"
-      ],
-      "mappingStatus": [
-        "Insufficient specificity for core credit"
-      ]
-    },
-    {
-      "label": "trouble_sleeping",
-      "sources": [
-        "https://pubmed.ncbi.nlm.nih.gov/36170224/"
-      ],
-      "analysisUse": {
-        "all": 1,
-        "b4Yes": 0,
-        "b4No": 1,
-        "recordIds": [
-          "36170224_ADHD"
-        ]
-      },
-      "controlRoutes": [
-        "Measured adjustment"
-      ],
-      "mappingStatus": [
-        "Insufficient specificity for core credit"
-      ]
-    },
-    {
-      "label": "unspecified",
-      "sources": [
-        "https://pubmed.ncbi.nlm.nih.gov/37431475/"
-      ],
-      "analysisUse": {
-        "all": 2,
-        "b4Yes": 0,
-        "b4No": 2,
-        "recordIds": [
-          "37431475_ADHD_pop",
-          "37431475_ADHD_sib"
-        ]
-      },
-      "controlRoutes": [
-        "Propensity-score model input"
-      ],
-      "mappingStatus": [
-        "Insufficient specificity for core credit"
-      ]
-    }
-  ]
+  "unmappedVariables": []
 };
