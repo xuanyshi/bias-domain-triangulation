@@ -14,3 +14,20 @@
 .simple-review .node-button .domain-badge{display:inline-block;font-family:Helvetica,sans-serif;font-size:11px;line-height:1.5;padding:1px 5px;border:1px solid #c3d3c7;border-radius:4px;background:#edf3ee;color:#385b49;vertical-align:baseline}.graph-node text.node-domain-label{font-family:Helvetica,sans-serif;font-size:13px;font-weight:600;fill:#385b49;letter-spacing:.3px}
 
 .variable>small.hint{display:block;font-size:12px;margin:4px 0;line-height:1.5}
+
+/* Domain colors identify constructs; arrow colors continue to show review status. */
+[data-domain="B1"]{--domain-ink:#245ba0;--domain-tint:#edf4fc;--domain-line:#9fbee3}
+[data-domain="B2"]{--domain-ink:#146b61;--domain-tint:#eaf5f1;--domain-line:#90c6b8}
+[data-domain="B3"]{--domain-ink:#925515;--domain-tint:#fff4e4;--domain-line:#dfb982}
+[data-domain="B4"]{--domain-ink:#79439a;--domain-tint:#f6eefb;--domain-line:#c6a5dc}
+.domain-legend{display:flex;gap:7px;margin:0 0 12px;flex-wrap:wrap}
+.domain-legend span,.simple-review .node-button[data-domain] .domain-badge{background:var(--domain-tint,#edf0ef);color:var(--domain-ink,#52655d);border:1px solid var(--domain-line,#c3d3c7);border-radius:4px;font-family:Helvetica,sans-serif;font-size:11px;line-height:1.5;padding:1px 7px;font-weight:600}
+.simple-review .node-button[data-domain^="B"]{border-left:3px solid var(--domain-line)}
+.simple-review .node-button[data-domain^="B"]:hover{background:var(--domain-tint)}
+.simple-review .node-button[data-domain^="B"][aria-current=true]{background:var(--domain-tint);border-color:var(--domain-line);border-left-color:var(--domain-ink)}
+.graph-node[data-domain^="B"] rect{fill:var(--domain-tint);stroke:var(--domain-line)}
+.graph-node[data-domain^="B"].selected rect{stroke:var(--domain-ink)}
+.graph-node[data-domain^="B"] text.node-domain-label{fill:var(--domain-ink)}
+.node-panel[data-domain^="B"] .eyebrow{color:var(--domain-ink)}
+#domain-reviews>.panel[data-domain]{border-top:3px solid var(--domain-ink)}
+#domain-reviews>.panel[data-domain] h2{color:var(--domain-ink)}
