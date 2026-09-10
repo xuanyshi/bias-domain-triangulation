@@ -10,7 +10,8 @@
   function progress(){const count=D.edges.filter(e=>R.complete(state.edges[e.id])).length;const need=D.edges.filter(e=>state.edges[e.id].decision&&!R.complete(state.edges[e.id])).length;$('progress-text').textContent=`箭头 ${count}/${D.edges.length} · 节点 ${D.nodes.filter(n=>R.nodeComplete(state,n.id)).length}/27 · 领域 ${Object.values(state.domains).filter(R.complete).length}/4`+(need?` · ${need} 条待补信息`:'');$('progress').value=count;}
   function el(tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;}
   function incident(id=nodeId){return D.edges.filter(e=>e.from===id||e.to===id);}
-  function visibleEdges(){return incident().filter(e=>!$('pending-only').checked||!R.complete(state.edges[e.id]));}
+  function relatedEdges(){const edges=incident(),main=D.edges.find(e=>e.from===D.nodes[0].id&&e.to===D.nodes[1].id);return main&&!edges.some(e=>e.id===main.id)?[...edges,main]:edges;}
+  function visibleEdges(){return relatedEdges().filter(e=>!$('pending-only').checked||!R.complete(state.edges[e.id]));}
   function status(e){const r=state.edges[e.id];return r.decision? r.decision+(R.complete(r)?'':' · 待补信息'):'未审核';}
   function renderNodes(){const q=$('search').value.trim().toLowerCase(),domain=$('domain').value;const container=$('node-list');container.replaceChildren();const filtered=D.nodes.filter(n=>(!domain||(domain==='other'?!['B1','B2','B3','B4'].includes(n.domain):n.domain===domain))&&(!q||[n.name,n.zh,...n.labels.map(v=>v.label)].join(' ').toLowerCase().includes(q)));
     for(const n of filtered){const b=el('button',undefined,'node-button');b.type='button';b.setAttribute('aria-current',String(n.id===nodeId));b.append(el('span',n.zh));const all=incident(n.id);b.append(el('span',`节点 ${R.nodeComplete(state,n.id)?'已审':'未审'} · ${all.filter(e=>R.complete(state.edges[e.id])).length}/${all.length} 条已审`,'meta'));b.onclick=()=>selectNode(n.id);container.append(b);}if(!filtered.length)container.append(el('p','没有匹配节点。','hint'));
@@ -20,7 +21,7 @@
   function renderEdges(){const es=visibleEdges();if(!es.some(e=>e.id===edgeId))edgeId=es[0]?.id||null;$('edge-select').replaceChildren();for(const e of es){const o=el('option',`${e.id} · ${ns[e.from].zh} → ${ns[e.to].zh} · ${status(e)}`);o.value=e.id;$('edge-select').append(o);}$('edge-select').value=edgeId||'';$('edge-select').disabled=!es.length;$('review-body').hidden=!edgeId;$('empty-edges').hidden=!!edgeId;if(!edgeId)return;const e=D.edges.find(e=>e.id===edgeId),r=state.edges[edgeId];$('edge-statement').replaceChildren(el('small',e.id),el('div',`${ns[e.from].zh} → ${ns[e.to].zh}`),el('small',`${ns[e.from].name} → ${ns[e.to].name}`));document.querySelectorAll('[name=decision]').forEach(x=>{x.checked=x.value===r.decision;});$('reason').value=r.reason;$('edge-change').value=r.change;reasonLabel();$('previous-edge').disabled=D.edges.findIndex(e=>e.id===edgeId)===0;}
   function reasonLabel(){const required=['修改','不确定'].includes(state.edges[edgeId]?.decision);$('reason-label').textContent=required?'理由 / 修改建议（请填写后完成本条）':'理由 / 修改建议（选填）';$('reason').required=required;$('edge-change-row').hidden=state.edges[edgeId]?.decision!=='修改';}
   function updateEdge(){save();reasonLabel();renderNodes();renderGraph();const option=Array.from($('edge-select').options).find(o=>o.value===edgeId);if(option){const e=D.edges.find(e=>e.id===edgeId);option.textContent=`${e.id} · ${ns[e.from].zh} → ${ns[e.to].zh} · ${status(e)}`;}}
-  function goEdge(id){const e=D.edges.find(e=>e.id===id);if(!e)return;if(!incident().some(x=>x.id===id)){nodeId=e.from;}edgeId=id;if($('pending-only').checked&&R.complete(state.edges[id]))$('pending-only').checked=false;renderNodes();renderNode();renderEdges();renderGraph();}
+  function goEdge(id){const e=D.edges.find(e=>e.id===id);if(!e)return;if(!relatedEdges().some(x=>x.id===id)){nodeId=e.from;}edgeId=id;if($('pending-only').checked&&R.complete(state.edges[id]))$('pending-only').checked=false;renderNodes();renderNode();renderEdges();renderGraph();}
   const svgNS='http://www.w3.org/2000/svg';
   function svgEl(tag,attrs={},text){const n=document.createElementNS(svgNS,tag);for(const[k,v]of Object.entries(attrs))n.setAttribute(k,v);if(text!==undefined)n.textContent=text;return n;}
   function clickable(e,fn){e.setAttribute('tabindex','0');e.setAttribute('role','button');e.addEventListener('click',fn);e.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();fn();}});}
@@ -32,26 +33,31 @@
   }
   function renderGraph(){
     const exposure=D.nodes[0].id,outcome=D.nodes[1].id;
-    const es=full?D.edges:incident();
+    const es=full?D.edges:relatedEdges();
     const shown=new Set([exposure,outcome,nodeId,...es.flatMap(e=>[e.from,e.to])]);
     const ids=full?D.nodes.map(n=>n.id):D.nodes.filter(n=>shown.has(n.id)).map(n=>n.id);
     const middle=ids.filter(id=>id!==exposure&&id!==outcome);
     const positions={},width=1140,boxWidth=280,boxHeight=104,rowGap=132;
-    const height=Math.max(310,middle.length*rowGap+136);
+    const height=full?Math.max(310,middle.length*rowGap+136):Math.max(430,middle.length*rowGap+298);
     const selectedMiddle=middle.indexOf(nodeId);
-    const centerY=middle.length===1?154:full&&selectedMiddle>=0?108+selectedMiddle*rowGap:height/2;
+    const centerY=!full?116:middle.length===1?154:selectedMiddle>=0?108+selectedMiddle*rowGap:height/2;
     positions[exposure]={x:170,y:centerY};positions[outcome]={x:970,y:centerY};
-    middle.forEach((id,i)=>positions[id]={x:570,y:middle.length===1?centerY:108+i*rowGap});
-    const s=svgEl('svg',{viewBox:`0 0 ${width} ${height}`,class:full?'full':'',role:'group','aria-label':full?'完整 DAG：暴露在左、相关变量居中、结局在右':'节点关联图：暴露在左、相关变量居中、结局在右'});const defs=svgEl('defs');const colors={'保留':'#21644a','修改':'#9a591d','不确定':'#9a591d','超出专长':'#536e9a','':'#98a89e'};for(const color of new Set(Object.values(colors))){const marker=svgEl('marker',{id:'arrow'+color.slice(1),viewBox:'0 0 10 10',refX:'9',refY:'5',markerWidth:'7',markerHeight:'7',orient:'auto-start-reverse',markerUnits:'userSpaceOnUse'});marker.append(svgEl('path',{d:'M 0 0 L 10 5 L 0 10 z',fill:color}));defs.append(marker);}s.append(defs);
+    middle.forEach((id,i)=>positions[id]={x:570,y:full?(middle.length===1?centerY:108+i*rowGap):330+i*rowGap});
+    const s=svgEl('svg',{viewBox:`0 0 ${width} ${height}`,class:full?'full':'',role:'group','aria-label':full?'完整 DAG：暴露在左、相关变量居中、结局在右':'三角关联图：暴露在左上，结局在右上，相关变量位于下方'});const defs=svgEl('defs');const colors={'保留':'#21644a','修改':'#9a591d','不确定':'#9a591d','超出专长':'#536e9a','':'#98a89e'};for(const color of new Set(Object.values(colors))){const marker=svgEl('marker',{id:'arrow'+color.slice(1),viewBox:'0 0 10 10',refX:'9',refY:'5',markerWidth:'7',markerHeight:'7',orient:'auto-start-reverse',markerUnits:'userSpaceOnUse'});marker.append(svgEl('path',{d:'M 0 0 L 10 5 L 0 10 z',fill:color}));defs.append(marker);}s.append(defs);
     for(const [x,label,en] of [[170,'暴露','EXPOSURE'],[570,'相关变量','RELATED VARIABLES'],[970,'结局','OUTCOME']]){
-      s.append(svgEl('text',{x,y:27,'text-anchor':'middle',class:'lane-heading'},label),svgEl('text',{x,y:46,'text-anchor':'middle',class:'lane-caption'},en));
+      const headingY=!full&&x===570?248:27;
+      s.append(svgEl('text',{x,y:headingY,'text-anchor':'middle',class:'lane-heading'},label),svgEl('text',{x,y:headingY+19,'text-anchor':'middle',class:'lane-caption'},en));
     }
-    s.append(svgEl('rect',{x:410,y:64,width:320,height:height-78,rx:12,class:'middle-lane'}));
+    if(full)s.append(svgEl('rect',{x:410,y:64,width:320,height:height-78,rx:12,class:'middle-lane'}));
     for(const e of es){
       const a=positions[e.from],b=positions[e.to];
       const sign=b.x>a.x?1:-1,x1=a.x+sign*boxWidth/2,y1=a.y,x2=b.x-sign*boxWidth/2,y2=b.y;
       let d,labelX=(x1+x2)/2,labelY=(y1+y2)/2-10;
-      if(e.from===exposure&&e.to===outcome){
+      if(!full){
+        const anchor=(p,q)=>{const dx=q.x-p.x,dy=q.y-p.y,t=Math.min((boxWidth/2)/Math.abs(dx||0.0001),(boxHeight/2)/Math.abs(dy||0.0001));return {x:p.x+dx*t,y:p.y+dy*t};};
+        const start=anchor(a,b),end=anchor(b,a);
+        d=`M${start.x},${start.y} L${end.x},${end.y}`;labelX=(start.x+end.x)/2;labelY=(start.y+end.y)/2-12;
+      }else if(e.from===exposure&&e.to===outcome){
         const bypassY=height-24;
         d=`M${a.x},${a.y+boxHeight/2} C${a.x},${bypassY} ${a.x},${bypassY} ${a.x+80},${bypassY} L${b.x-80},${bypassY} C${b.x},${bypassY} ${b.x},${bypassY} ${b.x},${b.y+boxHeight/2}`;
         labelX=570;labelY=bypassY-10;
@@ -71,7 +77,7 @@
     const graphView=(full?'full:':'focus:')+nodeId,previousScroll=$('graph').scrollTop;
     $('graph').replaceChildren(s);
     if(graphView!==lastGraphView){lastGraphView=graphView;requestAnimationFrame(()=>{if(lastGraphView===graphView)$('graph').scrollTop=Math.max(0,centerY*s.getBoundingClientRect().width/width-$('graph').clientHeight/2);});}else $('graph').scrollTop=previousScroll;
-$('graph-title').textContent=full?'完整 DAG':'当前节点的关联图';$('graph-caption').textContent=full?'27 个节点 · 50 条箭头；箭头方向沿用原图':'显示所选节点关联的 '+es.length+' 条箭头；中间位置仅用于排版，不代表中介作用';$('focus-view').setAttribute('aria-pressed',String(!full));$('full-view').setAttribute('aria-pressed',String(full));
+$('graph-title').textContent=full?'完整 DAG':'当前节点的三角关联图';$('graph-caption').textContent=full?'27 个节点 · 50 条箭头；箭头方向沿用原图':'暴露 → 结局主路径与所选节点的原有连接，共 '+es.length+' 条箭头；方向沿用原图';$('focus-view').setAttribute('aria-pressed',String(!full));$('full-view').setAttribute('aria-pressed',String(full));
   }
   function download(content,type,ext){const url=URL.createObjectURL(new Blob([content],{type}));const a=el('a');a.href=url;a.download=`DAG-review-${D.version}-${new Date().toISOString().slice(0,10)}.${ext}`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
   $('export-json').onclick=()=>{if(!state.reviewer.trim()){notice('请先填写审核人 / 稳定编号，便于研究组区分不同专家及轮次。');$('reviewer').focus();return;}download(JSON.stringify(R.exported(state,D),null,2),'application/json','json');notice('已导出完整记录，可重新导入继续审核。请将下载文件发回研究组；未审核项保留为空。');};
