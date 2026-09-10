@@ -42,3 +42,7 @@ Run logic/data tests: `node --test docs/dag-review/review-core.test.cjs`. Browse
 ## Dedicated overview
 
 `overview.html` provides a viewport-sized, zoomable and pannable 27-node/50-edge overview. Selecting a node highlights its incident edges; selecting an edge provides a direct hash link into the review page. The review page itself renders at most three edges. Exposure and outcome entries review their definitions and the main exposure–outcome edge; other relationships remain accessible through their associated nodes. No baseline edges are removed.
+
+## Simplified expert interface
+
+The default view shows variable selection, the focused triangle, four decision options and next/export actions. Reasons expand for modification or uncertainty. Node-definition review, domain rules and proposals live under Supplementary review; import/export variants, expertise and team links live under More. Completion prompts still distinguish the 50 arrows from outstanding node/domain reviews. Existing storage keys and review fields are unchanged.
