@@ -12,3 +12,5 @@
 .simple-review .export-readiness{max-width:1320px;margin:0 auto;padding:0 28px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--muted)}.export-readiness button{font-size:14px;padding:6px 12px;min-height:34px}@media(max-width:700px){.simple-review .export-readiness{padding:0 16px 14px}}
 
 .simple-review .node-button .domain-badge{display:inline-block;font-family:Helvetica,sans-serif;font-size:11px;line-height:1.5;padding:1px 5px;border:1px solid #c3d3c7;border-radius:4px;background:#edf3ee;color:#385b49;vertical-align:baseline}.graph-node text.node-domain-label{font-family:Helvetica,sans-serif;font-size:13px;font-weight:600;fill:#385b49;letter-spacing:.3px}
+
+.variable>small.hint{display:block;font-size:12px;margin:4px 0;line-height:1.5}
