@@ -1,0 +1,110 @@
+{
+  "version": "DAG132-decision-tree-v3-C13-timing-20261009",
+  "graph_version": "DAG132-v1-20261007",
+  "target": "X to Y total effect",
+  "nodes": 19,
+  "edges": 132,
+  "fixed_exclusion_nodes": [
+    "C14",
+    "C16",
+    "C17"
+  ],
+  "domains": {
+    "B1": {
+      "required": [
+        "C01",
+        "C05"
+      ],
+      "additional": []
+    },
+    "B2": {
+      "required": [
+        "C06",
+        "C07",
+        "C10",
+        "C11"
+      ],
+      "additional": []
+    },
+    "B3": {
+      "required": [
+        "C02",
+        "C03",
+        "C04"
+      ],
+      "additional": [
+        "C09",
+        "C12"
+      ]
+    }
+  },
+  "grade_levels": [
+    "Weak",
+    "Moderate",
+    "Strong"
+  ],
+  "accepted_minimal_sets": {
+    "A": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C10",
+      "C11"
+    ],
+    "B": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C09",
+      "C11",
+      "C12",
+      "C13"
+    ]
+  },
+  "common_core": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "C11"
+  ],
+  "set_specific_requirements": {
+    "A": [
+      "C10"
+    ],
+    "B": [
+      "C09",
+      "C12",
+      "C13"
+    ]
+  },
+  "overall_rule": "After B4: Strong if the covered construct set contains all members of A or all members of B; otherwise Weak if any reference domain is Weak; otherwise Moderate.",
+  "domain_rule": "B1-B3 remain fixed-reference domain coverage diagnostics under set A. Domain grades do not substitute for the explicit whole-set test. A model meeting set B may be Overall Strong with reference B2 Moderate.",
+  "conditioning_definition": "Actual adjustment, stratification, matching, weighting or sample restriction on the defined construct; measurement or discussion alone does not trigger exclusion.",
+  "b4_pass_meaning": "The model does not condition on C14/C16/C17 under the recorded mapping. Passing B4 does not establish sufficient adjustment or absence of collider or other bias.",
+  "alternative_set_policy": "Accept complete coverage of any enumerated graph-valid minimal adjustment set; both sets must be checked in full. Do not combine incomplete fragments or mix models, outcomes, or time windows.",
+  "scope": "Model-level reported construct coverage, conditional on the working DAG; not overall risk of bias or proof that residual confounding is absent.",
+  "superset_scope": "This is minimum-set construct coverage under the adopted B4 screen. It does not assert that every larger actual adjustment set is graph-valid or bias-free.",
+  "C13_coverage_rule": {
+    "eligible": "A current-pregnancy obstetric condition documented as present before the start of the selected exposure window and actually controlled in the selected model. It must represent the antecedent component assumed by the graph, without being caused by earlier target exposure.",
+    "ineligible": "Gestational age at birth, preterm birth, birthweight, small-for-gestational-age status, delivery or labour mode, birth trauma, Apgar scores and other delivery/neonatal outcomes do not establish antecedent C13 coverage.",
+    "timing_unresolved": "Pregnancy-wide diagnoses of gestational diabetes, gestational hypertension, preeclampsia or other complications without onset ordering are Unclear for C13 coverage. Actual reported controls remain recorded. Unclear is an input-evidence status, not a fourth grade.",
+    "exposure_anchor": "Use the start of the exposure window represented by the selected contrast; specimen collection at delivery does not by itself establish the beginning of prenatal exposure.",
+    "output_rule": "Recalculate the tree under all admissible C13 Yes/No assignments. Assign a grade only if every assignment gives the same grade. The C14/C16/C17 exclusion rule is unchanged.",
+    "graph_scope": "This qualification does not revise the recorded edge judgments, 132-edge topology or formal adjustment-set enumeration. Set B remains conditional on an antecedent interpretation of C13; the broad construct label is not a jointly measured baseline variable."
+  },
+  "yes_definition": "A representative measurement or qualifying design component explicitly controlled in the selected model, meeting construct and timing boundaries.",
+  "no_definition": "No qualifying coverage after inspection of complete model information. Missing reporting alone is not No.",
+  "uncertainty_policy": "Assign a grade only when all admissible Yes/No completions yield the same result. Otherwise retain pending verification; this is not a fourth grade."
+}

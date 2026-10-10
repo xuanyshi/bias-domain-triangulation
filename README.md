@@ -10,7 +10,9 @@ A step-by-step guide to applying the bias-domain triangulation framework to any 
 
 **https://xuanyshi.github.io/bias-domain-triangulation/**
 
-The same content is in [`docs/`](docs/) as HTML, Markdown, and Word. It mirrors the reusable-protocol section of the paper's Supplementary Information; the version of record is the journal article and its Supplementary Information.
+The public tutorial was updated on **10 October 2026** to follow the current ten-step protocol. The same tutorial is available in [`docs/`](docs/) as HTML, Markdown, and Word, with a [construct dictionary](docs/assets/construct_dictionary.json), [132-edge DAG](docs/assets/DAG132.dagitty), [grading rules](docs/assets/decision_rule.json), and [version manifest](docs/assets/tutorial_manifest.json). Overall Strong requires complete coverage of either adjustment set within the same model; set B requires qualifying pre-exposure C13 coverage. Grades describe reported construct coverage conditional on the working DAG.
+
+**Version boundary:** the analysis files and reproduction commands below describe the earlier 24-article/39-estimate release. They do not reproduce the current DAG132 application (38 retained estimates from 23 articles). The separate expert-review interface also retains its historical graph. The tutorial update does not replace those analysis artifacts. Current graph-based mapping is AI assisted and has not undergone independent human adjudication.
 
 ## Systematic review search strategy
 
@@ -22,7 +24,8 @@ The full electronic search strategies (MEDLINE via PubMed and Embase, searched f
 ├── docs/                          # Reusable-protocol tutorial -> GitHub Pages
 │   ├── index.html                          # Web tutorial (hosted at the URL above)
 │   ├── Supplementary_Protocol_bias_domain_triangulation.md    # Markdown source
-│   └── Supplementary_Protocol_bias_domain_triangulation.docx  # Word version
+│   ├── Supplementary_Protocol_bias_domain_triangulation.docx  # Word version
+│   └── assets/                              # Current tutorial graph, dictionary, rules and manifest
 │
 ├── data/                          # All input data (no individual-level participant data)
 │   ├── SourceData_meta_analysis_20260727_B1Strong.xlsx

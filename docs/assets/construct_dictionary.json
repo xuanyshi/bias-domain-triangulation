@@ -1,0 +1,108 @@
+{
+  "version": "2026-10-10",
+  "source": "Current supplementary Table S1a",
+  "constructs": [
+    {
+      "node_and_construct": "C01\nFamilial and genetic background",
+      "definition_and_components": "Inherited parental or offspring liability and stable shared familial background.\nIncludes: Shared family background; parental and offspring inherited liability; drug-metabolism genotype as a candidate mechanistic component.",
+      "timing_and_boundaries": "Antecedent family background; genotype established by conception. A sibling comparison is a control strategy, not a measured node. Later household changes belong elsewhere.",
+      "grading_role": "B1 required; sets A and B"
+    },
+    {
+      "node_and_construct": "C02\nSociodemographic and family characteristics",
+      "definition_and_components": "Maternal demographic and family characteristics, with child sex treated as a distinct component.\nIncludes: Maternal age; household or partner structure; social-group and migration context; child sex.",
+      "timing_and_boundaries": "Pregnancy-relevant antecedent characteristics. Child sex alone does not represent maternal or family context. Effects involving one component are not assumed for all components.",
+      "grading_role": "B3 required; sets A and B"
+    },
+    {
+      "node_and_construct": "C03\nSocioeconomic position",
+      "definition_and_components": "Socioeconomic resources and attainment established before the target exposure.\nIncludes: Completed education; material resources; income; employment.",
+      "timing_and_boundaries": "Use pre-exposure measures. Post-treatment or post-child-outcome changes fall outside this definition.",
+      "grading_role": "B3 required; sets A and B"
+    },
+    {
+      "node_and_construct": "C04\nGeographical and calendar context",
+      "definition_and_components": "Geographical setting and calendar context relevant to the target pregnancy.\nIncludes: Pre-exposure residence or geographical context; pregnancy or exposure calendar period.",
+      "timing_and_boundaries": "Distinguish residence from healthcare-site choice and sample composition. Calendar time is an index; childhood residence is not substituted for pregnancy context.",
+      "grading_role": "B3 required; sets A and B"
+    },
+    {
+      "node_and_construct": "C05\nEstablished maternal neuropsychiatric health",
+      "definition_and_components": "Established maternal neurodevelopmental or psychiatric conditions and history.\nIncludes: Maternal neurodevelopmental background; maternal psychiatric-health background.",
+      "timing_and_boundaries": "Conditions precede the medication use they may influence. Excludes reactions to the child's outcome and transient post-dose symptoms; onset and recording dates may differ.",
+      "grading_role": "B1 required; sets A and B"
+    },
+    {
+      "node_and_construct": "C06\nMaternal physical and metabolic health",
+      "definition_and_components": "Pre-existing maternal physical or metabolic disease and antecedent adiposity.\nIncludes: Chronic physical or metabolic conditions; pre-exposure BMI or adiposity.",
+      "timing_and_boundaries": "Disease or adiposity precedes target exposure. Current-pregnancy complications belong to C13; newly drug-induced disease is outside this established-health construct.",
+      "grading_role": "B2 required; sets A and B"
+    },
+    {
+      "node_and_construct": "C07\nMaternal indications and symptoms",
+      "definition_and_components": "Maternal symptoms and indications present before target medication use.\nIncludes: Infection; fever; pain; headache or migraine.",
+      "timing_and_boundaries": "Specify the indication and its timing. Excludes symptom relief and new symptoms after exposure; ordering relative to healthcare use or other treatment is not universal.",
+      "grading_role": "B2 required; sets A and B"
+    },
+    {
+      "node_and_construct": "C08\nReproductive and prior obstetric history",
+      "definition_and_components": "Completed reproductive and obstetric history before the target pregnancy.\nIncludes: Parity; previous pregnancies; prior adverse obstetric outcomes.",
+      "timing_and_boundaries": "Excludes complications and events of the current pregnancy. Historical circumstances are distinguished from current age and household measures.",
+      "grading_role": "Not graded in B1–B3; not in either minimal set"
+    },
+    {
+      "node_and_construct": "C09\nPsychosocial conditions and health behaviors",
+      "definition_and_components": "Maternal psychosocial conditions and health behaviours preceding target exposure.\nIncludes: Smoking; alcohol use; other substance use; psychosocial stress.",
+      "timing_and_boundaries": "Excludes post-exposure behaviour changes and reactions to the child's outcome. Healthcare literacy and general care preferences are not interchangeable with these components.",
+      "grading_role": "Additional B3 coverage; required in set B"
+    },
+    {
+      "node_and_construct": "C10\nMaternal healthcare seeking and use",
+      "definition_and_components": "Actual maternal healthcare seeking and contacts before target exposure.\nIncludes: Preventive and symptom-driven maternal contacts; pregnancy-relevant prior healthcare use.",
+      "timing_and_boundaries": "Excludes post-exposure and child diagnostic contacts. Access, income, health literacy and latent care propensity are distinct. Pregnancy-wide utilisation alone does not establish pre-exposure coverage.",
+      "grading_role": "B2 required; set A"
+    },
+    {
+      "node_and_construct": "C11\nOther medications and treatments",
+      "definition_and_components": "Other medications and treatments used before target exposure.\nIncludes: Other drug classes; other treatments, with the specific class or treatment identified.",
+      "timing_and_boundaries": "Excludes treatments initiated after target exposure or the child's diagnosis. Treatment episodes must remain temporally consistent; no universal order relative to C07 or C10 is assumed.",
+      "grading_role": "B2 required; sets A and B"
+    },
+    {
+      "node_and_construct": "C12\nEnvironmental and occupational exposures",
+      "definition_and_components": "Actual environmental or occupational agents relevant to maternal exposure.\nIncludes: Pollutants; lead; pesticides; relevant physical agents; other specified environmental or occupational exposures.",
+      "timing_and_boundaries": "Maternal preconception or prenatal exposure history. Job class, residence, income and workplace culture alone do not identify an actual agent. Postnatal child exposure is separate.",
+      "grading_role": "Additional B3 coverage; required in set B"
+    },
+    {
+      "node_and_construct": "C13\nCurrent-pregnancy obstetric and perinatal health",
+      "definition_and_components": "Obstetric and perinatal conditions of the current pregnancy, comprising components with different temporal positions.\nIncludes: Pregnancy complications before or after exposure; gestational age at delivery; birth weight; delivery mode.",
+      "timing_and_boundaries": "For set B, require a controlled obstetric condition documented before the selected exposure window and compatible with the graph’s antecedent component. Delivery/neonatal outcomes do not qualify. Pregnancy-wide complications without onset ordering remain unresolved.",
+      "grading_role": "Not graded in B1–B3. Set B requires confirmed pre-exposure C13 coverage."
+    },
+    {
+      "node_and_construct": "C14\nInfant feeding and breastfeeding",
+      "definition_and_components": "Actual infant feeding and breastfeeding practices during a specified early postnatal period.\nIncludes: Infant feeding status; breastfeeding in the same defined infant window; relevant duration or change.",
+      "timing_and_boundaries": "After delivery and before the selected later endpoint. May overlap early health and developmental manifestations; no universal order relative to C15 or C16 is assumed.",
+      "grading_role": "B4 exclusion when actually conditioned on"
+    },
+    {
+      "node_and_construct": "C15\nEarly childhood physical and immune health",
+      "definition_and_components": "Early childhood physical illness, immune-related conditions and relevant biological states.\nIncludes: Physical-health events; infection; atopic or immune-health measures; microbiome-related measures as a distinct component.",
+      "timing_and_boundaries": "After birth and before the selected later endpoint. Distinguish actual health from detection or healthcare use; minor infections are not interchangeable with severe CNS injury.",
+      "grading_role": "Not graded; no automatic exclusion"
+    },
+    {
+      "node_and_construct": "C16\nEarly neurodevelopmental and regulatory phenotypes",
+      "definition_and_components": "Early developmental or regulatory manifestations distinct from the selected later outcome.\nIncludes: Early neurodevelopmental manifestations; early regulatory or behavioural phenotypes.",
+      "timing_and_boundaries": "After birth and before a separate later endpoint. If the measure is itself the selected endpoint, it belongs to Y. Symptom onset and recognition may differ.",
+      "grading_role": "B4 exclusion when actually conditioned on"
+    },
+    {
+      "node_and_construct": "C17\nBiological and pharmacological response processes",
+      "definition_and_components": "Candidate biological or pharmacological responses following target prenatal exposure.\nIncludes: Oxidative response; hormonal signalling; epigenetic response; placental-function response.",
+      "timing_and_boundaries": "Post-exposure responses during pregnancy. Excludes baseline biological states and effects on later treatment episodes. Components are hypothetical, non-exhaustive mechanisms requiring supporting evidence.",
+      "grading_role": "B4 exclusion when actually conditioned on"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "tutorial_version": "2026-10-10",
+  "updated": "2026-10-10",
+  "source_manuscript_version": "DAG132-S2-DAGitty-20261010",
+  "graph_version": "DAG132-v1-20261007",
+  "decision_rule_version": "DAG132-decision-tree-v3-C13-timing-20261009",
+  "source_manuscript_sha256": "084dd0584e6525226c33eb77cd971abc537e3b428276d2c34a23aea8f6cf6785",
+  "source_supplement_sha256": "ee1e129a5f5624d8985fecd6fd03b4c18bb786c4ada5ddfbf77ad4ada5bf0298",
+  "source_rule_sha256": "ade9d7028daf0f41ecf03bdec27344c2e7ebe6106034090db1e1287122ea01ec",
+  "graph_sha256": "44aa589481c277a77419df7cbeb4eaf4c96f974b8642f192707eee1b6e2ae8a3",
+  "scope": "Public methods tutorial; historical repository analyses and expert-review interface retain separate version scope.",
+  "files": {
+    "index.html": "dcfc8ff9d7718953f3cf625c5bc86ca2cecdcb7f6db4bcb9e21335186ff0054d",
+    "Supplementary_Protocol_bias_domain_triangulation.md": "d7687e5560d900c66043be98453ab3db9f7d5f4e86707fceac2ac794a6d6f7ee",
+    "Supplementary_Protocol_bias_domain_triangulation.docx": "7d73287584417bba9d87c1aeeab3380b7ab274e68857106fb7f69f2e9ea2bc64",
+    "assets/decision_rule.json": "be5aef10942e886b50785a5caa980317128d089613546e582c59ecfea32120f9",
+    "assets/construct_dictionary.json": "e48a33df2ffb172431c3bbb261faa0de2778c4dc99bc6b51d086d1b78a7074fc",
+    "assets/DAG132.dagitty": "44aa589481c277a77419df7cbeb4eaf4c96f974b8642f192707eee1b6e2ae8a3"
+  }
+}
