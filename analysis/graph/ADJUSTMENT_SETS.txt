@@ -1,0 +1,27 @@
+DAG and adjustment sets
+
+The DAG contains 19 nodes (X, Y and C01-C17) and 132 directed edges.
+The target is the total effect of prenatal acetaminophen use (X) on the specified
+recorded offspring ASD or ADHD outcome (Y), interpreted separately by outcome.
+
+Set A: C01, C02, C03, C04, C05, C06, C07, C10, C11.
+Set B: C01, C02, C03, C04, C05, C06, C07, C09, C11, C12, C13.
+Overall Strong requires complete coverage of either set in the same model,
+outcome and exposure window. Set B requires a qualifying pre-exposure C13
+component. B1-B3 retain set A as their domain reference.
+
+DAGitty 0.3.4 enumerated both sets. Independent d-separation and single-member
+deletion checks confirmed sufficiency and minimality for the supplied graph.
+These graph properties depend on the stated causal assumptions and construct
+boundaries; representative measurements may incompletely capture a construct.
+
+Edge integration
+Of 342 assessed directions, 135 received Pass. Omitting C12 -> C08,
+C14 -> C15 and C17 -> C13 resolved ten directed cycles, yielding 132 edges.
+The three original Pass decisions are recorded separately from DAG inclusion.
+X -> Y represents the focal research hypothesis.
+
+Sources
+Supplementary_Table_S10_Edge_Judgments.xlsx records directional judgments.
+DAG132_v1_edge_provenance.json provides the author rationales in English.
+https://search.r-project.org/CRAN/refmans/dagitty/html/adjustmentSets.html

@@ -1,0 +1,62 @@
+[
+  {
+    "article_id": "38592388",
+    "study": "Ahlqvist 2024",
+    "contrast": "Any prenatal use versus none",
+    "sample_comparison": "Full cohort versus eligible full siblings; sample membership differs.",
+    "model_changes": "Family-stratified Cox; covariates that do not vary within families are not separately estimated.",
+    "source_locator": "Figure 3 and Methods; main-text reference 11.",
+    "doi": "10.1001/jama.2024.3172",
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/38592388/"
+  },
+  {
+    "article_id": "37431475",
+    "study": "Gustavson 2021",
+    "contrast": "At least 29 days versus no use",
+    "sample_comparison": "Both selected models use the sibling sample.",
+    "model_changes": "Model 2 includes propensity scores, education and parity. Model 3 includes propensity scores and family-mean exposure; education and parity are omitted.",
+    "source_locator": "Table 2, Models 2 and 3; main-text reference 36.",
+    "doi": "10.1002/jcv2.12020",
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/37431475/"
+  },
+  {
+    "article_id": "41801232",
+    "study": "Lee 2026",
+    "contrast": "At least two prescriptions versus zero or one",
+    "sample_comparison": "Full cohort versus sibling-matched cohort; sample membership differs.",
+    "model_changes": "Family-stratified Cox. The exposure contrast and diagnosis are matched within each pair.",
+    "source_locator": "Methods and primary/sibling estimates; main-text reference 42.",
+    "doi": "",
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/41801232/"
+  },
+  {
+    "article_id": "42371637",
+    "study": "Luo 2026",
+    "contrast": "Any prenatal dispensing versus none",
+    "sample_comparison": "Full singleton cohort versus sibling-matched cohort; sample membership differs.",
+    "model_changes": "Family-stratified Cox with cluster-robust standard errors. Detailed Supplement 1 covariates remain subject to the source qualification in Table S3.",
+    "source_locator": "Methods, Sibling-Matched Analysis; main-text reference 44.",
+    "doi": "10.1001/jamainternmed.2026.2215",
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/42371637/"
+  },
+  {
+    "article_id": "40898607",
+    "study": "Okubo 2025",
+    "contrast": "Any prenatal dispensing versus none",
+    "sample_comparison": "Propensity-score-matched cohort versus exposure-discordant siblings; sample membership differs.",
+    "model_changes": "Propensity-score matching is replaced by family-stratified Cox with selected covariates. Current mapping uses Appendix S1, Supplemental Methods 2.4–2.5 and Tables S4–S6.",
+    "source_locator": "Results, Table 2 and Appendix S1; main-text reference 39.",
+    "doi": "10.1111/ppe.70071",
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/40898607/"
+  },
+  {
+    "article_id": "41973453",
+    "study": "Prahm 2026",
+    "contrast": "Any prenatal prescription versus none",
+    "sample_comparison": "Full cohort versus exposure-discordant sibling cohort; sample membership differs.",
+    "model_changes": "Maternal-ID clustering is reported; family strata or fixed effects are not documented. The sibling model omits fibromyalgia.",
+    "source_locator": "Methods and Figure footnote d; main-text reference 43.",
+    "doi": "10.1001/jamapediatrics.2026.0646",
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/41973453/"
+  }
+]

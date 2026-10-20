@@ -1,0 +1,64 @@
+{
+  "graph_version": "DAG132-v1-20261007",
+  "exposure": "X",
+  "outcome": "Y",
+  "effect": "total",
+  "selected_minimal_sufficient_adjustment_set": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "C10",
+    "C11"
+  ],
+  "selected_construct_names": {
+    "C01": "Familial and genetic background",
+    "C02": "Sociodemographic and family characteristics",
+    "C03": "Socioeconomic position",
+    "C04": "Geographical and calendar context",
+    "C05": "Established maternal neuropsychiatric health",
+    "C06": "Maternal physical and metabolic health",
+    "C07": "Maternal indications and symptoms",
+    "C10": "Maternal healthcare seeking and use",
+    "C11": "Other medications and treatments"
+  },
+  "selection_reason": "Set A is the nine-construct reference set for domain grading. Overall Strong accepts complete set A or set B; C13 in set B requires qualifying pre-exposure timing.",
+  "all_global_minimal_adjustment_sets": {
+    "1": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C09",
+      "C11",
+      "C12",
+      "C13"
+    ],
+    "2": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C10",
+      "C11"
+    ]
+  },
+  "number_of_global_minimal_sets": 2,
+  "verification": {
+    "dagitty_version": "0.3.4",
+    "is_acyclic": true,
+    "selected_set_sufficient": true,
+    "removing_any_selected_member_makes_set_insufficient": true,
+    "independent_d_separation_check": true
+  },
+  "scope": "Graph-based construct-level sufficiency conditional on the adopted DAG. Proxy variables and study-specific measurement are not evaluated here."
+}

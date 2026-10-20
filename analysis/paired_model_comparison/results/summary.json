@@ -1,0 +1,154 @@
+{
+  "all": {
+    "analysis": "all",
+    "label": "All displayed pairs",
+    "articles": 6,
+    "pairs": 10,
+    "lower": 9,
+    "closer": 8,
+    "median_rhr": 0.869314713064713,
+    "minimum_rhr": 0.5247524752475248,
+    "maximum_rhr": 1.058252427184466
+  },
+  "documented": {
+    "analysis": "documented",
+    "label": "Documented within-family control",
+    "articles": 5,
+    "pairs": 9,
+    "lower": 9,
+    "closer": 8,
+    "median_rhr": 0.8547008547008548,
+    "minimum_rhr": 0.5247524752475248,
+    "maximum_rhr": 0.9333333333333332
+  },
+  "subsets": [
+    {
+      "analysis": "ADHD",
+      "label": "Documented within-family control, ADHD",
+      "articles": 5,
+      "pairs": 5,
+      "lower": 5,
+      "closer": 5,
+      "median_rhr": 0.8211382113821138,
+      "minimum_rhr": 0.5247524752475248,
+      "maximum_rhr": 0.9158878504672896
+    },
+    {
+      "analysis": "ASD",
+      "label": "Documented within-family control, ASD",
+      "articles": 4,
+      "pairs": 4,
+      "lower": 4,
+      "closer": 3,
+      "median_rhr": 0.8896145782938236,
+      "minimum_rhr": 0.8018867924528301,
+      "maximum_rhr": 0.9333333333333332
+    },
+    {
+      "analysis": "same_other_grades",
+      "label": "Unchanged B2 and B3 grades",
+      "articles": 4,
+      "pairs": 8,
+      "lower": 8,
+      "closer": 7,
+      "median_rhr": 0.869314713064713,
+      "minimum_rhr": 0.7049180327868853,
+      "maximum_rhr": 0.9333333333333332
+    },
+    {
+      "analysis": "exclude_Luo",
+      "label": "Exclude Luo source-qualified models",
+      "articles": 4,
+      "pairs": 7,
+      "lower": 7,
+      "closer": 6,
+      "median_rhr": 0.8839285714285713,
+      "minimum_rhr": 0.5247524752475248,
+      "maximum_rhr": 0.9333333333333332
+    },
+    {
+      "analysis": "any_use",
+      "label": "Any-use or dispensing versus none",
+      "articles": 3,
+      "pairs": 6,
+      "lower": 6,
+      "closer": 5,
+      "median_rhr": 0.8379195330414844,
+      "minimum_rhr": 0.7049180327868853,
+      "maximum_rhr": 0.9333333333333332
+    }
+  ],
+  "leave_one_article_out": [
+    {
+      "analysis": "omit_38592388",
+      "label": "Omit Ahlqvist 2024",
+      "articles": 4,
+      "pairs": 7,
+      "lower": 7,
+      "closer": 6,
+      "median_rhr": 0.8211382113821138,
+      "minimum_rhr": 0.5247524752475248,
+      "maximum_rhr": 0.9245283018867924
+    },
+    {
+      "analysis": "omit_37431475",
+      "label": "Omit Gustavson 2021",
+      "articles": 4,
+      "pairs": 8,
+      "lower": 8,
+      "closer": 7,
+      "median_rhr": 0.869314713064713,
+      "minimum_rhr": 0.7049180327868853,
+      "maximum_rhr": 0.9333333333333332
+    },
+    {
+      "analysis": "omit_41801232",
+      "label": "Omit Lee 2026",
+      "articles": 4,
+      "pairs": 7,
+      "lower": 7,
+      "closer": 6,
+      "median_rhr": 0.8211382113821138,
+      "minimum_rhr": 0.5247524752475248,
+      "maximum_rhr": 0.9333333333333332
+    },
+    {
+      "analysis": "omit_42371637",
+      "label": "Omit Luo 2026",
+      "articles": 4,
+      "pairs": 7,
+      "lower": 7,
+      "closer": 6,
+      "median_rhr": 0.8839285714285713,
+      "minimum_rhr": 0.5247524752475248,
+      "maximum_rhr": 0.9333333333333332
+    },
+    {
+      "analysis": "omit_40898607",
+      "label": "Omit Okubo 2025",
+      "articles": 4,
+      "pairs": 7,
+      "lower": 7,
+      "closer": 7,
+      "median_rhr": 0.8839285714285713,
+      "minimum_rhr": 0.5247524752475248,
+      "maximum_rhr": 0.9333333333333332
+    }
+  ],
+  "Okubo_Table2_alternative": {
+    "analysis": "Okubo_Table2",
+    "label": "Okubo ASD Table 2 alternative, population HR 1.07",
+    "articles": 6,
+    "pairs": 10,
+    "lower": 9,
+    "closer": 8,
+    "median_rhr": 0.869314713064713,
+    "minimum_rhr": 0.5247524752475248,
+    "maximum_rhr": 1.058252427184466
+  },
+  "difference_confidence_intervals": null,
+  "difference_p_values": null,
+  "pooled_model_change": null,
+  "reason": "Within-pair sampling covariance is unavailable. Multiple outcomes are dependent. No covariance is assumed and no significance test or pooled model change is estimated.",
+  "interpretation": "Descriptive within-publication model comparison; no quantified bias removal and no validation of the full DAG or grading framework."
+}

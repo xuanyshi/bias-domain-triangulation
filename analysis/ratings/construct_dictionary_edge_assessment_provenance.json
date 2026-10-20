@@ -1,0 +1,220 @@
+{
+  "status": "Original edge-assessment dictionary retained for provenance; the operational grading boundary for C02 is recorded in full_ratings.json and Table S1a.",
+  "constructs": [
+    {
+      "id": "C01",
+      "name": "Familial and genetic background",
+      "scope": "Inherited parental/offspring liability and stable shared familial background.",
+      "coarse_time": "Parental inherited background precedes pregnancy; offspring genotype is established at conception. Stable family influences are antecedent.",
+      "boundaries": "Distinguish parental from offspring genotype when discussing maternal history. Sibling comparison is an analytic design, not the node. This node is not all later household changes or C02/C03 social position.",
+      "original_components": [
+        "Stable shared familial background",
+        "Inherited parental and offspring genetic background",
+        "Drug-metabolism genotype as a candidate mechanistic component"
+      ],
+      "construct_label": "Familial and genetic background"
+    },
+    {
+      "id": "C02",
+      "name": "Sociodemographic and family characteristics",
+      "scope": "Maternal age, household/partner structure, social-group/migration context, and child sex as explicitly distinct components.",
+      "coarse_time": "Maternal demographic history and pregnancy-relevant family context; child sex established early in development. Components have different histories.",
+      "boundaries": "Restore the original component dictionary. Name the component supporting a direction. Current maternal age cannot act backward on completed reproductive history. An incoming arrow to household state does not cause child sex.",
+      "original_components": [
+        "Maternal age",
+        "Pre-use household and partner structure",
+        "Social group and migration context",
+        "Child sex as a distinct offspring component"
+      ],
+      "construct_label": "Sociodemographic and family characteristics"
+    },
+    {
+      "id": "C03",
+      "name": "Socioeconomic position",
+      "scope": "Education completed and material resources/income/employment established before target X. Distinguish components, without moving between their past and future versions.",
+      "coarse_time": "Fixed relative to the selected prenatal exposure window as specified in scope; no pair-specific time changes.",
+      "boundaries": "Do not use post-treatment or post-child-outcome changes to justify incoming effects.",
+      "original_components": [
+        "Education completed before target medication use",
+        "Pre-use material resources, income and employment"
+      ],
+      "construct_label": "Socioeconomic position"
+    },
+    {
+      "id": "C04",
+      "name": "Geographical and calendar context",
+      "scope": "Geographic residence/exposure setting and calendar context relevant to the target pregnancy and follow-up environment.",
+      "coarse_time": "Pregnancy-relevant location and calendar setting precede later endpoint ascertainment. Residence may change; calendar time is an index.",
+      "boundaries": "A personal event cannot cause calendar time. Residence changes must be actual, not healthcare-site choice or sample composition. Do not silently import a childhood residence history.",
+      "original_components": [
+        "Geographic context before target medication use",
+        "Calendar context of the target pregnancy/exposure period"
+      ],
+      "construct_label": "Geographical and calendar context"
+    },
+    {
+      "id": "C05",
+      "name": "Established maternal neuropsychiatric health",
+      "scope": "Established maternal neurodevelopmental or psychiatric conditions and history.",
+      "coarse_time": "Established before the prenatal use it may influence. Onset may substantially predate recording.",
+      "boundaries": "Exclude a new reaction to the child outcome and temporary post-dose symptoms. Do not infer a universal ordering against socioeconomic, physical-health or reproductive history.",
+      "original_components": [
+        "Established maternal neurodevelopmental background",
+        "Established maternal psychiatric-health background"
+      ],
+      "construct_label": "Established maternal neuropsychiatric health"
+    },
+    {
+      "id": "C06",
+      "name": "Maternal physical and metabolic health",
+      "scope": "Pre-existing chronic physical/metabolic conditions and antecedent adiposity/BMI relevant to pregnancy.",
+      "coarse_time": "Chronic or antecedent states before the use they may influence; condition onset and BMI measurement can differ.",
+      "boundaries": "Separate named disease components and BMI. Current-pregnancy complications belong to C13. Do not import drug-induced new disease into this established-health node.",
+      "original_components": [
+        "Pre-existing chronic physical or metabolic disease",
+        "BMI or adiposity before target exposure"
+      ],
+      "construct_label": "Maternal physical and metabolic health"
+    },
+    {
+      "id": "C07",
+      "name": "Maternal indications and symptoms",
+      "scope": "Maternal infection, fever, pain or headache present before target X; distinguish the actual indication components.",
+      "coarse_time": "Fixed relative to the selected prenatal exposure window as specified in scope; no pair-specific time changes.",
+      "boundaries": "Post-X symptom relief or new symptoms are outside this node. No universal ordering relative to C10 or C11 is imposed.",
+      "original_components": [
+        "Infection or fever before X",
+        "Pain or headache before X"
+      ],
+      "construct_label": "Maternal indications and symptoms"
+    },
+    {
+      "id": "C08",
+      "name": "Reproductive and prior obstetric history",
+      "scope": "Completed prior pregnancies, parity and specific previous obstetric outcomes.",
+      "coarse_time": "Before the current target pregnancy.",
+      "boundaries": "Exclude current pregnancy complications and events. Distinguish historical age/social states from age or household state measured in the present pregnancy.",
+      "original_components": [
+        "Parity and previous pregnancies",
+        "Prior adverse obstetric outcomes"
+      ],
+      "construct_label": "Reproductive and prior obstetric history"
+    },
+    {
+      "id": "C09",
+      "name": "Psychosocial conditions and health behaviors",
+      "scope": "Maternal smoking, alcohol, other substance use and psychosocial stress before target X.",
+      "coarse_time": "Fixed relative to the selected prenatal exposure window as specified in scope; no pair-specific time changes.",
+      "boundaries": "No post-X behavior change or post-child-outcome reaction. Do not substitute healthcare literacy or all health preferences.",
+      "original_components": [
+        "Smoking before X",
+        "Alcohol use before X",
+        "Other substance use before X",
+        "Psychosocial stress before X"
+      ],
+      "construct_label": "Psychosocial conditions and health behaviors"
+    },
+    {
+      "id": "C10",
+      "name": "Maternal healthcare seeking and use",
+      "scope": "Actual maternal healthcare seeking and contacts before target X, including preventive and symptom-driven contacts. This includes pregnancy-relevant prior utilization.",
+      "coarse_time": "Fixed relative to the selected prenatal exposure window as specified in scope; no pair-specific time changes.",
+      "boundaries": "Exclude post-X contacts and child diagnostic contacts. Actual contacts are not identical to healthcare access, income, health literacy or a latent stable family care propensity. Do not assume either C10<C11 or C11<C10 globally.",
+      "original_components": [
+        "Maternal healthcare seeking before X",
+        "Maternal healthcare use before X"
+      ],
+      "construct_label": "Maternal healthcare seeking and use"
+    },
+    {
+      "id": "C11",
+      "name": "Other medications and treatments",
+      "scope": "Other medication classes and treatments before target X; name the class or treatment component.",
+      "coarse_time": "Fixed relative to the selected prenatal exposure window as specified in scope; no pair-specific time changes.",
+      "boundaries": "Exclude treatments started after X and changes after child diagnosis. Order relative to C10 or C07 is not imposed; competing episodes cannot be swapped to support two directions.",
+      "original_components": [
+        "Other drug classes before X",
+        "Other treatments before X"
+      ],
+      "construct_label": "Other medications and treatments"
+    },
+    {
+      "id": "C12",
+      "name": "Environmental and occupational exposures",
+      "scope": "Actual environmental or occupational agents, such as pollutants, lead, pesticides or physical agents.",
+      "coarse_time": "Exposure histories relevant to the maternal preconception/prenatal period.",
+      "boundaries": "Name a relevant actual agent/process. Do not substitute job class, residence, income or workplace culture for actual exposure. Offspring postnatal exposure is a different scope.",
+      "original_components": [
+        "Specific environmental exposures",
+        "Specific occupational exposures"
+      ],
+      "construct_label": "Environmental and occupational exposures"
+    },
+    {
+      "id": "C13",
+      "name": "Current-pregnancy obstetric and perinatal health",
+      "scope": "Current-pregnancy complications, gestational age at delivery, birthweight and delivery mode as distinct components.",
+      "coarse_time": "Some complications can precede prenatal use; others follow use; birth outcomes occur at delivery. All precede postnatal child processes.",
+      "boundaries": "No universal post-X restriction. Name the component and relative stage. Opposite directions may require pre-use complication versus subsequent perinatal components. Do not treat the whole construct as one observed baseline covariate.",
+      "original_components": [
+        "Current-pregnancy complications before X",
+        "Current-pregnancy complications after X",
+        "Gestational age at delivery",
+        "Birth weight",
+        "Delivery mode"
+      ],
+      "construct_label": "Current-pregnancy obstetric and perinatal health"
+    },
+    {
+      "id": "C14",
+      "name": "Infant feeding and breastfeeding",
+      "scope": "Actual early postnatal feeding/breastfeeding practices and their relevant course.",
+      "coarse_time": "After delivery, before the selected later endpoint; may overlap early childhood health and developmental manifestations.",
+      "boundaries": "No universal C14<C15<C16 order. Distinguish initial feeding from later duration/change. A causal relation must use compatible component periods.",
+      "original_components": [
+        "Feeding status in a fixed early-infant window",
+        "Breastfeeding in that same early-infant window"
+      ],
+      "construct_label": "Infant feeding and breastfeeding"
+    },
+    {
+      "id": "C15",
+      "name": "Early childhood physical and immune health",
+      "scope": "Early childhood physical illness, immune-related conditions or relevant biological states, with named components where needed.",
+      "coarse_time": "After birth and before the selected later endpoint, potentially overlapping feeding and developmental manifestations.",
+      "boundaries": "No universal order against C14/C16. Ordinary minor infections cannot stand in for severe CNS injury. Distinguish actual health from its detection or healthcare utilization.",
+      "original_components": [
+        "Early childhood physical-health events",
+        "Infection and atopic/immune-health measures",
+        "Microbiome-related measures as a distinct component"
+      ],
+      "construct_label": "Early childhood physical and immune health"
+    },
+    {
+      "id": "C16",
+      "name": "Early neurodevelopmental and regulatory phenotypes",
+      "scope": "Early offspring developmental/regulatory manifestations distinct from the later selected recorded outcome.",
+      "coarse_time": "After birth and before the separate later endpoint; onset and recognition/measurement may differ.",
+      "boundaries": "No forced post-C15 window. If the C16 measure is the study endpoint, map to Y. Effects on recording are distinct from causing latent ASD/ADHD onset.",
+      "original_components": [
+        "Early neurodevelopmental manifestations",
+        "Early regulatory or behavioral phenotypes"
+      ],
+      "construct_label": "Early neurodevelopmental and regulatory phenotypes"
+    },
+    {
+      "id": "C17",
+      "name": "Biological and pharmacological response processes",
+      "scope": "Candidate biological/pharmacological responses following target X during pregnancy; preserve distinct mechanism branches.",
+      "coarse_time": "Fixed relative to the selected prenatal exposure window as specified in scope; no pair-specific time changes.",
+      "boundaries": "No baseline biological state or effect on later X. These are hypothetical, non-exhaustive mediators; component existence and effects need support.",
+      "original_components": [
+        "Oxidative response",
+        "Hormonal signaling",
+        "Epigenetic response",
+        "Placental-function response"
+      ],
+      "construct_label": "Biological and pharmacological response processes"
+    }
+  ]
+}

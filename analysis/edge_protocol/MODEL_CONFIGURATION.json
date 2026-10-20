@@ -1,0 +1,20 @@
+{
+  "protocol_version": "EDGE-PAIR-UNIFIED-20261006-v1",
+  "models": [
+    {
+      "model": "deepseek-flash",
+      "reasoning_effort": "high",
+      "thinking": "enabled"
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high"
+    },
+    {
+      "model": "gpt-6-astra",
+      "reasoning_effort": "high"
+    }
+  ],
+  "procedure": "Fresh context per pair; initial judgment followed by own-model review; common research instructions, node definitions and evidence.",
+  "source": "Archived original run manifests; native execution environments differed."
+}

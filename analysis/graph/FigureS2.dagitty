@@ -1,0 +1,154 @@
+dag {
+bb="-98.000,-293.986,3755.894,2137.524"
+"Actual prenatal acetaminophen use" [exposure, pos="460.000,1350.000"]
+"Recorded offspring ASD or ADHD" [outcome, pos="3335.000,1350.000"]
+"Family and genetic background" [pos="230.000,150.000"]
+"Sociodemographic and family factors" [pos="1955.000,150.000"]
+"Socioeconomic position" [pos="2530.000,150.000"]
+"Geographic and calendar context" [pos="3105.000,150.000"]
+"Pre-existing maternal neuropsychiatric health" [pos="805.000,150.000"]
+"Maternal physical and metabolic health" [pos="1725.000,570.000"]
+"Maternal treatment indications and symptoms" [pos="2300.000,570.000"]
+"Reproductive and prior obstetric history" [pos="1380.000,150.000"]
+"Psychosocial conditions and health behaviours" [pos="575.000,570.000"]
+"Maternal healthcare seeking and use" [pos="1035.000,975.000"]
+"Other medications and treatments" [pos="1725.000,975.000"]
+"Environmental and occupational exposures" [pos="1150.000,570.000"]
+"Current obstetric and perinatal health" [pos="2875.000,570.000"]
+"Infant feeding and breastfeeding" [pos="3105.000,1920.000"]
+"Early childhood physical and immune health" [pos="2530.000,975.000"]
+"Early neurodevelopmental and regulatory phenotypes" [pos="2530.000,1590.000"]
+"Post-exposure biological and pharmacological responses" [pos="1426.000,1590.000"]
+"Family and genetic background" -> "Socioeconomic position" [pos="1380.000,-160.000"]
+"Family and genetic background" -> "Pre-existing maternal neuropsychiatric health"
+"Family and genetic background" -> "Maternal physical and metabolic health"
+"Family and genetic background" -> "Maternal treatment indications and symptoms" [pos="1231.000,360.000"]
+"Family and genetic background" -> "Reproductive and prior obstetric history" [pos="805.000,-45.000"]
+"Family and genetic background" -> "Psychosocial conditions and health behaviours"
+"Family and genetic background" -> "Maternal healthcare seeking and use" [pos="907.792,283.149"]
+"Family and genetic background" -> "Other medications and treatments" [pos="919.521,667.564"]
+"Family and genetic background" -> "Current obstetric and perinatal health" [pos="1383.325,-706.626"]
+"Family and genetic background" -> "Infant feeding and breastfeeding" [pos="2334.271,740.488"]
+"Family and genetic background" -> "Early childhood physical and immune health" [pos="1356.947,939.011"]
+"Family and genetic background" -> "Early neurodevelopmental and regulatory phenotypes" [pos="1607.321,1139.710"]
+"Family and genetic background" -> "Post-exposure biological and pharmacological responses" [pos="237.974,1184.300"]
+"Family and genetic background" -> "Actual prenatal acetaminophen use" [pos="317.145,749.589"]
+"Family and genetic background" -> "Recorded offspring ASD or ADHD" [pos="2573.531,1937.483"]
+"Sociodemographic and family factors" -> "Socioeconomic position"
+"Sociodemographic and family factors" -> "Geographic and calendar context" [pos="2530.000,-23.000"]
+"Sociodemographic and family factors" -> "Maternal physical and metabolic health"
+"Sociodemographic and family factors" -> "Maternal treatment indications and symptoms"
+"Sociodemographic and family factors" -> "Psychosocial conditions and health behaviours"
+"Sociodemographic and family factors" -> "Maternal healthcare seeking and use" [pos="1122.885,765.160"]
+"Sociodemographic and family factors" -> "Other medications and treatments" [pos="2045.307,771.919"]
+"Sociodemographic and family factors" -> "Environmental and occupational exposures"
+"Sociodemographic and family factors" -> "Current obstetric and perinatal health"
+"Sociodemographic and family factors" -> "Infant feeding and breastfeeding" [pos="2873.059,478.866"]
+"Sociodemographic and family factors" -> "Early childhood physical and immune health" [pos="1981.341,768.217"]
+"Sociodemographic and family factors" -> "Early neurodevelopmental and regulatory phenotypes" [pos="2131.056,914.500"]
+"Sociodemographic and family factors" -> "Actual prenatal acetaminophen use" [pos="710.622,288.098"]
+"Sociodemographic and family factors" -> "Recorded offspring ASD or ADHD" [pos="1976.821,1425.606"]
+"Socioeconomic position" -> "Maternal physical and metabolic health"
+"Socioeconomic position" -> "Maternal treatment indications and symptoms"
+"Socioeconomic position" -> "Psychosocial conditions and health behaviours" [pos="1552.500,379.500"]
+"Socioeconomic position" -> "Maternal healthcare seeking and use" [pos="1528.457,1064.628"]
+"Socioeconomic position" -> "Other medications and treatments" [pos="2030.613,466.695"]
+"Socioeconomic position" -> "Environmental and occupational exposures"
+"Socioeconomic position" -> "Current obstetric and perinatal health"
+"Socioeconomic position" -> "Infant feeding and breastfeeding" [pos="2910.071,2508.586"]
+"Socioeconomic position" -> "Early childhood physical and immune health"
+"Socioeconomic position" -> "Early neurodevelopmental and regulatory phenotypes" [pos="1552.000,578.000"]
+"Socioeconomic position" -> "Actual prenatal acetaminophen use" [pos="1413.485,1154.378"]
+"Socioeconomic position" -> "Recorded offspring ASD or ADHD" [pos="3382.292,308.889"]
+"Geographic and calendar context" -> "Maternal physical and metabolic health"
+"Geographic and calendar context" -> "Maternal treatment indications and symptoms"
+"Geographic and calendar context" -> "Psychosocial conditions and health behaviours" [pos="1806.000,360.000"]
+"Geographic and calendar context" -> "Maternal healthcare seeking and use" [pos="2503.127,831.279"]
+"Geographic and calendar context" -> "Other medications and treatments" [pos="2040.751,264.174"]
+"Geographic and calendar context" -> "Environmental and occupational exposures"
+"Geographic and calendar context" -> "Current obstetric and perinatal health"
+"Geographic and calendar context" -> "Infant feeding and breastfeeding" [pos="2988.000,2205.000"]
+"Geographic and calendar context" -> "Early childhood physical and immune health" [pos="3350.759,934.165"]
+"Geographic and calendar context" -> "Actual prenatal acetaminophen use" [pos="816.148,2047.170"]
+"Geographic and calendar context" -> "Recorded offspring ASD or ADHD"
+"Pre-existing maternal neuropsychiatric health" -> "Sociodemographic and family factors" [pos="1380.000,-34.000"]
+"Pre-existing maternal neuropsychiatric health" -> "Socioeconomic position" [pos="1678.500,-93.000"]
+"Pre-existing maternal neuropsychiatric health" -> "Maternal physical and metabolic health"
+"Pre-existing maternal neuropsychiatric health" -> "Maternal treatment indications and symptoms"
+"Pre-existing maternal neuropsychiatric health" -> "Reproductive and prior obstetric history"
+"Pre-existing maternal neuropsychiatric health" -> "Psychosocial conditions and health behaviours"
+"Pre-existing maternal neuropsychiatric health" -> "Maternal healthcare seeking and use"
+"Pre-existing maternal neuropsychiatric health" -> "Other medications and treatments" [pos="1403.229,428.820"]
+"Pre-existing maternal neuropsychiatric health" -> "Current obstetric and perinatal health"
+"Pre-existing maternal neuropsychiatric health" -> "Infant feeding and breastfeeding" [pos="1975.123,2345.496"]
+"Pre-existing maternal neuropsychiatric health" -> "Early childhood physical and immune health" [pos="1833.951,959.012"]
+"Pre-existing maternal neuropsychiatric health" -> "Early neurodevelopmental and regulatory phenotypes" [pos="2247.397,1048.122"]
+"Pre-existing maternal neuropsychiatric health" -> "Actual prenatal acetaminophen use" [pos="994.928,748.523"]
+"Maternal physical and metabolic health" -> "Maternal treatment indications and symptoms"
+"Maternal physical and metabolic health" -> "Maternal healthcare seeking and use"
+"Maternal physical and metabolic health" -> "Other medications and treatments"
+"Maternal physical and metabolic health" -> "Current obstetric and perinatal health" [pos="2300.000,386.000"]
+"Maternal physical and metabolic health" -> "Infant feeding and breastfeeding" [pos="3263.915,1890.220"]
+"Maternal physical and metabolic health" -> "Early childhood physical and immune health"
+"Maternal physical and metabolic health" -> "Early neurodevelopmental and regulatory phenotypes"
+"Maternal physical and metabolic health" -> "Post-exposure biological and pharmacological responses" [pos="1435.191,933.488"]
+"Maternal physical and metabolic health" -> "Actual prenatal acetaminophen use" [pos="1290.439,1222.478"]
+"Maternal physical and metabolic health" -> "Recorded offspring ASD or ADHD" [pos="2268.601,1274.966"]
+"Maternal treatment indications and symptoms" -> "Maternal healthcare seeking and use"
+"Maternal treatment indications and symptoms" -> "Other medications and treatments"
+"Maternal treatment indications and symptoms" -> "Current obstetric and perinatal health"
+"Maternal treatment indications and symptoms" -> "Early childhood physical and immune health"
+"Maternal treatment indications and symptoms" -> "Early neurodevelopmental and regulatory phenotypes" [pos="2136.797,1099.987"]
+"Maternal treatment indications and symptoms" -> "Actual prenatal acetaminophen use" [pos="1691.293,1599.691"]
+"Maternal treatment indications and symptoms" -> "Recorded offspring ASD or ADHD" [pos="2821.722,886.167"]
+"Reproductive and prior obstetric history" -> "Sociodemographic and family factors"
+"Reproductive and prior obstetric history" -> "Socioeconomic position" [pos="1955.000,-45.000"]
+"Reproductive and prior obstetric history" -> "Maternal physical and metabolic health"
+"Reproductive and prior obstetric history" -> "Maternal treatment indications and symptoms"
+"Reproductive and prior obstetric history" -> "Psychosocial conditions and health behaviours"
+"Reproductive and prior obstetric history" -> "Maternal healthcare seeking and use" [pos="1531.532,581.822"]
+"Reproductive and prior obstetric history" -> "Other medications and treatments" [pos="1421.081,655.093"]
+"Reproductive and prior obstetric history" -> "Current obstetric and perinatal health"
+"Reproductive and prior obstetric history" -> "Infant feeding and breastfeeding" [pos="1357.348,1822.945"]
+"Psychosocial conditions and health behaviours" -> "Maternal physical and metabolic health" [pos="1150.000,397.000"]
+"Psychosocial conditions and health behaviours" -> "Maternal treatment indications and symptoms" [pos="1437.500,330.000"]
+"Psychosocial conditions and health behaviours" -> "Maternal healthcare seeking and use"
+"Psychosocial conditions and health behaviours" -> "Other medications and treatments"
+"Psychosocial conditions and health behaviours" -> "Current obstetric and perinatal health" [pos="1725.000,282.000"]
+"Psychosocial conditions and health behaviours" -> "Infant feeding and breastfeeding" [pos="527.692,1346.593"]
+"Psychosocial conditions and health behaviours" -> "Early childhood physical and immune health"
+"Psychosocial conditions and health behaviours" -> "Early neurodevelopmental and regulatory phenotypes" [pos="1440.500,968.000"]
+"Psychosocial conditions and health behaviours" -> "Post-exposure biological and pharmacological responses" [pos="817.360,1269.251"]
+"Psychosocial conditions and health behaviours" -> "Recorded offspring ASD or ADHD" [pos="1970.217,1389.924"]
+"Maternal healthcare seeking and use" -> "Other medications and treatments"
+"Maternal healthcare seeking and use" -> "Infant feeding and breastfeeding" [pos="2028.883,1688.375"]
+"Maternal healthcare seeking and use" -> "Actual prenatal acetaminophen use"
+"Other medications and treatments" -> "Infant feeding and breastfeeding" [pos="2675.002,1184.465"]
+"Other medications and treatments" -> "Early childhood physical and immune health"
+"Other medications and treatments" -> "Early neurodevelopmental and regulatory phenotypes"
+"Other medications and treatments" -> "Post-exposure biological and pharmacological responses"
+"Other medications and treatments" -> "Actual prenatal acetaminophen use"
+"Other medications and treatments" -> "Recorded offspring ASD or ADHD"
+"Environmental and occupational exposures" -> "Maternal physical and metabolic health"
+"Environmental and occupational exposures" -> "Maternal treatment indications and symptoms" [pos="1725.000,386.000"]
+"Environmental and occupational exposures" -> "Maternal healthcare seeking and use"
+"Environmental and occupational exposures" -> "Other medications and treatments"
+"Environmental and occupational exposures" -> "Current obstetric and perinatal health" [pos="2012.500,330.000"]
+"Environmental and occupational exposures" -> "Infant feeding and breastfeeding" [pos="1915.154,1779.868"]
+"Environmental and occupational exposures" -> "Early childhood physical and immune health"
+"Environmental and occupational exposures" -> "Early neurodevelopmental and regulatory phenotypes" [pos="2021.756,758.330"]
+"Environmental and occupational exposures" -> "Recorded offspring ASD or ADHD" [pos="1715.300,1620.791"]
+"Current obstetric and perinatal health" -> "Maternal healthcare seeking and use"
+"Current obstetric and perinatal health" -> "Other medications and treatments"
+"Current obstetric and perinatal health" -> "Infant feeding and breastfeeding"
+"Current obstetric and perinatal health" -> "Early childhood physical and immune health"
+"Current obstetric and perinatal health" -> "Early neurodevelopmental and regulatory phenotypes" [pos="2839.847,1145.897"]
+"Current obstetric and perinatal health" -> "Recorded offspring ASD or ADHD"
+"Early childhood physical and immune health" -> "Early neurodevelopmental and regulatory phenotypes"
+"Early childhood physical and immune health" -> "Recorded offspring ASD or ADHD"
+"Early neurodevelopmental and regulatory phenotypes" -> "Infant feeding and breastfeeding"
+"Early neurodevelopmental and regulatory phenotypes" -> "Recorded offspring ASD or ADHD"
+"Post-exposure biological and pharmacological responses" -> "Early neurodevelopmental and regulatory phenotypes"
+"Actual prenatal acetaminophen use" -> "Post-exposure biological and pharmacological responses"
+"Actual prenatal acetaminophen use" -> "Recorded offspring ASD or ADHD"
+}

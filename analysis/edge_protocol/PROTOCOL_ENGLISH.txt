@@ -1,0 +1,63 @@
+Pairwise edge-assessment protocol
+
+This English description documents protocol EDGE-PAIR-UNIFIED-20261006-v1.
+The verbatim prompts and responses are retained in the separate original-language
+research archive. This description is not presented as a verbatim model input.
+
+The 19 nodes were C01-C17, X and Y. Each of 171 unordered pairs was assessed in
+both directions in a fresh context. Models received common node definitions,
+evidence and causal criteria, followed by within-model review. They had no
+access to other pairs or model answers and were not asked to construct a whole
+graph or assess cycles. Sources were restricted to the supplied evidence packet
+and ordinary substantive causal reasoning. Model settings are documented in
+MODEL_CONFIGURATION.json.
+
+For each direction, assess three criteria:
+1. temporal_compatible: the specified source component can precede the target
+   within the defined observation window.
+2. construct_match: the variables and subjects match the node definitions.
+   A temporal failure alone does not require construct_match to be false.
+3. causal_support_sufficient: a specific causal pathway is supported at the
+   stated resolution. Correlation, prediction, prior adjustment or temporal
+   ordering alone is insufficient. Temporal or construct failure makes this
+   criterion false. Direct, indirect and background-mechanism support are
+   distinguished. A pathway entirely represented by retained mediators is not
+   compressed into an additional direct edge.
+
+Choose exactly one preferred_direction after assessing both directions.
+If one direction passes all criteria, select it. If both pass, select the more
+plausible direction from ordinary temporal processes, construct components and
+required assumptions. If neither passes, select the relatively more plausible
+direction with low confidence, while both decisions remain Fail. Direction
+confidence is distinct from model reasoning effort. frequency_basis is
+qualitative_judgment_only. Potential omitted reverse mechanisms are recorded.
+
+Decision rule
+The preferred direction receives Pass only when all three criteria are true.
+The non-preferred direction receives Fail; its criterion values remain as
+assessed. Each pair has exactly two decisions and at most one Pass.
+
+Fail reason priority
+Temporal failure: outside_scope_or_temporality.
+Construct failure after temporal compatibility: construct_mismatch.
+Insufficient support: insufficient_causal_support, or no_supported_direct_path
+when no separate direct pathway is supported.
+All criteria true but direction not selected: not_selected_primary_direction.
+Pass: not_applicable.
+
+Prespecified boundaries
+X is actual prenatal acetaminophen use; Y is the subsequent recorded ASD or ADHD
+outcome. X -> Y is retained as the focal hypothesis, with all three criteria
+true and edge_role/reasoning_basis=focal_hypothesis. This encodes the research
+question. Y -> X fails temporal compatibility for these variable definitions.
+C08 -> C05 is Fail because post-stillbirth symptoms in the supplied packet do
+not establish a prior neuropsychiatric disorder; the reverse is assessed
+separately. C10 includes actual maternal healthcare contacts before X.
+C16 -> Y distinguishes outcome ascertainment from disease occurrence.
+All component and temporal boundaries apply throughout assessment.
+
+Integration
+The author provided 63 directional adjudications; 279 directions retained
+unanimous model judgments. Three integration omissions resolved directed cycles.
+Final directional decisions and DAG inclusion are in Supplementary Table S10;
+English author rationales are in graph/DAG132_v1_edge_provenance.json.

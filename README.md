@@ -1,144 +1,52 @@
 # Bias-domain triangulation of prenatal paracetamol and offspring neurodevelopment
 
-Code and data for:
+Data and code for the DAG132 analysis of prenatal paracetamol exposure and offspring neurodevelopment.
 
-> Shi X, Deng G, Du J. Bias-domain triangulation of non-convergent observational evidence in mental health research.
+## Current analysis
 
-## Reusable protocol (tutorial)
+The [analysis directory](analysis/) contains the data, graph, rating rules and scripts used for the current manuscript. The inventory comprises 39 estimates from 24 articles. The primary analysis retains 38 estimates from 23 articles after the specified post-exposure-adjustment exclusion.
 
-A step-by-step guide to applying the bias-domain triangulation framework to any exposure–outcome question is hosted as a web tutorial:
+The adopted graph contains 19 nodes and 132 directed edges. Coverage grades describe the reported adjustment of each selected study model under this graph and its decision rules. Statistical synthesis uses intercept-only random-effects models with REML estimation and Knapp–Hartung intervals. The paired population–family model comparison is descriptive.
 
-**https://xuanyshi.github.io/bias-domain-triangulation/**
+| Material | Location |
+| --- | --- |
+| Run instructions and file descriptions | [analysis/README.txt](analysis/README.txt) |
+| Analysis input and results | [analysis/meta/](analysis/meta/) |
+| DAG and adjustment sets | [analysis/graph/](analysis/graph/) |
+| Coverage rules and model ratings | [analysis/decision_rule/](analysis/decision_rule/) and [analysis/ratings/](analysis/ratings/) |
+| Supplementary restrictions | [analysis/supplementary_restrictions/](analysis/supplementary_restrictions/) |
+| Population–family model comparison | [analysis/paired_model_comparison/](analysis/paired_model_comparison/) |
+| Figure source data | [analysis/figure_source_data/](analysis/figure_source_data/) |
+| Model ratings and supplementary Tables S2 and S10 | [analysis/supplementary_tables/](analysis/supplementary_tables/) |
+| Edge-assessment protocol and model settings | [analysis/edge_protocol/](analysis/edge_protocol/) |
 
-The public tutorial was updated on **10 October 2026** to follow the current ten-step protocol. The same tutorial is available in [`docs/`](docs/) as HTML, Markdown, and Word, with a [construct dictionary](docs/assets/construct_dictionary.json), [132-edge DAG](docs/assets/DAG132.dagitty), [grading rules](docs/assets/decision_rule.json), and [version manifest](docs/assets/tutorial_manifest.json). Overall Strong requires complete coverage of either adjustment set within the same model; set B requires qualifying pre-exposure C13 coverage. Grades describe reported construct coverage conditional on the working DAG.
+## Reproduction
 
-**Version boundary:** the analysis files and reproduction commands below describe the earlier 24-article/39-estimate release. They do not reproduce the current DAG132 application (38 retained estimates from 23 articles). The separate expert-review interface also retains its historical graph. The tutorial update does not replace those analysis artifacts. Current graph-based mapping is AI assisted and has not undergone independent human adjudication.
+Requirements: Python 3 and R with `metafor` and `jsonlite`. The Python analysis scripts use the standard library.
 
-## Systematic review search strategy
+From the repository root:
 
-The full electronic search strategies (MEDLINE via PubMed and Embase, searched from inception to 1 July 2026), the eligibility criteria, and the PRISMA study-selection flow are documented in [`SEARCH_STRATEGY.md`](SEARCH_STRATEGY.md). The review is registered on PROSPERO (CRD420261365276).
-
-## Repository structure
-
-```
-├── docs/                          # Reusable-protocol tutorial -> GitHub Pages
-│   ├── index.html                          # Web tutorial (hosted at the URL above)
-│   ├── Supplementary_Protocol_bias_domain_triangulation.md    # Markdown source
-│   ├── Supplementary_Protocol_bias_domain_triangulation.docx  # Word version
-│   └── assets/                              # Current tutorial graph, dictionary, rules and manifest
-│
-├── data/                          # All input data (no individual-level participant data)
-│   ├── SourceData_meta_analysis_20260727_B1Strong.xlsx
-│   │                                         # Final 24-article, 39-estimate meta-analysis and sensitivity Source Data
-│   ├── SourceData_main_model_covariates_20260723_B1Strong.xlsx
-│   │                                         # Current per-record main-model covariate audit
-│   ├── Extraction_adjudication_and_interrater_reliability.xlsx
-│   │                                         # Extraction audit, agreement statistics, and final adjudication
-│   ├── effect_estimates_and_ratings.xlsx   # Archived 22-study/33-estimate development-set artifact
-│   ├── main_model_covariates.xlsx          # Stable-path copy of the current covariate Source Data
-│   ├── ratings_locked16.xlsx               # Study-level B1/B2/B3 ratings (primary: 16 constructs)
-│   ├── ratings_coarse.xlsx                 # Archived development-set coarse-rating artifact
-│   ├── ratings_fine.xlsx                   # Archived development-set fine-rating artifact
-│   ├── pooled_strata_estimates.csv         # Current NHB-method stratified pooled results
-│   ├── trackB_pooled_variables.json        # 1,357 LLM-generated candidate variables (Track B input)
-│   ├── trackB_final_mapping_locked.json    # Locked construct mapping (16 core confounders)
-│   └── Supplementary_Table_S2_LLM_DAG_recall_20260727_final.xlsx
-│                                             # Final Table S2 recall matrix and computed summary
-│
-├── code/                          # Analysis scripts
-│   ├── meta_analysis_primary.R             # Main stratified meta-analysis (Figs 2-3, S3-S5, Tables S4-S5)
-│   ├── meta_analysis_sensitivity.R         # Current-39 granularity and threshold sensitivity analyses
-│   ├── ratings_locked16.py                 # Bias-domain rating engine (16-construct mapping)
-│   ├── sensitivity_granularity.py          # Generate current-39 alternative ratings and audit counts
-│   ├── llm_dag_induction.py               # Track B Prompt 1: per-study causal-role induction
-│   ├── llm_dag_induction_gemini.py        # Gemini-specific API wrapper
-│   ├── llm_dag_clustering.py              # Track B Prompt 2: blind construct clustering
-│   ├── llm_crosswalk.py                   # Cross-model construct crosswalk
-│   └── llm_recluster.py                   # Multi-model recluster reconciliation
-│
-├── prompts/                       # Prompt specifications and shared text
-│   ├── prompt_1_perstudy_causal_role_induction.md   # Three variants (A/B/C)
-│   └── prompt_2_construct_clustering_blind.md        # Blind taxonomy-induction template
-│
-├── llm_outputs/                   # Raw Track B outputs, including the byte-exact sent prompts
-│   ├── trackB_taxonomy_deepseek-v4-pro.json
-│   ├── trackB_taxonomy_gemini-3.1-pro-preview.json
-│   └── trackB_taxonomy_gpt-5.5.json
-│
-├── requirements.txt               # Python dependencies
-└── r_packages.txt                 # R dependencies
+```sh
+Rscript -e 'install.packages(c("metafor", "jsonlite"), repos="https://cloud.r-project.org")'
+cd analysis
+python3 decision_rule/reapply_ratings.py
+Rscript meta/code/analyze.R meta
+Rscript supplementary_restrictions/code/supplementary_restrictions.R supplementary_restrictions
+python3 paired_model_comparison/code/analyze_pairs.py
 ```
 
-## Reproducing the main results
+Use the commit identifier cited in the manuscript to obtain the corresponding version. File checksums are recorded in [analysis/PACKAGE_MANIFEST.json](analysis/PACKAGE_MANIFEST.json).
 
-All commands are run from the repository root.
+## Methods and source records
 
-### 1. Install dependencies
+The [tutorial](https://xuanyshi.github.io/bias-domain-triangulation/) describes the ten-step framework. The [search strategy](SEARCH_STRATEGY.md) documents the systematic review registered as PROSPERO CRD420261365276.
 
-```bash
-pip install -r requirements.txt
-Rscript -e 'install.packages(readLines("r_packages.txt")[!grepl("^#|^$", readLines("r_packages.txt"))])'
-```
+The source data were extracted from published study reports; no individual-level participant data are included. Model-assisted construct mapping, directional judgments and author adjudications retain their recorded provenance. Published prompts and discovery outputs from the earlier release remain in [prompts/](prompts/) and [llm_outputs/](llm_outputs/). The current edge-assessment protocol is described in English in `analysis/edge_protocol/`; the verbatim original-language edge-assessment records are held separately by the authors.
 
-### 2. Primary stratified meta-analysis
+## Earlier analysis
 
-Recomputes the primary analysis using the method applied in the NHB submission: REML random-effects models with Knapp–Hartung inference, categorical moderator Q-tests for B1/B2/B3/overall strata, an HR/aHR-only sensitivity analysis, and leave-one-effect-out diagnostics. The current analysis contains 39 adjusted estimates from 24 independent articles; the locked 16-construct mapping and rating thresholds are unchanged.
-
-```bash
-Rscript code/meta_analysis_primary.R
-```
-
-Computed CSV and JSON result files and the publication figures are written to `output/`; the tracked pooled-strata table is updated in `data/`.
-
-### 3. Sensitivity analyses (construct granularity and rating thresholds)
-
-Re-rates the current 39 estimates under coarse (11 constructs), primary (16 constructs), and fine (19 constructs) mappings, and under looser, primary, and stricter B2/B3 rating thresholds. The generated audit files preserve the construct counts and ratings for every estimate.
-
-```bash
-python3 code/sensitivity_granularity.py
-Rscript code/meta_analysis_sensitivity.R
-```
-
-### 4. Track B: LLM-based background DAG (optional re-run)
-
-Track B used three LLMs (GPT-5.5, DeepSeek-V4-pro, Gemini-3.1-pro) to independently generate candidate causal structures. Re-running requires API access; all outputs are provided in `llm_outputs/`.
-
-```bash
-# Step 1: Per-study causal-role induction (Prompt 1, three prompting strategies)
-python code/llm_dag_induction.py        # DeepSeek / OpenAI
-python code/llm_dag_induction_gemini.py # Gemini
-
-# Step 2: Blind construct clustering (Prompt 2)
-python code/llm_dag_clustering.py
-
-# Step 3: Cross-model crosswalk and reconciliation
-python code/llm_crosswalk.py
-python code/llm_recluster.py
-```
-
-API keys are read from a local key file (`~/.llm_dag_keys.env`) via `dotenv` and are not included in this repository. Some scripts also require intermediate files not shipped in this repository; the scripts and prompts are provided for transparency.
-
-## Data description
-
-All data are extracted from published study reports. No individual-level participant data are used.
-
-| File | Description |
-|------|-------------|
-| `SourceData_meta_analysis_20260727_B1Strong.xlsx` | Final dataset: 24 independent articles, 39 adjusted ratio-type estimates, primary pooled results, bias-domain strata, construct-granularity and rating-threshold analyses, HR/aHR-only sensitivity analysis, and leave-one-effect-out diagnostics |
-| `SourceData_main_model_covariates_20260723_B1Strong.xlsx` | Current 39-record main-model covariate audit used for the empirical Track A inspection |
-| `Extraction_adjudication_and_interrater_reliability.xlsx` | Independent extraction audit, inter-rater agreement, discrepancy resolution and final Senior-adjudicated values; its 33-estimate page is explicitly retained as an historical NHB development-set audit |
-| `effect_estimates_and_ratings.xlsx` | Archived 22-study/33-estimate framework-development artifact retained for provenance; it is not used by the final current-39 analyses |
-| `main_model_covariates.xlsx` | Stable-path copy of the current main-model covariate Source Data |
-| `ratings_locked16.xlsx` | Study-level bias-domain ratings (B1/B2/B3) under the locked 16-construct two-source mapping |
-| `pooled_strata_estimates.csv` | Current REML/Knapp–Hartung pooled estimates by bias domain and control level |
-| `trackB_pooled_variables.json` | 1,357 unique candidate variables pooled across 3 models, 3 prompting strategies, and 2 outcomes |
-| `trackB_final_mapping_locked.json` | Final locked construct mapping with causal-role adjudication |
-| `Supplementary_Table_S2_LLM_DAG_recall_20260727_final.xlsx` | Final per-model and per-prompting-strategy recall matrix. The 17-row denominator is explicitly labelled as the pre-adjudication Track A set; one construct was subsequently reclassified as a mediator, leaving 16 scored confounder constructs |
-
-## Correspondence
-
-Jian Du (dujian@bjmu.edu.cn), Institute of Medical Technology, Peking University Health Science Center.
+The top-level `code/` and `data/` directories contain the earlier 24-article, 39-estimate analysis. Use `analysis/` to reproduce the current DAG132 results.
 
 ## License
 
-This project is licensed under the MIT License.
+Code is distributed under the [MIT license](LICENSE). Source publications remain subject to their respective terms.

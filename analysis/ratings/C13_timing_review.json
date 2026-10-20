@@ -1,0 +1,627 @@
+{
+  "changes": [
+    {
+      "record_id": "34679367_ADHD",
+      "study": "Anand 2021",
+      "before": "Yes",
+      "after": "No",
+      "reported_controls": [
+        "delivery_type",
+        "preterm_birth",
+        "low_birthweight"
+      ],
+      "reason": "The recorded C13 controls are delivery or perinatal outcomes and do not establish antecedent C13 coverage for set B.",
+      "source_file": "evidence/34679367-Anand-2021-Brain_Sci.txt",
+      "source_locator": "Section 2.4, lines 330-339; Table 2 individual-acetaminophen model, lines 681-687"
+    },
+    {
+      "record_id": "27353198_ADHD",
+      "study": "Avella Garcia 2016",
+      "before": "Yes",
+      "after": "No",
+      "reported_controls": [
+        "gestational_age"
+      ],
+      "reason": "The recorded C13 controls are delivery or perinatal outcomes and do not establish antecedent C13 coverage for set B.",
+      "source_file": "evidence/27353198-Avella_Garcia-2016-Int_J_Epidemiol.txt",
+      "source_locator": "Methods, lines 210-231; Table 2 footnote, lines 317-318"
+    },
+    {
+      "record_id": "40964537_ADHD",
+      "study": "Baker 2025",
+      "before": "Yes",
+      "after": "No",
+      "reported_controls": [
+        "delivery_method",
+        "labor_type"
+      ],
+      "reason": "The recorded C13 controls are delivery or perinatal outcomes and do not establish antecedent C13 coverage for set B.",
+      "source_file": "evidence/40964537-Baker-2025-Nat_Ment_Health.txt",
+      "source_locator": "Covariates, lines 713-728; child age and sensitivity-only perinatal controls, lines 733-745"
+    },
+    {
+      "record_id": "31509360_ADHD",
+      "study": "Chen 2019",
+      "before": "Yes",
+      "after": "No",
+      "reported_controls": [
+        "comorbid_perinatal_conditions"
+      ],
+      "reason": "The source defines comorbid perinatal conditions as preterm/low birthweight, birth trauma and intrauterine hypoxia/birth asphyxia (Methods). These do not establish antecedent C13 coverage for set B.",
+      "source_file": "evidence/31509360-Chen-2019-J_Clin_Psychiatry.txt",
+      "source_locator": "Methods, lines 132–146; adjusted Model 2, lines 202–206"
+    },
+    {
+      "record_id": "29970852_ADHD",
+      "study": "Ji 2018",
+      "before": "Yes",
+      "after": "No",
+      "reported_controls": [
+        "delivery_type",
+        "gestational_age",
+        "birthweight"
+      ],
+      "reason": "The recorded C13 controls are delivery or perinatal outcomes and do not establish antecedent C13 coverage for set B.",
+      "source_file": "evidence/29970852-Ji-2018-Brain_Sci.txt",
+      "source_locator": "Model 6, lines 204-225 and 420-429"
+    },
+    {
+      "record_id": "31664451_ADHD",
+      "study": "Ji 2019",
+      "before": "Yes",
+      "after": "No",
+      "reported_controls": [
+        "delivery_type",
+        "preterm_birth",
+        "low_birth_weight"
+      ],
+      "reason": "The recorded C13 controls are delivery or perinatal outcomes and do not establish antecedent C13 coverage for set B.",
+      "source_file": "evidence/31664451-Ji-2019-JAMA_Psychiatry.txt",
+      "source_locator": "Statistical analysis, lines 170-203; Table 2; sensitivity-only controls, lines 227-232"
+    },
+    {
+      "record_id": "31664451_ASD",
+      "study": "Ji 2019",
+      "before": "Yes",
+      "after": "No",
+      "reported_controls": [
+        "delivery_type",
+        "preterm_birth",
+        "low_birth_weight"
+      ],
+      "reason": "The recorded C13 controls are delivery or perinatal outcomes and do not establish antecedent C13 coverage for set B.",
+      "source_file": "evidence/31664451-Ji-2019-JAMA_Psychiatry.txt",
+      "source_locator": "Statistical analysis, lines 170-203; Table 2; sensitivity-only controls, lines 227-232"
+    },
+    {
+      "record_id": "24566677_ADHD",
+      "study": "Liew 2014",
+      "before": "Yes",
+      "after": "No",
+      "reported_controls": [
+        "gestational_age",
+        "birth_weight"
+      ],
+      "reason": "The recorded C13 controls are delivery or perinatal outcomes and do not establish antecedent C13 coverage for set B.",
+      "source_file": "evidence/24566677-Liew-2014-JAMA_Pediatr.txt",
+      "source_locator": "Main covariates, lines 190-220; HKD analysis distinct from SDQ parental-behaviour adjustment"
+    },
+    {
+      "record_id": "30923825_ADHD",
+      "study": "Liew 2019",
+      "before": "Yes",
+      "after": "Unclear",
+      "reported_controls": [
+        "gestational_diabetes",
+        "preeclampsia"
+      ],
+      "reason": "Pregnancy-wide complications are recorded, but their onset before the selected exposure window is not established. C13 coverage is unresolved.",
+      "source_file": "evidence/30923825-Liew-2019-Am_J_Epidemiol.txt",
+      "source_locator": "Statistical analysis and Results, lines 183-208; Table 3 footnotes, lines 391 and 437"
+    },
+    {
+      "record_id": "42371637_ADHD_pop",
+      "study": "Luo 2026a",
+      "before": "Yes",
+      "after": "Unclear",
+      "reported_controls": [
+        "delivery_mode",
+        "gestational_hypertension",
+        "gestational_diabetes",
+        "birth_trauma",
+        "preterm_birth",
+        "birth_weight",
+        "Apgar_1min",
+        "Apgar_5min"
+      ],
+      "reason": "Pregnancy-wide complications are recorded, but their onset before the selected exposure window is not established. C13 coverage is unresolved.",
+      "source_file": "evidence/42371637-Luo-2026.txt",
+      "source_locator": "Family-stratified model, lines 166-180; common adjustment specification, lines 485-488; detailed list retained from source extraction"
+    },
+    {
+      "record_id": "42371637_ASD_pop",
+      "study": "Luo 2026a",
+      "before": "Yes",
+      "after": "Unclear",
+      "reported_controls": [
+        "delivery_mode",
+        "gestational_hypertension",
+        "gestational_diabetes",
+        "birth_trauma",
+        "preterm_birth",
+        "birth_weight",
+        "Apgar_1min",
+        "Apgar_5min"
+      ],
+      "reason": "Pregnancy-wide complications are recorded, but their onset before the selected exposure window is not established. C13 coverage is unresolved.",
+      "source_file": "evidence/42371637-Luo-2026.txt",
+      "source_locator": "Family-stratified model, lines 166-180; common adjustment specification, lines 485-488; detailed list retained from source extraction"
+    },
+    {
+      "record_id": "42371637_ADHD_sib",
+      "study": "Luo 2026b",
+      "before": "Yes",
+      "after": "Unclear",
+      "reported_controls": [
+        "delivery_mode",
+        "gestational_hypertension",
+        "gestational_diabetes",
+        "birth_trauma",
+        "preterm_birth",
+        "birth_weight",
+        "Apgar_1min",
+        "Apgar_5min"
+      ],
+      "reason": "Pregnancy-wide complications are recorded, but their onset before the selected exposure window is not established. C13 coverage is unresolved.",
+      "source_file": "evidence/42371637-Luo-2026.txt",
+      "source_locator": "Family-stratified model, lines 166-180; common adjustment specification, lines 485-488; detailed list retained from source extraction"
+    },
+    {
+      "record_id": "42371637_ASD_sib",
+      "study": "Luo 2026b",
+      "before": "Yes",
+      "after": "Unclear",
+      "reported_controls": [
+        "delivery_mode",
+        "gestational_hypertension",
+        "gestational_diabetes",
+        "birth_trauma",
+        "preterm_birth",
+        "birth_weight",
+        "Apgar_1min",
+        "Apgar_5min"
+      ],
+      "reason": "Pregnancy-wide complications are recorded, but their onset before the selected exposure window is not established. C13 coverage is unresolved.",
+      "source_file": "evidence/42371637-Luo-2026.txt",
+      "source_locator": "Family-stratified model, lines 166-180; common adjustment specification, lines 485-488; detailed list retained from source extraction"
+    },
+    {
+      "record_id": "41238184_ADHD",
+      "study": "Pleau 2026",
+      "before": "Yes",
+      "after": "Unclear",
+      "reported_controls": [
+        "gestational_hypertension",
+        "gestational_diabetes",
+        "antepartum_hemorrhage",
+        "premature_contractions",
+        "premature_rupture_membrane",
+        "malpresentation",
+        "delivery_mode",
+        "small_for_gestational_age"
+      ],
+      "reason": "Pregnancy-wide complications are recorded, but their onset before the selected exposure window is not established. C13 coverage is unresolved.",
+      "source_file": "evidence/41238184-Pleau-2026-J_Obstet_Gynaecol_Can.txt",
+      "source_locator": "Covariate timing, lines 210-233; adjusted-model footnote, lines 460-465"
+    }
+  ],
+  "all_records": [
+    {
+      "record_id": "38592388_ADHD_pop",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "38592388_ASD_pop",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "38592388_ADHD_sib",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Strong"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": [
+        "A"
+      ]
+    },
+    {
+      "record_id": "38592388_ASD_sib",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Strong"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": [
+        "A"
+      ]
+    },
+    {
+      "record_id": "34679367_ADHD",
+      "C13_before": "Yes",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Weak"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "27353198_ADHD",
+      "C13_before": "Yes",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "32986124_ADHD",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Weak"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "40964537_ADHD",
+      "C13_before": "Yes",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "31509360_ADHD",
+      "C13_before": "Yes",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "37431475_ADHD_pop",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Weak"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "37431475_ADHD_sib",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "33230558_ADHD",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "29970852_ADHD",
+      "C13_before": "Yes",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Excluded"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "31664451_ADHD",
+      "C13_before": "Yes",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Weak"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "31664451_ASD",
+      "C13_before": "Yes",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Weak"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "41801232_ADHD_pop",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "41801232_ASD_pop",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "41801232_ADHD_sib",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "41801232_ASD_sib",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "24566677_ADHD",
+      "C13_before": "Yes",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "26688372_ASD",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "28031314_ADHD",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "30923825_ADHD",
+      "C13_before": "Yes",
+      "C13_after": "Unclear",
+      "possible_overall_grades": [
+        "Weak"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "42371637_ADHD_pop",
+      "C13_before": "Yes",
+      "C13_after": "Unclear",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "42371637_ASD_pop",
+      "C13_before": "Yes",
+      "C13_after": "Unclear",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "42371637_ADHD_sib",
+      "C13_before": "Yes",
+      "C13_after": "Unclear",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "42371637_ASD_sib",
+      "C13_before": "Yes",
+      "C13_after": "Unclear",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "40898607_ADHD_pop",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "40898607_ASD_pop",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "40898607_ADHD_sib",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "40898607_ASD_sib",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "41238184_ADHD",
+      "C13_before": "Yes",
+      "C13_after": "Unclear",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "41973453_ASD_pop",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Strong"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": [
+        "A"
+      ]
+    },
+    {
+      "record_id": "41973453_ASD_sib",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Strong"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": [
+        "A"
+      ]
+    },
+    {
+      "record_id": "36937866_ADHD",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Weak"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "27533796_ADHD",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "36170224_ADHD",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "30458756_ADHD",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Weak"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    },
+    {
+      "record_id": "29084830_ADHD",
+      "C13_before": "No",
+      "C13_after": "No",
+      "possible_overall_grades": [
+        "Moderate"
+      ],
+      "grades_unchanged": true,
+      "matched_sets": []
+    }
+  ],
+  "summary": {
+    "records_reviewed": 39,
+    "previous_Yes": 14,
+    "changed_to_No": 8,
+    "changed_to_Unclear": 6,
+    "qualifying_Yes": 0,
+    "grades_changed": 0,
+    "scope": "Targeted qualification of C13 for set B. Raw controls, broad discovery taxonomy, edge adjudications and scientific graph assumptions remain traceable."
+  }
+}

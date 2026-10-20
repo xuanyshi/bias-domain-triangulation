@@ -1,0 +1,30 @@
+label,year,B1,B2,B3,Overall,n_estimates,record_ids,article_ids,outcome_categories
+Liew 2014,2014,Moderate,Moderate,Strong,Moderate,1,24566677_ADHD,24566677,ADHD
+Avella Garcia 2016,2016,Moderate,Moderate,Moderate,Moderate,1,27353198_ADHD,27353198,ADHD
+Liew 2016a,2016,Moderate,Moderate,Strong,Moderate,1,26688372_ASD,26688372,ASD
+Liew 2016b,2016,Moderate,Moderate,Moderate,Moderate,1,28031314_ADHD,28031314,ADHD
+Stergiakouli 2016,2016,Strong,Moderate,Moderate,Moderate,1,27533796_ADHD,27533796,ADHD
+Ystrom 2017,2017,Strong,Moderate,Strong,Moderate,1,29084830_ADHD,29084830,ADHD
+Tovo 2018,2018,Weak,Moderate,Moderate,Weak,1,30458756_ADHD,30458756,ADHD
+Chen 2019,2019,Moderate,Moderate,Strong,Moderate,1,31509360_ADHD,31509360,ADHD
+Ji 2019,2019,Weak,Moderate,Moderate,Weak,2,31664451_ADHD;31664451_ASD,31664451,ADHD;ASD
+Liew 2019,2019,Weak,Moderate,Moderate,Weak,1,30923825_ADHD,30923825,ADHD
+Baker 2020,2020,Weak,Moderate,Moderate,Weak,1,32986124_ADHD,32986124,ADHD
+Inoue 2020,2020,Moderate,Moderate,Strong,Moderate,1,33230558_ADHD,33230558,ADHD
+Anand 2021,2021,Weak,Moderate,Moderate,Weak,1,34679367_ADHD,34679367,ADHD
+Gustavson 2021a,2021,Weak,Moderate,Strong,Weak,1,37431475_ADHD_pop,37431475,ADHD
+Gustavson 2021b,2021,Strong,Moderate,Moderate,Moderate,1,37431475_ADHD_sib,37431475,ADHD
+Sznajder 2022,2022,Moderate,Moderate,Moderate,Moderate,1,36170224_ADHD,36170224,ADHD
+Smith Webb 2023,2023,Weak,Weak,Moderate,Weak,1,36937866_ADHD,36937866,ADHD
+Ahlqvist 2024a,2024,Moderate,Strong,Strong,Moderate,2,38592388_ADHD_pop;38592388_ASD_pop,38592388,ADHD;ASD
+Ahlqvist 2024b,2024,Strong,Strong,Strong,Strong,2,38592388_ADHD_sib;38592388_ASD_sib,38592388,ADHD;ASD
+Baker 2025,2025,Strong,Moderate,Moderate,Moderate,1,40964537_ADHD,40964537,ADHD
+Okubo 2025a,2025,Moderate,Moderate,Moderate,Moderate,2,40898607_ADHD_pop;40898607_ASD_pop,40898607,ADHD;ASD
+Okubo 2025b,2025,Strong,Moderate,Moderate,Moderate,2,40898607_ADHD_sib;40898607_ASD_sib,40898607,ADHD;ASD
+Lee 2026a,2026,Moderate,Moderate,Strong,Moderate,2,41801232_ADHD_pop;41801232_ASD_pop,41801232,ADHD;ASD
+Lee 2026b,2026,Strong,Moderate,Strong,Moderate,2,41801232_ADHD_sib;41801232_ASD_sib,41801232,ADHD;ASD
+Luo 2026a,2026,Moderate,Moderate,Moderate,Moderate,2,42371637_ADHD_pop;42371637_ASD_pop,42371637,ADHD;ASD
+Luo 2026b,2026,Strong,Moderate,Moderate,Moderate,2,42371637_ADHD_sib;42371637_ASD_sib,42371637,ADHD;ASD
+Pleau 2026,2026,Moderate,Moderate,Strong,Moderate,1,41238184_ADHD,41238184,ADHD
+Prahm 2026a,2026,Strong,Strong,Strong,Strong,1,41973453_ASD_pop,41973453,ASD
+Prahm 2026b,2026,Strong,Strong,Strong,Strong,1,41973453_ASD_sib,41973453,ASD

@@ -1,0 +1,133 @@
+source,target,source_name,target_name,decision_source,source_row
+X,Y,Actual prenatal acetaminophen use,Recorded ASD or ADHD outcome,three_model_consensus,2
+C01,X,Familial and genetic background,Actual prenatal acetaminophen use,user_adjudication,5
+C02,X,Sociodemographic and family characteristics,Actual prenatal acetaminophen use,user_adjudication,7
+C03,X,Socioeconomic position,Actual prenatal acetaminophen use,three_model_consensus,9
+C04,X,Geographical and calendar context,Actual prenatal acetaminophen use,three_model_consensus,11
+C05,X,Established maternal neuropsychiatric health,Actual prenatal acetaminophen use,user_adjudication,13
+C06,X,Maternal physical and metabolic health,Actual prenatal acetaminophen use,user_adjudication,15
+C07,X,Maternal indications and symptoms,Actual prenatal acetaminophen use,three_model_consensus,17
+C10,X,Maternal healthcare seeking and use,Actual prenatal acetaminophen use,user_adjudication,23
+C11,X,Other medications and treatments,Actual prenatal acetaminophen use,user_adjudication,25
+X,C17,Actual prenatal acetaminophen use,Post-exposure biological and pharmacological responses,three_model_consensus,36
+C01,Y,Familial and genetic background,Recorded ASD or ADHD outcome,three_model_consensus,39
+C02,Y,Sociodemographic and family characteristics,Recorded ASD or ADHD outcome,three_model_consensus,41
+C03,Y,Socioeconomic position,Recorded ASD or ADHD outcome,three_model_consensus,43
+C04,Y,Geographical and calendar context,Recorded ASD or ADHD outcome,three_model_consensus,45
+C06,Y,Maternal physical and metabolic health,Recorded ASD or ADHD outcome,three_model_consensus,49
+C07,Y,Maternal indications and symptoms,Recorded ASD or ADHD outcome,three_model_consensus,51
+C09,Y,Psychosocial conditions and health behaviors,Recorded ASD or ADHD outcome,user_adjudication,55
+C11,Y,Other medications and treatments,Recorded ASD or ADHD outcome,three_model_consensus,59
+C12,Y,Environmental and occupational exposures,Recorded ASD or ADHD outcome,three_model_consensus,61
+C13,Y,Current-pregnancy obstetric and perinatal health,Recorded ASD or ADHD outcome,three_model_consensus,63
+C15,Y,Early childhood physical and immune health,Recorded ASD or ADHD outcome,user_adjudication,67
+C16,Y,Early neurodevelopmental and regulatory phenotypes,Recorded ASD or ADHD outcome,three_model_consensus,69
+C01,C03,Familial and genetic background,Socioeconomic position,three_model_consensus,74
+C01,C05,Familial and genetic background,Established maternal neuropsychiatric health,three_model_consensus,78
+C01,C06,Familial and genetic background,Maternal physical and metabolic health,three_model_consensus,80
+C01,C07,Familial and genetic background,Maternal indications and symptoms,three_model_consensus,82
+C01,C08,Familial and genetic background,Reproductive and prior obstetric history,three_model_consensus,84
+C01,C09,Familial and genetic background,Psychosocial conditions and health behaviors,three_model_consensus,86
+C01,C10,Familial and genetic background,Maternal healthcare seeking and use,user_adjudication,88
+C01,C11,Familial and genetic background,Other medications and treatments,user_adjudication,90
+C01,C13,Familial and genetic background,Current-pregnancy obstetric and perinatal health,three_model_consensus,94
+C01,C14,Familial and genetic background,Infant feeding and breastfeeding,user_adjudication,96
+C01,C15,Familial and genetic background,Early childhood physical and immune health,three_model_consensus,98
+C01,C16,Familial and genetic background,Early neurodevelopmental and regulatory phenotypes,three_model_consensus,100
+C01,C17,Familial and genetic background,Post-exposure biological and pharmacological responses,three_model_consensus,102
+C02,C03,Sociodemographic and family characteristics,Socioeconomic position,user_adjudication,104
+C02,C04,Sociodemographic and family characteristics,Geographical and calendar context,three_model_consensus,106
+C05,C02,Established maternal neuropsychiatric health,Sociodemographic and family characteristics,user_adjudication,109
+C02,C06,Sociodemographic and family characteristics,Maternal physical and metabolic health,user_adjudication,110
+C02,C07,Sociodemographic and family characteristics,Maternal indications and symptoms,three_model_consensus,112
+C08,C02,Reproductive and prior obstetric history,Sociodemographic and family characteristics,user_adjudication,115
+C02,C09,Sociodemographic and family characteristics,Psychosocial conditions and health behaviors,three_model_consensus,116
+C02,C10,Sociodemographic and family characteristics,Maternal healthcare seeking and use,three_model_consensus,118
+C02,C11,Sociodemographic and family characteristics,Other medications and treatments,three_model_consensus,120
+C02,C12,Sociodemographic and family characteristics,Environmental and occupational exposures,user_adjudication,122
+C02,C13,Sociodemographic and family characteristics,Current-pregnancy obstetric and perinatal health,three_model_consensus,124
+C02,C14,Sociodemographic and family characteristics,Infant feeding and breastfeeding,three_model_consensus,126
+C02,C15,Sociodemographic and family characteristics,Early childhood physical and immune health,three_model_consensus,128
+C02,C16,Sociodemographic and family characteristics,Early neurodevelopmental and regulatory phenotypes,three_model_consensus,130
+C05,C03,Established maternal neuropsychiatric health,Socioeconomic position,three_model_consensus,137
+C03,C06,Socioeconomic position,Maternal physical and metabolic health,three_model_consensus,138
+C03,C07,Socioeconomic position,Maternal indications and symptoms,three_model_consensus,140
+C08,C03,Reproductive and prior obstetric history,Socioeconomic position,user_adjudication,143
+C03,C09,Socioeconomic position,Psychosocial conditions and health behaviors,three_model_consensus,144
+C03,C10,Socioeconomic position,Maternal healthcare seeking and use,three_model_consensus,146
+C03,C11,Socioeconomic position,Other medications and treatments,user_adjudication,148
+C03,C12,Socioeconomic position,Environmental and occupational exposures,three_model_consensus,150
+C03,C13,Socioeconomic position,Current-pregnancy obstetric and perinatal health,three_model_consensus,152
+C03,C14,Socioeconomic position,Infant feeding and breastfeeding,three_model_consensus,154
+C03,C15,Socioeconomic position,Early childhood physical and immune health,three_model_consensus,156
+C03,C16,Socioeconomic position,Early neurodevelopmental and regulatory phenotypes,user_adjudication,158
+C04,C06,Geographical and calendar context,Maternal physical and metabolic health,user_adjudication,164
+C04,C07,Geographical and calendar context,Maternal indications and symptoms,three_model_consensus,166
+C04,C09,Geographical and calendar context,Psychosocial conditions and health behaviors,three_model_consensus,170
+C04,C10,Geographical and calendar context,Maternal healthcare seeking and use,three_model_consensus,172
+C04,C11,Geographical and calendar context,Other medications and treatments,three_model_consensus,174
+C04,C12,Geographical and calendar context,Environmental and occupational exposures,three_model_consensus,176
+C04,C13,Geographical and calendar context,Current-pregnancy obstetric and perinatal health,user_adjudication,178
+C04,C14,Geographical and calendar context,Infant feeding and breastfeeding,three_model_consensus,180
+C04,C15,Geographical and calendar context,Early childhood physical and immune health,user_adjudication,182
+C05,C06,Established maternal neuropsychiatric health,Maternal physical and metabolic health,user_adjudication,188
+C05,C07,Established maternal neuropsychiatric health,Maternal indications and symptoms,three_model_consensus,190
+C05,C08,Established maternal neuropsychiatric health,Reproductive and prior obstetric history,user_adjudication,192
+C05,C09,Established maternal neuropsychiatric health,Psychosocial conditions and health behaviors,user_adjudication,194
+C05,C10,Established maternal neuropsychiatric health,Maternal healthcare seeking and use,three_model_consensus,196
+C05,C11,Established maternal neuropsychiatric health,Other medications and treatments,three_model_consensus,198
+C05,C13,Established maternal neuropsychiatric health,Current-pregnancy obstetric and perinatal health,three_model_consensus,202
+C05,C14,Established maternal neuropsychiatric health,Infant feeding and breastfeeding,user_adjudication,204
+C05,C15,Established maternal neuropsychiatric health,Early childhood physical and immune health,user_adjudication,206
+C05,C16,Established maternal neuropsychiatric health,Early neurodevelopmental and regulatory phenotypes,user_adjudication,208
+C06,C07,Maternal physical and metabolic health,Maternal indications and symptoms,three_model_consensus,212
+C08,C06,Reproductive and prior obstetric history,Maternal physical and metabolic health,user_adjudication,215
+C09,C06,Psychosocial conditions and health behaviors,Maternal physical and metabolic health,three_model_consensus,217
+C06,C10,Maternal physical and metabolic health,Maternal healthcare seeking and use,three_model_consensus,218
+C06,C11,Maternal physical and metabolic health,Other medications and treatments,three_model_consensus,220
+C12,C06,Environmental and occupational exposures,Maternal physical and metabolic health,three_model_consensus,223
+C06,C13,Maternal physical and metabolic health,Current-pregnancy obstetric and perinatal health,three_model_consensus,224
+C06,C14,Maternal physical and metabolic health,Infant feeding and breastfeeding,three_model_consensus,226
+C06,C15,Maternal physical and metabolic health,Early childhood physical and immune health,user_adjudication,228
+C06,C16,Maternal physical and metabolic health,Early neurodevelopmental and regulatory phenotypes,three_model_consensus,230
+C06,C17,Maternal physical and metabolic health,Post-exposure biological and pharmacological responses,three_model_consensus,232
+C08,C07,Reproductive and prior obstetric history,Maternal indications and symptoms,user_adjudication,235
+C09,C07,Psychosocial conditions and health behaviors,Maternal indications and symptoms,three_model_consensus,237
+C07,C10,Maternal indications and symptoms,Maternal healthcare seeking and use,three_model_consensus,238
+C07,C11,Maternal indications and symptoms,Other medications and treatments,three_model_consensus,240
+C12,C07,Environmental and occupational exposures,Maternal indications and symptoms,three_model_consensus,243
+C07,C13,Maternal indications and symptoms,Current-pregnancy obstetric and perinatal health,three_model_consensus,244
+C07,C15,Maternal indications and symptoms,Early childhood physical and immune health,user_adjudication,248
+C07,C16,Maternal indications and symptoms,Early neurodevelopmental and regulatory phenotypes,three_model_consensus,250
+C08,C09,Reproductive and prior obstetric history,Psychosocial conditions and health behaviors,three_model_consensus,254
+C08,C10,Reproductive and prior obstetric history,Maternal healthcare seeking and use,three_model_consensus,256
+C08,C11,Reproductive and prior obstetric history,Other medications and treatments,three_model_consensus,258
+C08,C13,Reproductive and prior obstetric history,Current-pregnancy obstetric and perinatal health,three_model_consensus,262
+C08,C14,Reproductive and prior obstetric history,Infant feeding and breastfeeding,three_model_consensus,264
+C09,C10,Psychosocial conditions and health behaviors,Maternal healthcare seeking and use,three_model_consensus,272
+C09,C11,Psychosocial conditions and health behaviors,Other medications and treatments,user_adjudication,274
+C09,C13,Psychosocial conditions and health behaviors,Current-pregnancy obstetric and perinatal health,three_model_consensus,278
+C09,C14,Psychosocial conditions and health behaviors,Infant feeding and breastfeeding,user_adjudication,280
+C09,C15,Psychosocial conditions and health behaviors,Early childhood physical and immune health,three_model_consensus,282
+C09,C16,Psychosocial conditions and health behaviors,Early neurodevelopmental and regulatory phenotypes,three_model_consensus,284
+C09,C17,Psychosocial conditions and health behaviors,Post-exposure biological and pharmacological responses,three_model_consensus,286
+C10,C11,Maternal healthcare seeking and use,Other medications and treatments,three_model_consensus,288
+C12,C10,Environmental and occupational exposures,Maternal healthcare seeking and use,user_adjudication,291
+C13,C10,Current-pregnancy obstetric and perinatal health,Maternal healthcare seeking and use,three_model_consensus,293
+C10,C14,Maternal healthcare seeking and use,Infant feeding and breastfeeding,user_adjudication,294
+C12,C11,Environmental and occupational exposures,Other medications and treatments,three_model_consensus,303
+C13,C11,Current-pregnancy obstetric and perinatal health,Other medications and treatments,three_model_consensus,305
+C11,C14,Other medications and treatments,Infant feeding and breastfeeding,user_adjudication,306
+C11,C15,Other medications and treatments,Early childhood physical and immune health,user_adjudication,308
+C11,C16,Other medications and treatments,Early neurodevelopmental and regulatory phenotypes,user_adjudication,310
+C11,C17,Other medications and treatments,Post-exposure biological and pharmacological responses,user_adjudication,312
+C12,C13,Environmental and occupational exposures,Current-pregnancy obstetric and perinatal health,three_model_consensus,314
+C12,C14,Environmental and occupational exposures,Infant feeding and breastfeeding,user_adjudication,316
+C12,C15,Environmental and occupational exposures,Early childhood physical and immune health,three_model_consensus,318
+C12,C16,Environmental and occupational exposures,Early neurodevelopmental and regulatory phenotypes,three_model_consensus,320
+C13,C14,Current-pregnancy obstetric and perinatal health,Infant feeding and breastfeeding,three_model_consensus,324
+C13,C15,Current-pregnancy obstetric and perinatal health,Early childhood physical and immune health,three_model_consensus,326
+C13,C16,Current-pregnancy obstetric and perinatal health,Early neurodevelopmental and regulatory phenotypes,three_model_consensus,328
+C16,C14,Early neurodevelopmental and regulatory phenotypes,Infant feeding and breastfeeding,user_adjudication,335
+C15,C16,Early childhood physical and immune health,Early neurodevelopmental and regulatory phenotypes,user_adjudication,338
+C17,C16,Post-exposure biological and pharmacological responses,Early neurodevelopmental and regulatory phenotypes,user_adjudication,343

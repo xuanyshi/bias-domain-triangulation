@@ -1,0 +1,21 @@
+{
+  "C01": "Family and genetic background",
+  "C02": "Sociodemographic and family factors",
+  "C03": "Socioeconomic position",
+  "C04": "Geographic and calendar context",
+  "C05": "Pre-existing maternal neuropsychiatric health",
+  "C06": "Maternal physical and metabolic health",
+  "C07": "Maternal treatment indications and symptoms",
+  "C08": "Reproductive and prior obstetric history",
+  "C09": "Psychosocial conditions and health behaviours",
+  "C10": "Maternal healthcare seeking and use",
+  "C11": "Other medications and treatments",
+  "C12": "Environmental and occupational exposures",
+  "C13": "Current obstetric and perinatal health",
+  "C14": "Infant feeding and breastfeeding",
+  "C15": "Early childhood physical and immune health",
+  "C16": "Early neurodevelopmental and regulatory phenotypes",
+  "C17": "Post-exposure biological and pharmacological responses",
+  "X": "Actual prenatal acetaminophen use",
+  "Y": "Recorded offspring ASD or ADHD"
+}

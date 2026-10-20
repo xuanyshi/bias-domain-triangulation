@@ -1,0 +1,29 @@
+{
+  "graph_version": "DAG132-v1-20261007",
+  "nodes": 19,
+  "assessed_directions": 342,
+  "author_adjudications": 63,
+  "model_consensus_directions": 279,
+  "pass_directions": 135,
+  "initial_cycles": 10,
+  "edges": 132,
+  "omitted_edges": [
+    [
+      "C12",
+      "C08"
+    ],
+    [
+      "C14",
+      "C15"
+    ],
+    [
+      "C17",
+      "C13"
+    ]
+  ],
+  "explicit_author_pass_decisions_changed": 0,
+  "directional_judgments": "../supplementary_tables/Supplementary_Table_S10_Edge_Judgments.xlsx",
+  "rationales": "DAG132_v1_edge_provenance.json",
+  "rationale_language": "English translation of recorded author rationales",
+  "original_records": "Verbatim source records are retained in the separate original-language research archive."
+}

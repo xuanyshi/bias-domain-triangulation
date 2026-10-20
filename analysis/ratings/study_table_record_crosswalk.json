@@ -1,0 +1,1267 @@
+{
+  "rule_version": "DAG132-decision-tree-v3-C13-timing-20261009",
+  "source_ratings_sha256": "3c68d6847d6efc1cdb45b125e262b05c7a3b19e3b8dc729000141975f484db1f",
+  "displayed_rows": 30,
+  "articles": 24,
+  "estimates": 39,
+  "retained_estimates": 38,
+  "overall_counts": {
+    "Moderate": 26,
+    "Strong": 4,
+    "Weak": 8,
+    "Excluded": 1
+  },
+  "rows": [
+    {
+      "display_row": 1,
+      "record_ids": [
+        "38592388_ADHD_pop",
+        "38592388_ASD_pop"
+      ],
+      "study": "Ahlqvist 2024",
+      "covered": [
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11"
+      ],
+      "missing": {
+        "A": [
+          "C01"
+        ],
+        "B": [
+          "C01",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Moderate",
+        "B2": "Strong",
+        "B3": "Strong"
+      },
+      "overall": "Moderate",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 2,
+      "record_ids": [
+        "38592388_ADHD_sib",
+        "38592388_ASD_sib"
+      ],
+      "study": "Ahlqvist 2024",
+      "covered": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11"
+      ],
+      "missing": {
+        "A": [],
+        "B": [
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [
+        "A"
+      ],
+      "domain_grades": {
+        "B1": "Strong",
+        "B2": "Strong",
+        "B3": "Strong"
+      },
+      "overall": "Strong",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 3,
+      "record_ids": [
+        "34679367_ADHD"
+      ],
+      "study": "Anand 2021",
+      "covered": [
+        "C02",
+        "C03",
+        "C06",
+        "C07",
+        "C08",
+        "C09"
+      ],
+      "missing": {
+        "A": [
+          "C01",
+          "C04",
+          "C05",
+          "C10",
+          "C11"
+        ],
+        "B": [
+          "C01",
+          "C04",
+          "C05",
+          "C11",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Weak",
+        "B2": "Moderate",
+        "B3": "Moderate"
+      },
+      "overall": "Weak",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 4,
+      "record_ids": [
+        "27353198_ADHD"
+      ],
+      "study": "Avella Garcia 2016",
+      "covered": [
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C11"
+      ],
+      "missing": {
+        "A": [
+          "C01",
+          "C02",
+          "C10"
+        ],
+        "B": [
+          "C01",
+          "C02",
+          "C09",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Moderate",
+        "B2": "Moderate",
+        "B3": "Moderate"
+      },
+      "overall": "Moderate",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 5,
+      "record_ids": [
+        "32986124_ADHD"
+      ],
+      "study": "Baker 2020",
+      "covered": [
+        "C02",
+        "C03",
+        "C06",
+        "C09"
+      ],
+      "missing": {
+        "A": [
+          "C01",
+          "C04",
+          "C05",
+          "C07",
+          "C10",
+          "C11"
+        ],
+        "B": [
+          "C01",
+          "C04",
+          "C05",
+          "C07",
+          "C11",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Weak",
+        "B2": "Moderate",
+        "B3": "Moderate"
+      },
+      "overall": "Weak",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 6,
+      "record_ids": [
+        "40964537_ADHD"
+      ],
+      "study": "Baker 2025",
+      "covered": [
+        "C01",
+        "C02",
+        "C03",
+        "C05",
+        "C06",
+        "C09",
+        "C11"
+      ],
+      "missing": {
+        "A": [
+          "C04",
+          "C07",
+          "C10"
+        ],
+        "B": [
+          "C04",
+          "C07",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Strong",
+        "B2": "Moderate",
+        "B3": "Moderate"
+      },
+      "overall": "Moderate",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 7,
+      "record_ids": [
+        "31509360_ADHD"
+      ],
+      "study": "Chen 2019",
+      "covered": [
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C07"
+      ],
+      "missing": {
+        "A": [
+          "C01",
+          "C06",
+          "C10",
+          "C11"
+        ],
+        "B": [
+          "C01",
+          "C06",
+          "C09",
+          "C11",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Moderate",
+        "B2": "Moderate",
+        "B3": "Strong"
+      },
+      "overall": "Moderate",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 8,
+      "record_ids": [
+        "37431475_ADHD_pop"
+      ],
+      "study": "Gustavson 2021",
+      "covered": [
+        "C02",
+        "C03",
+        "C04",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C11"
+      ],
+      "missing": {
+        "A": [
+          "C01",
+          "C05",
+          "C10"
+        ],
+        "B": [
+          "C01",
+          "C05",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Weak",
+        "B2": "Moderate",
+        "B3": "Strong"
+      },
+      "overall": "Weak",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 9,
+      "record_ids": [
+        "37431475_ADHD_sib"
+      ],
+      "study": "Gustavson 2021",
+      "covered": [
+        "C01",
+        "C02",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C09",
+        "C11"
+      ],
+      "missing": {
+        "A": [
+          "C03",
+          "C10"
+        ],
+        "B": [
+          "C03",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Strong",
+        "B2": "Moderate",
+        "B3": "Moderate"
+      },
+      "overall": "Moderate",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 10,
+      "record_ids": [
+        "33230558_ADHD"
+      ],
+      "study": "Inoue 2020",
+      "covered": [
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C11"
+      ],
+      "missing": {
+        "A": [
+          "C01",
+          "C10"
+        ],
+        "B": [
+          "C01",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Moderate",
+        "B2": "Moderate",
+        "B3": "Strong"
+      },
+      "overall": "Moderate",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 11,
+      "record_ids": [
+        "29970852_ADHD"
+      ],
+      "study": "Ji 2018",
+      "covered": [
+        "C02",
+        "C03",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C14"
+      ],
+      "missing": {
+        "A": [
+          "C01",
+          "C04",
+          "C05",
+          "C10",
+          "C11"
+        ],
+        "B": [
+          "C01",
+          "C04",
+          "C05",
+          "C11",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": null,
+        "B2": null,
+        "B3": null
+      },
+      "overall": "Excluded",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 12,
+      "record_ids": [
+        "31664451_ADHD",
+        "31664451_ASD"
+      ],
+      "study": "Ji 2019",
+      "covered": [
+        "C02",
+        "C03",
+        "C06",
+        "C08",
+        "C09"
+      ],
+      "missing": {
+        "A": [
+          "C01",
+          "C04",
+          "C05",
+          "C07",
+          "C10",
+          "C11"
+        ],
+        "B": [
+          "C01",
+          "C04",
+          "C05",
+          "C07",
+          "C11",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Weak",
+        "B2": "Moderate",
+        "B3": "Moderate"
+      },
+      "overall": "Weak",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 13,
+      "record_ids": [
+        "41801232_ADHD_pop",
+        "41801232_ASD_pop"
+      ],
+      "study": "Lee 2026",
+      "covered": [
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C07",
+        "C08",
+        "C09",
+        "C11"
+      ],
+      "missing": {
+        "A": [
+          "C01",
+          "C06",
+          "C10"
+        ],
+        "B": [
+          "C01",
+          "C06",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Moderate",
+        "B2": "Moderate",
+        "B3": "Strong"
+      },
+      "overall": "Moderate",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 14,
+      "record_ids": [
+        "41801232_ADHD_sib",
+        "41801232_ASD_sib"
+      ],
+      "study": "Lee 2026",
+      "covered": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C07",
+        "C08",
+        "C09",
+        "C11"
+      ],
+      "missing": {
+        "A": [
+          "C06",
+          "C10"
+        ],
+        "B": [
+          "C06",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Strong",
+        "B2": "Moderate",
+        "B3": "Strong"
+      },
+      "overall": "Moderate",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 15,
+      "record_ids": [
+        "24566677_ADHD"
+      ],
+      "study": "Liew 2014",
+      "covered": [
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09"
+      ],
+      "missing": {
+        "A": [
+          "C01",
+          "C10",
+          "C11"
+        ],
+        "B": [
+          "C01",
+          "C11",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Moderate",
+        "B2": "Moderate",
+        "B3": "Strong"
+      },
+      "overall": "Moderate",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 16,
+      "record_ids": [
+        "26688372_ASD"
+      ],
+      "study": "Liew 2016a",
+      "covered": [
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C11"
+      ],
+      "missing": {
+        "A": [
+          "C01",
+          "C10"
+        ],
+        "B": [
+          "C01",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Moderate",
+        "B2": "Moderate",
+        "B3": "Strong"
+      },
+      "overall": "Moderate",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 17,
+      "record_ids": [
+        "28031314_ADHD"
+      ],
+      "study": "Liew 2016b",
+      "covered": [
+        "C02",
+        "C03",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C11"
+      ],
+      "missing": {
+        "A": [
+          "C01",
+          "C04",
+          "C10"
+        ],
+        "B": [
+          "C01",
+          "C04",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Moderate",
+        "B2": "Moderate",
+        "B3": "Moderate"
+      },
+      "overall": "Moderate",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 18,
+      "record_ids": [
+        "30923825_ADHD"
+      ],
+      "study": "Liew 2019",
+      "covered": [
+        "C02",
+        "C04",
+        "C08",
+        "C11"
+      ],
+      "missing": {
+        "A": [
+          "C01",
+          "C03",
+          "C05",
+          "C06",
+          "C07",
+          "C10"
+        ],
+        "B": [
+          "C01",
+          "C03",
+          "C05",
+          "C06",
+          "C07",
+          "C09",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Weak",
+        "B2": "Moderate",
+        "B3": "Moderate"
+      },
+      "overall": "Weak",
+      "uncertain": {
+        "A": [],
+        "B": [
+          "C13"
+        ]
+      }
+    },
+    {
+      "display_row": 19,
+      "record_ids": [
+        "42371637_ADHD_pop",
+        "42371637_ASD_pop"
+      ],
+      "study": "Luo 2026",
+      "covered": [
+        "C02",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C11"
+      ],
+      "missing": {
+        "A": [
+          "C01",
+          "C03",
+          "C10"
+        ],
+        "B": [
+          "C01",
+          "C03",
+          "C09",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Moderate",
+        "B2": "Moderate",
+        "B3": "Moderate"
+      },
+      "overall": "Moderate",
+      "uncertain": {
+        "A": [],
+        "B": [
+          "C13"
+        ]
+      }
+    },
+    {
+      "display_row": 20,
+      "record_ids": [
+        "42371637_ADHD_sib",
+        "42371637_ASD_sib"
+      ],
+      "study": "Luo 2026",
+      "covered": [
+        "C01",
+        "C02",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C11"
+      ],
+      "missing": {
+        "A": [
+          "C03",
+          "C10"
+        ],
+        "B": [
+          "C03",
+          "C09",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Strong",
+        "B2": "Moderate",
+        "B3": "Moderate"
+      },
+      "overall": "Moderate",
+      "uncertain": {
+        "A": [],
+        "B": [
+          "C13"
+        ]
+      }
+    },
+    {
+      "display_row": 21,
+      "record_ids": [
+        "40898607_ADHD_pop",
+        "40898607_ASD_pop"
+      ],
+      "study": "Okubo 2025",
+      "covered": [
+        "C02",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C11"
+      ],
+      "missing": {
+        "A": [
+          "C01",
+          "C03",
+          "C10"
+        ],
+        "B": [
+          "C01",
+          "C03",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Moderate",
+        "B2": "Moderate",
+        "B3": "Moderate"
+      },
+      "overall": "Moderate",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 22,
+      "record_ids": [
+        "40898607_ADHD_sib",
+        "40898607_ASD_sib"
+      ],
+      "study": "Okubo 2025",
+      "covered": [
+        "C01",
+        "C02",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C11"
+      ],
+      "missing": {
+        "A": [
+          "C03",
+          "C10"
+        ],
+        "B": [
+          "C03",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Strong",
+        "B2": "Moderate",
+        "B3": "Moderate"
+      },
+      "overall": "Moderate",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 23,
+      "record_ids": [
+        "41238184_ADHD"
+      ],
+      "study": "Pleau 2026",
+      "covered": [
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C09",
+        "C11"
+      ],
+      "missing": {
+        "A": [
+          "C01",
+          "C10"
+        ],
+        "B": [
+          "C01",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Moderate",
+        "B2": "Moderate",
+        "B3": "Strong"
+      },
+      "overall": "Moderate",
+      "uncertain": {
+        "A": [],
+        "B": [
+          "C13"
+        ]
+      }
+    },
+    {
+      "display_row": 24,
+      "record_ids": [
+        "41973453_ASD_pop"
+      ],
+      "study": "Prahm 2026",
+      "covered": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11"
+      ],
+      "missing": {
+        "A": [],
+        "B": [
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [
+        "A"
+      ],
+      "domain_grades": {
+        "B1": "Strong",
+        "B2": "Strong",
+        "B3": "Strong"
+      },
+      "overall": "Strong",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 25,
+      "record_ids": [
+        "41973453_ASD_sib"
+      ],
+      "study": "Prahm 2026",
+      "covered": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11"
+      ],
+      "missing": {
+        "A": [],
+        "B": [
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [
+        "A"
+      ],
+      "domain_grades": {
+        "B1": "Strong",
+        "B2": "Strong",
+        "B3": "Strong"
+      },
+      "overall": "Strong",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 26,
+      "record_ids": [
+        "36937866_ADHD"
+      ],
+      "study": "Smith Webb 2023",
+      "covered": [
+        "C02",
+        "C03",
+        "C08",
+        "C09"
+      ],
+      "missing": {
+        "A": [
+          "C01",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C10",
+          "C11"
+        ],
+        "B": [
+          "C01",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C11",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Weak",
+        "B2": "Weak",
+        "B3": "Moderate"
+      },
+      "overall": "Weak",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 27,
+      "record_ids": [
+        "27533796_ADHD"
+      ],
+      "study": "Stergiakouli 2016",
+      "covered": [
+        "C01",
+        "C02",
+        "C03",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09"
+      ],
+      "missing": {
+        "A": [
+          "C04",
+          "C10",
+          "C11"
+        ],
+        "B": [
+          "C04",
+          "C11",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Strong",
+        "B2": "Moderate",
+        "B3": "Moderate"
+      },
+      "overall": "Moderate",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 28,
+      "record_ids": [
+        "36170224_ADHD"
+      ],
+      "study": "Sznajder 2022",
+      "covered": [
+        "C02",
+        "C03",
+        "C05",
+        "C06",
+        "C09"
+      ],
+      "missing": {
+        "A": [
+          "C01",
+          "C04",
+          "C07",
+          "C10",
+          "C11"
+        ],
+        "B": [
+          "C01",
+          "C04",
+          "C07",
+          "C11",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Moderate",
+        "B2": "Moderate",
+        "B3": "Moderate"
+      },
+      "overall": "Moderate",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 29,
+      "record_ids": [
+        "30458756_ADHD"
+      ],
+      "study": "Tovo 2018",
+      "covered": [
+        "C02",
+        "C03",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C11"
+      ],
+      "missing": {
+        "A": [
+          "C01",
+          "C04",
+          "C05",
+          "C10"
+        ],
+        "B": [
+          "C01",
+          "C04",
+          "C05",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Weak",
+        "B2": "Moderate",
+        "B3": "Moderate"
+      },
+      "overall": "Weak",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "display_row": 30,
+      "record_ids": [
+        "29084830_ADHD"
+      ],
+      "study": "Ystrom 2017",
+      "covered": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C08",
+        "C09"
+      ],
+      "missing": {
+        "A": [
+          "C07",
+          "C10",
+          "C11"
+        ],
+        "B": [
+          "C07",
+          "C11",
+          "C12",
+          "C13"
+        ]
+      },
+      "matched_sets": [],
+      "domain_grades": {
+        "B1": "Strong",
+        "B2": "Moderate",
+        "B3": "Strong"
+      },
+      "overall": "Moderate",
+      "uncertain": {
+        "A": [],
+        "B": []
+      }
+    }
+  ]
+}

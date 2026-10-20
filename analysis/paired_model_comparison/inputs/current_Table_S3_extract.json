@@ -1,0 +1,275 @@
+[
+  {
+    "source_table": "S3a",
+    "cells": [
+      "Ahlqvist 2024\nPopulation cohort; adjusted Cox\nPMID 38592388",
+      "ADHD / ASD\n(2)",
+      "8/9 covered\nMissing: C01",
+      "8/11 covered\nMissing: C01, C12, C13",
+      "Moderate",
+      "Strong",
+      "Strong",
+      "Moderate"
+    ]
+  },
+  {
+    "source_table": "S3a",
+    "cells": [
+      "Ahlqvist 2024\nSibling comparison; family fixed effects\nPMID 38592388",
+      "ADHD / ASD\n(2)",
+      "9/9 complete",
+      "9/11 covered\nMissing: C12, C13",
+      "Strong",
+      "Strong",
+      "Strong",
+      "Strong"
+    ]
+  },
+  {
+    "source_table": "S3a",
+    "cells": [
+      "Gustavson 2021\nSibling sample; population model with propensity-score adjustment\nPMID 37431475",
+      "ADHD\n(1)",
+      "6/9 covered\nMissing: C01, C05, C10",
+      "7/11 covered\nMissing: C01, C05, C12, C13",
+      "Weak",
+      "Moderate",
+      "Strong",
+      "Weak"
+    ]
+  },
+  {
+    "source_table": "S3a",
+    "cells": [
+      "Gustavson 2021\nWithin-family model with propensity-score adjustment\nPMID 37431475",
+      "ADHD\n(1)",
+      "7/9 covered\nMissing: C03, C10",
+      "8/11 covered\nMissing: C03, C12, C13",
+      "Strong",
+      "Moderate",
+      "Moderate",
+      "Moderate"
+    ]
+  },
+  {
+    "source_table": "S3a",
+    "cells": [
+      "Lee 2026\nPopulation cohort; adjusted Cox\nPMID 41801232",
+      "ADHD / ASD\n(2)",
+      "6/9 covered\nMissing: C01, C06, C10",
+      "7/11 covered\nMissing: C01, C06, C12, C13",
+      "Moderate",
+      "Moderate",
+      "Strong",
+      "Moderate"
+    ]
+  },
+  {
+    "source_table": "S3a",
+    "cells": [
+      "Lee 2026\nSibling-matched; stratified Cox\nPMID 41801232",
+      "ADHD / ASD\n(2)",
+      "7/9 covered\nMissing: C06, C10",
+      "8/11 covered\nMissing: C06, C12, C13",
+      "Strong",
+      "Moderate",
+      "Strong",
+      "Moderate"
+    ]
+  },
+  {
+    "source_table": "S3a",
+    "cells": [
+      "Luo 2026\nPopulation cohort; adjusted Cox [1]\nPMID 42371637",
+      "ADHD / ASD\n(2)",
+      "6/9 covered\nMissing: C01, C03, C10",
+      "6/11 covered\nMissing: C01, C03, C09, C12\nUnclear: C13",
+      "Moderate",
+      "Moderate",
+      "Moderate",
+      "Moderate"
+    ]
+  },
+  {
+    "source_table": "S3a",
+    "cells": [
+      "Luo 2026\nSibling cohort; family-stratified Cox [1]\nPMID 42371637",
+      "ADHD / ASD\n(2)",
+      "7/9 covered\nMissing: C03, C10",
+      "7/11 covered\nMissing: C03, C09, C12\nUnclear: C13",
+      "Strong",
+      "Moderate",
+      "Moderate",
+      "Moderate"
+    ]
+  },
+  {
+    "source_table": "S3a",
+    "cells": [
+      "Okubo 2025\nPropensity-score-matched cohort; Cox [2]\nPMID 40898607",
+      "ADHD / ASD\n(2)",
+      "6/9 covered\nMissing: C01, C03, C10",
+      "7/11 covered\nMissing: C01, C03, C12, C13",
+      "Moderate",
+      "Moderate",
+      "Moderate",
+      "Moderate"
+    ]
+  },
+  {
+    "source_table": "S3a",
+    "cells": [
+      "Okubo 2025\nFamily-stratified Cox; selected covariates [2]\nPMID 40898607",
+      "ADHD / ASD\n(2)",
+      "7/9 covered\nMissing: C03, C10",
+      "8/11 covered\nMissing: C03, C12, C13",
+      "Strong",
+      "Moderate",
+      "Moderate",
+      "Moderate"
+    ]
+  },
+  {
+    "source_table": "S3a",
+    "cells": [
+      "Prahm 2026\nPopulation cohort; adjusted Cox [4]\nPMID 41973453",
+      "ASD\n(1)",
+      "9/9 complete",
+      "9/11 covered\nMissing: C12, C13",
+      "Strong",
+      "Strong",
+      "Strong",
+      "Strong"
+    ]
+  },
+  {
+    "source_table": "S3a",
+    "cells": [
+      "Prahm 2026\nDiscordant-sibling restriction; maternal-ID clustering [4]\nPMID 41973453",
+      "ASD\n(1)",
+      "9/9 complete",
+      "9/11 covered\nMissing: C12, C13",
+      "Strong",
+      "Strong",
+      "Strong",
+      "Strong"
+    ]
+  },
+  {
+    "source_table": "S3b",
+    "cells": [
+      "Ahlqvist 2024\nPopulation cohort; adjusted Cox\nPMID 38592388\nADHD / ASD",
+      "migraine; chronic pain; infection; fever; rheumatoid arthritis; headache; birth year; period delivery; child sex; parity; maternal age; country; residence; cohabitation; maternal BMI; smoking; maternal asd; maternal adhd; maternal intellectual dis; maternal psychiatric; psycholeptic; antidepressant; antiseizure; healthcare visits pre preg; antenatal visits; education; household income; aspirin; NSAID; opioid; antimigraine",
+      "C02: maternal age; country; cohabitation\nC03: education; household income\nC04: birth year; period delivery; residence\nC05: maternal asd; maternal adhd; maternal intellectual dis; maternal psychiatric\nC06: rheumatoid arthritis; maternal BMI\nC07: migraine; chronic pain; infection; fever; headache; antimigraine\nC08: parity\nC09: smoking\nC10: healthcare visits pre preg\nC11: psycholeptic; antidepressant; antiseizure; aspirin; NSAID; opioid; antimigraine",
+      "Covariates and sibling model, lines 190-208; follow-up, lines 210-215"
+    ]
+  },
+  {
+    "source_table": "S3b",
+    "cells": [
+      "Ahlqvist 2024\nSibling comparison; family fixed effects\nPMID 38592388\nADHD / ASD",
+      "migraine; chronic pain; infection; fever; rheumatoid arthritis; headache; birth year; period delivery; child sex; parity; maternal age; residence; cohabitation; maternal BMI; smoking; psycholeptic; antidepressant; antiseizure; healthcare visits pre preg; antenatal visits; education; household income; aspirin; NSAID; opioid; antimigraine; + family stratum(family fixed effects)",
+      "C01: verified family-stratified Cox or explicit family-mean exposure model\nC02: maternal age; cohabitation\nC03: education; household income\nC04: birth year; period delivery; residence\nC05: stable shared component through within-family design\nC06: rheumatoid arthritis; maternal BMI\nC07: migraine; chronic pain; infection; fever; headache; antimigraine\nC08: parity\nC09: smoking\nC10: healthcare visits pre preg\nC11: psycholeptic; antidepressant; antiseizure; aspirin; NSAID; opioid; antimigraine",
+      "Covariates and sibling model, lines 190-208; follow-up, lines 210-215"
+    ]
+  },
+  {
+    "source_table": "S3b",
+    "cells": [
+      "Gustavson 2021\nSibling sample; population model with propensity-score adjustment\nPMID 37431475\nADHD",
+      "indication groups(pain;fever/infection;chronic autoimmune/inflammatory;unspecified;other); child birth year; maternal age; alcohol; smoking; anxiety/depression; apap before&after pregnancy; n co-medications; child sex; maternal education; parity",
+      "C02: maternal age\nC03: maternal education\nC04: child birth year\nC06: chronic autoimmune/inflammatory\nC07: indication groups: pain; fever/infection\nC08: parity\nC09: alcohol; smoking; anxiety/depression\nC11: n co-medications",
+      "Propensity and family-mean models, lines 182-237"
+    ]
+  },
+  {
+    "source_table": "S3b",
+    "cells": [
+      "Gustavson 2021\nWithin-family model with propensity-score adjustment\nPMID 37431475\nADHD",
+      "indication groups(pain;fever/infection;chronic autoimmune/inflammatory;unspecified;other); child birth year; maternal age; alcohol; smoking; anxiety/depression; apap before&after pregnancy; n co-medications; child sex; family mean exposure(family fixed effects)  (maternal education and parity omitted in the sibling model)",
+      "C01: verified family-stratified Cox or explicit family-mean exposure model\nC02: maternal age\nC04: child birth year\nC05: stable shared component through within-family design\nC06: chronic autoimmune/inflammatory\nC07: indication groups: pain; fever/infection\nC09: alcohol; smoking; anxiety/depression\nC11: n co-medications",
+      "Propensity and family-mean models, lines 182-237"
+    ]
+  },
+  {
+    "source_table": "S3b",
+    "cells": [
+      "Lee 2026\nPopulation cohort; adjusted Cox\nPMID 41801232\nADHD",
+      "maternal age; parity; employment status; family income; urbanization; child birth year; child sex; smoking; alcohol; maternal inflammation/infection; aspirin or ibuprofen(combined item); maternal psychiatric disorders",
+      "C02: maternal age\nC03: employment status; family income\nC04: urbanization; child birth year\nC05: maternal psychiatric disorders\nC07: maternal inflammation/infection\nC08: parity\nC09: smoking; alcohol\nC11: aspirin or ibuprofen(combined item)",
+      "Family-stratified model, lines 217-226; model footnote, lines 377-387"
+    ]
+  },
+  {
+    "source_table": "S3b",
+    "cells": [
+      "Lee 2026\nPopulation cohort; adjusted Cox\nPMID 41801232\nASD",
+      "maternal age; parity; employment status; family income; urbanization; child birth year; child sex; smoking; alcohol; maternal inflammation/infection; aspirin or ibuprofen; maternal psychiatric disorders",
+      "C02: maternal age\nC03: employment status; family income\nC04: urbanization; child birth year\nC05: maternal psychiatric disorders\nC07: maternal inflammation/infection\nC08: parity\nC09: smoking; alcohol\nC11: aspirin or ibuprofen",
+      "Family-stratified model, lines 217-226; model footnote, lines 377-387"
+    ]
+  },
+  {
+    "source_table": "S3b",
+    "cells": [
+      "Lee 2026\nSibling-matched; stratified Cox\nPMID 41801232\nADHD / ASD",
+      "maternal age; parity; employment status; family income; urbanization; child birth year; child sex; smoking; alcohol; maternal inflammation/infection; aspirin or ibuprofen; maternal psychiatric disorders; + family stratum(family strata, cluster-robust SE)",
+      "C01: verified family-stratified Cox or explicit family-mean exposure model\nC02: maternal age\nC03: employment status; family income\nC04: urbanization; child birth year\nC05: maternal psychiatric disorders; stable shared component through within-family design\nC07: maternal inflammation/infection\nC08: parity\nC09: smoking; alcohol\nC11: aspirin or ibuprofen",
+      "Family-stratified model, lines 217-226; model footnote, lines 377-387"
+    ]
+  },
+  {
+    "source_table": "S3b",
+    "cells": [
+      "Luo 2026\nPopulation cohort; adjusted Cox [1]\nPMID 42371637\nADHD / ASD",
+      "maternal age; delivery year; parity; delivery mode; maternal ASD; maternal ADHD; maternal intellectual disability; maternal psychiatric disorder; infection; fever; chronic pain; headache; migraine; asthma; rheumatoid arthritis; dyslipidemia; chronic kidney disease; hypertensive disease; gestational hypertension; diabetes; gestational diabetes; aspirin; NSAID; opioid; antidepressant; antimigraine; antiepileptic; lipid regulating drug; antihypertensive; glucose lowering agent; child sex; birth trauma; preterm birth; birth weight; Apgar 1min; Apgar 5min",
+      "C02: maternal age\nC04: delivery year\nC05: maternal ASD; maternal ADHD; maternal intellectual disability; maternal psychiatric disorder\nC06: asthma; rheumatoid arthritis; dyslipidemia; chronic kidney disease; diabetes\nC07: infection; fever; chronic pain; headache; migraine; antimigraine\nC08: parity\nC11: aspirin; NSAID; opioid; antidepressant; antimigraine; antiepileptic\nC13‡: delivery mode; gestational hypertension; gestational diabetes; birth trauma; preterm birth; birth weight; Apgar 1min; Apgar 5min",
+      "Family-stratified model, lines 166-180; common adjustment specification, lines 485-488; detailed list retained from source extraction\nDetailed covariate extraction has not been independently re-verified (Table S3a, note 1)."
+    ]
+  },
+  {
+    "source_table": "S3b",
+    "cells": [
+      "Luo 2026\nSibling cohort; family-stratified Cox [1]\nPMID 42371637\nADHD / ASD",
+      "maternal age; delivery year; parity; delivery mode; maternal ASD; maternal ADHD; maternal intellectual disability; maternal psychiatric disorder; infection; fever; chronic pain; headache; migraine; asthma; rheumatoid arthritis; dyslipidemia; chronic kidney disease; hypertensive disease; gestational hypertension; diabetes; gestational diabetes; aspirin; NSAID; opioid; antidepressant; antimigraine; antiepileptic; lipid regulating drug; antihypertensive; glucose lowering agent; child sex; birth trauma; preterm birth; birth weight; Apgar 1min; Apgar 5min; family stratum",
+      "C01: verified family-stratified Cox or explicit family-mean exposure model\nC02: maternal age\nC04: delivery year\nC05: maternal ASD; maternal ADHD; maternal intellectual disability; maternal psychiatric disorder; stable shared component through within-family design\nC06: asthma; rheumatoid arthritis; dyslipidemia; chronic kidney disease; diabetes\nC07: infection; fever; chronic pain; headache; migraine; antimigraine\nC08: parity\nC11: aspirin; NSAID; opioid; antidepressant; antimigraine; antiepileptic\nC13‡: delivery mode; gestational hypertension; gestational diabetes; birth trauma; preterm birth; birth weight; Apgar 1min; Apgar 5min",
+      "Family-stratified model, lines 166-180; common adjustment specification, lines 485-488; detailed list retained from source extraction\nDetailed covariate extraction has not been independently re-verified (Table S3a, note 1)."
+    ]
+  },
+  {
+    "source_table": "S3b",
+    "cells": [
+      "Okubo 2025\nPropensity-score-matched cohort; Cox [2]\nPMID 40898607\nADHD / ASD",
+      "maternal age; birth order; birth year; prepreg health checkup; migraine; headache; chronic pain; infection; fever; asthma; psychiatric condition; SLE; rheumatoid arthritis; hypertension; dyslipidemia; acetaminophen(look-back); antimigraine; NSAIDs; aspirin; antipsychotics; antiemetic; corticosteroids; antibiotics; antihistamine; asthma drugs; antiepileptics; H2 blocker; PPI; antidiabetics; beta blockers; CCB; lipid lowering; antithyroid; ADHD med; migraine med",
+      "C02: maternal age categories\nC04: birth year; birth month\nC05: maternal prior neurodevelopmental/psychiatric diagnoses\nC06: prepregnancy health-check weight/metabolic status; maternal chronic disease\nC07: migraine; headache; chronic pain; infection; fever\nC08: birth order\nC09: prepregnancy smoking; alcohol; sleep satisfaction\nC11: other analgesics; psychotropics; antibiotics; other drug classes",
+      "Original Appendix S1, Supplemental Methods 2.4–2.5; Tables S4–S6"
+    ]
+  },
+  {
+    "source_table": "S3b",
+    "cells": [
+      "Okubo 2025\nFamily-stratified Cox; selected covariates [2]\nPMID 40898607\nADHD / ASD",
+      "Family-stratified Cox model; family stratification replaces PS matching. Selected covariates and design components are listed in the mapping column; Appendix S1 specifies model-specific selection.",
+      "C01: family-stratified Cox model\nC02: maternal age categories\nC04: birth year; birth month\nC05: stable shared maternal background through family strata\nC06: asthma; prepregnancy medical history; blood pressure; HDL; LDL; uric acid\nC07: migraine; headache; chronic pain; infection; fever\nC08: birth order\nC09: prepregnancy smoking; alcohol; sleep satisfaction\nC11: opioids; NSAIDs; antiemetic; cardiac drugs; corticosteroids; antibiotics; antivirals; antihistamines; asthma drugs",
+      "Original Appendix S1, Supplemental Methods 2.4–2.5; Tables S4–S6"
+    ]
+  },
+  {
+    "source_table": "S3b",
+    "cells": [
+      "Prahm 2026\nPopulation cohort; adjusted Cox [4]\nPMID 41973453\nASD",
+      "maternal age; calendar time; prepregnancy BMI; smoking; country of birth; education; income; urban residence; cohabitation; parity; asthma; chronic pain; diabetes; headache; fever; fibromyalgia; gastric bypass; infection; migraine; neuropathic pain; rheumatoid arthritis; maternal psychiatric disease; aspirin; antidepressant; antimigraine; antiseizure; NSAID; psycholeptic; opioid; healthcare utilisation; paternal age; paternal psychiatric history; maternal sibling psychiatric history; child sex; season of birth",
+      "C01: paternal psychiatric history; maternal-sibling psychiatric history\nC02: maternal age; birth in Denmark; cohabitation\nC03: education; income quartile\nC04: calendar year; urban residency; season of delivery\nC05: psychiatric disease; paternal psychiatric history\nC06: prepregnancy BMI; asthma; diabetes; fibromyalgia; gastric bypass; rheumatoid arthritis\nC07: chronic pain; diagnosed headache; fever; infection; migraine; neuropathic pain; migraine medication\nC08: parity\nC09: smoking\nC10: hospital visits year before pregnancy\nC11: aspirin; antidepressant; antiseizure; NSAID; psycholeptic; opioid",
+      "Figure footnotes, lines 53-68; model specification, lines 101-113\nClustering alone is not within-family identification (Table S3a, note 4)."
+    ]
+  },
+  {
+    "source_table": "S3b",
+    "cells": [
+      "Prahm 2026\nDiscordant-sibling restriction; maternal-ID clustering [4]\nPMID 41973453\nASD",
+      "maternal age; calendar time; prepregnancy BMI; smoking; country of birth; education; income; urban residence; cohabitation; parity; asthma; chronic pain; diabetes; headache; fever; fibromyalgia; gastric bypass; infection; migraine; neuropathic pain; rheumatoid arthritis; maternal psychiatric disease; aspirin; antidepressant; antimigraine; antiseizure; NSAID; psycholeptic; opioid; healthcare utilisation; paternal age; paternal psychiatric history; maternal sibling psychiatric history; child sex; season of birth; maternal ID cluster",
+      "C01: paternal psychiatric history; maternal-sibling psychiatric history\nC02: maternal age; birth in Denmark; cohabitation\nC03: education; income quartile\nC04: calendar year; urban residency; season of delivery\nC05: psychiatric disease; paternal psychiatric history\nC06: prepregnancy BMI; asthma; diabetes; gastric bypass; rheumatoid arthritis\nC07: chronic pain; diagnosed headache; fever; infection; migraine; neuropathic pain; migraine medication\nC08: parity\nC09: smoking\nC10: hospital visits year before pregnancy\nC11: aspirin; antidepressant; antiseizure; NSAID; psycholeptic; opioid",
+      "Figure footnotes, lines 53-68; model specification, lines 101-113\nClustering alone is not within-family identification (Table S3a, note 4)."
+    ]
+  }
+]

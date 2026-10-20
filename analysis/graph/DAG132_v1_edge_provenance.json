@@ -1,0 +1,5474 @@
+[
+  {
+    "source": "X",
+    "target": "Y",
+    "source_row": 2,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "Y",
+    "target": "X",
+    "source_row": 3,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "X",
+    "target": "C01",
+    "source_row": 4,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C01",
+    "target": "X",
+    "source_row": 5,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Familial medication preferences and genetically related behaviors may affect actual use. A residual familial pathway is retained beyond the other represented nodes.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "X",
+    "target": "C02",
+    "source_row": 6,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C02",
+    "target": "X",
+    "source_row": 7,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Age and family support may affect medication choice under the same symptoms. The proposed effect concerns these demographic components.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "X",
+    "target": "C03",
+    "source_row": 8,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C03",
+    "target": "X",
+    "source_row": 9,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "X",
+    "target": "C04",
+    "source_row": 10,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C04",
+    "target": "X",
+    "source_row": 11,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "X",
+    "target": "C05",
+    "source_row": 12,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C05",
+    "target": "X",
+    "source_row": 13,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Established psychiatric conditions may affect risk perception, self-medication and adherence through pathways beyond symptoms and healthcare contacts.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "X",
+    "target": "C06",
+    "source_row": 14,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C06",
+    "target": "X",
+    "source_row": 15,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Underlying renal, hepatic or other conditions may affect analgesic choice and restrictions even when indications are similar.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "X",
+    "target": "C07",
+    "source_row": 16,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C07",
+    "target": "X",
+    "source_row": 17,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "X",
+    "target": "C08",
+    "source_row": 18,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C08",
+    "target": "X",
+    "source_row": 19,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "X",
+    "target": "C09",
+    "source_row": 20,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C09",
+    "target": "X",
+    "source_row": 21,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "X",
+    "target": "C10",
+    "source_row": 22,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C10",
+    "target": "X",
+    "source_row": 23,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Healthcare contacts, consultation and access before target medication use may affect actual use. Contacts after X are outside this pathway.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "X",
+    "target": "C11",
+    "source_row": 24,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C11",
+    "target": "X",
+    "source_row": 25,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Prior or concurrent treatments may substitute for, combine with or restrict target medication use. Treatments initiated after X are outside this pathway.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "X",
+    "target": "C12",
+    "source_row": 26,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C12",
+    "target": "X",
+    "source_row": 27,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "X",
+    "target": "C13",
+    "source_row": 28,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C13",
+    "target": "X",
+    "source_row": 29,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "X",
+    "target": "C14",
+    "source_row": 30,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C14",
+    "target": "X",
+    "source_row": 31,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "X",
+    "target": "C15",
+    "source_row": 32,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C15",
+    "target": "X",
+    "source_row": 33,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "X",
+    "target": "C16",
+    "source_row": 34,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C16",
+    "target": "X",
+    "source_row": 35,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "X",
+    "target": "C17",
+    "source_row": 36,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C17",
+    "target": "X",
+    "source_row": 37,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "Y",
+    "target": "C01",
+    "source_row": 38,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C01",
+    "target": "Y",
+    "source_row": 39,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "Y",
+    "target": "C02",
+    "source_row": 40,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C02",
+    "target": "Y",
+    "source_row": 41,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "Y",
+    "target": "C03",
+    "source_row": 42,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C03",
+    "target": "Y",
+    "source_row": 43,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "Y",
+    "target": "C04",
+    "source_row": 44,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C04",
+    "target": "Y",
+    "source_row": 45,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "Y",
+    "target": "C05",
+    "source_row": 46,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C05",
+    "target": "Y",
+    "source_row": 47,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "Y",
+    "target": "C06",
+    "source_row": 48,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C06",
+    "target": "Y",
+    "source_row": 49,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "Y",
+    "target": "C07",
+    "source_row": 50,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C07",
+    "target": "Y",
+    "source_row": 51,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "Y",
+    "target": "C08",
+    "source_row": 52,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C08",
+    "target": "Y",
+    "source_row": 53,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "Y",
+    "target": "C09",
+    "source_row": 54,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C09",
+    "target": "Y",
+    "source_row": 55,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Psychosocial conditions may affect child screening, healthcare contacts and diagnostic recording. Y is a recorded outcome; this pathway concerns ascertainment.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "Y",
+    "target": "C10",
+    "source_row": 56,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C10",
+    "target": "Y",
+    "source_row": 57,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "Y",
+    "target": "C11",
+    "source_row": 58,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C11",
+    "target": "Y",
+    "source_row": 59,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "Y",
+    "target": "C12",
+    "source_row": 60,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C12",
+    "target": "Y",
+    "source_row": 61,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "Y",
+    "target": "C13",
+    "source_row": 62,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C13",
+    "target": "Y",
+    "source_row": 63,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "Y",
+    "target": "C14",
+    "source_row": 64,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C14",
+    "target": "Y",
+    "source_row": 65,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "Y",
+    "target": "C15",
+    "source_row": 66,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C15",
+    "target": "Y",
+    "source_row": 67,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Child physical illness may increase pediatric contacts and referrals, affecting outcome recording. This does not establish a direct effect of common infections on ASD.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "Y",
+    "target": "C16",
+    "source_row": 68,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C16",
+    "target": "Y",
+    "source_row": 69,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "Y",
+    "target": "C17",
+    "source_row": 70,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C17",
+    "target": "Y",
+    "source_row": 71,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C01",
+    "target": "C02",
+    "source_row": 72,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Fail",
+    "effective_decision": "Fail",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Familial background and family characteristics may overlap. Distinct components and a causal pathway have not been specified.",
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C02",
+    "target": "C01",
+    "source_row": 73,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C01",
+    "target": "C03",
+    "source_row": 74,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C03",
+    "target": "C01",
+    "source_row": 75,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C01",
+    "target": "C04",
+    "source_row": 76,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Fail",
+    "effective_decision": "Fail",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Ancestry-region associations do not establish that familial background changes geography. A migration mechanism and its timing have not been specified.",
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C04",
+    "target": "C01",
+    "source_row": 77,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C01",
+    "target": "C05",
+    "source_row": 78,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C05",
+    "target": "C01",
+    "source_row": 79,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C01",
+    "target": "C06",
+    "source_row": 80,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C06",
+    "target": "C01",
+    "source_row": 81,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C01",
+    "target": "C07",
+    "source_row": 82,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C07",
+    "target": "C01",
+    "source_row": 83,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C01",
+    "target": "C08",
+    "source_row": 84,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C08",
+    "target": "C01",
+    "source_row": 85,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C01",
+    "target": "C09",
+    "source_row": 86,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C09",
+    "target": "C01",
+    "source_row": 87,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C01",
+    "target": "C10",
+    "source_row": 88,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Family healthcare beliefs and illness experience may affect maternal care seeking and preventive examinations. This is retained as a shared-background assumption.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C10",
+    "target": "C01",
+    "source_row": 89,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C01",
+    "target": "C11",
+    "source_row": 90,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Family treatment experience and medication beliefs may affect treatment choice. The pathway concerns shared background, without attributing an effect to every genetic measure.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C11",
+    "target": "C01",
+    "source_row": 91,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C01",
+    "target": "C12",
+    "source_row": 92,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Fail",
+    "effective_decision": "Fail",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Familial aggregation or gene-environment association does not establish an independent direct effect. A mechanism beyond socioeconomic and residential selection has not been specified.",
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C12",
+    "target": "C01",
+    "source_row": 93,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C01",
+    "target": "C13",
+    "source_row": 94,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C13",
+    "target": "C01",
+    "source_row": 95,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C01",
+    "target": "C14",
+    "source_row": 96,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Genetically related lactation capacity and breastfeeding propensity may affect feeding. Twin studies support this possibility without identifying a direct effect of a particular gene.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C14",
+    "target": "C01",
+    "source_row": 97,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C01",
+    "target": "C15",
+    "source_row": 98,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C15",
+    "target": "C01",
+    "source_row": 99,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C01",
+    "target": "C16",
+    "source_row": 100,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C16",
+    "target": "C01",
+    "source_row": 101,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C01",
+    "target": "C17",
+    "source_row": 102,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C17",
+    "target": "C01",
+    "source_row": 103,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C02",
+    "target": "C03",
+    "source_row": 104,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Age, marital status and household composition may affect employment and income. The pathway is restricted to these demographic components.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C03",
+    "target": "C02",
+    "source_row": 105,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": "Fail",
+    "effective_decision": "Fail",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Socioeconomic conditions may affect subsequent marriage and reproduction, but C02 combines fixed attributes and changing household structure. Timing is insufficiently resolved for a general reverse edge.",
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C02",
+    "target": "C04",
+    "source_row": 106,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C04",
+    "target": "C02",
+    "source_row": 107,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C02",
+    "target": "C05",
+    "source_row": 108,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C05",
+    "target": "C02",
+    "source_row": 109,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Early-onset, persistent psychiatric conditions may affect marital stability and household formation when they precede the relevant household changes.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C02",
+    "target": "C06",
+    "source_row": 110,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Maternal age and related demographic characteristics may affect chronic and metabolic disease through biological pathways beyond the represented socioeconomic and behavioral nodes.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C06",
+    "target": "C02",
+    "source_row": 111,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C02",
+    "target": "C07",
+    "source_row": 112,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C07",
+    "target": "C02",
+    "source_row": 113,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C02",
+    "target": "C08",
+    "source_row": 114,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C08",
+    "target": "C02",
+    "source_row": 115,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Previous childbearing may change household composition and co-residence. The pathway concerns household structure, excluding fixed attributes such as age or group background.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C02",
+    "target": "C09",
+    "source_row": 116,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C09",
+    "target": "C02",
+    "source_row": 117,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C02",
+    "target": "C10",
+    "source_row": 118,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C10",
+    "target": "C02",
+    "source_row": 119,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C02",
+    "target": "C11",
+    "source_row": 120,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C11",
+    "target": "C02",
+    "source_row": 121,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C02",
+    "target": "C12",
+    "source_row": 122,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Household composition and population context may affect occupational, residential and household exposures beyond differences in income.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C12",
+    "target": "C02",
+    "source_row": 123,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C02",
+    "target": "C13",
+    "source_row": 124,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C13",
+    "target": "C02",
+    "source_row": 125,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C02",
+    "target": "C14",
+    "source_row": 126,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C14",
+    "target": "C02",
+    "source_row": 127,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C02",
+    "target": "C15",
+    "source_row": 128,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C15",
+    "target": "C02",
+    "source_row": 129,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C02",
+    "target": "C16",
+    "source_row": 130,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C16",
+    "target": "C02",
+    "source_row": 131,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C02",
+    "target": "C17",
+    "source_row": 132,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C17",
+    "target": "C02",
+    "source_row": 133,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C03",
+    "target": "C04",
+    "source_row": 134,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Fail",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Fail",
+    "effective_decision": "Fail",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Income may affect migration, and earlier geography may affect income. C04 also includes calendar time; components and timing are insufficiently separated to fix a direction.",
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C04",
+    "target": "C03",
+    "source_row": 135,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": "Fail",
+    "effective_decision": "Fail",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Geography may affect socioeconomic conditions, while socioeconomic conditions may affect migration. Earlier geography and current residence are insufficiently separated to fix a direction.",
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C03",
+    "target": "C05",
+    "source_row": 136,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C05",
+    "target": "C03",
+    "source_row": 137,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C03",
+    "target": "C06",
+    "source_row": 138,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C06",
+    "target": "C03",
+    "source_row": 139,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C03",
+    "target": "C07",
+    "source_row": 140,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C07",
+    "target": "C03",
+    "source_row": 141,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C03",
+    "target": "C08",
+    "source_row": 142,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": "Fail",
+    "effective_decision": "Fail",
+    "decision_source": "user_adjudication",
+    "author_rationale": "C03 describes socioeconomic position in the target pregnancy and cannot cause completed reproductive history. Earlier socioeconomic circumstances require a separate time reference.",
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C08",
+    "target": "C03",
+    "source_row": 143,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Previous childbearing may affect current employment and income through caregiving demands and career interruption. This pathway does not imply an effect on completed education.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C03",
+    "target": "C09",
+    "source_row": 144,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C09",
+    "target": "C03",
+    "source_row": 145,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C03",
+    "target": "C10",
+    "source_row": 146,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C10",
+    "target": "C03",
+    "source_row": 147,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C03",
+    "target": "C11",
+    "source_row": 148,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Affordability, insurance and medication access may affect treatment choice beyond what visit counts capture.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C11",
+    "target": "C03",
+    "source_row": 149,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C03",
+    "target": "C12",
+    "source_row": 150,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C12",
+    "target": "C03",
+    "source_row": 151,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C03",
+    "target": "C13",
+    "source_row": 152,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C13",
+    "target": "C03",
+    "source_row": 153,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C03",
+    "target": "C14",
+    "source_row": 154,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C14",
+    "target": "C03",
+    "source_row": 155,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C03",
+    "target": "C15",
+    "source_row": 156,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C15",
+    "target": "C03",
+    "source_row": 157,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C03",
+    "target": "C16",
+    "source_row": 158,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Family resources may affect early development through learning opportunities and caregiving. Cash-intervention evidence offers partial support without establishing an effect on ASD.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C16",
+    "target": "C03",
+    "source_row": 159,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C03",
+    "target": "C17",
+    "source_row": 160,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C17",
+    "target": "C03",
+    "source_row": 161,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C04",
+    "target": "C05",
+    "source_row": 162,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C05",
+    "target": "C04",
+    "source_row": 163,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Fail",
+    "effective_decision": "Fail",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Psychiatric conditions cannot change calendar time. Health-selective migration is possible, but its temporal relationship with psychiatric conditions is unspecified.",
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C04",
+    "target": "C06",
+    "source_row": 164,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Geography and period may affect maternal health through pathogens, food supply and sanitation not represented as separate nodes.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C06",
+    "target": "C04",
+    "source_row": 165,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C04",
+    "target": "C07",
+    "source_row": 166,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C07",
+    "target": "C04",
+    "source_row": 167,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C04",
+    "target": "C08",
+    "source_row": 168,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C08",
+    "target": "C04",
+    "source_row": 169,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C04",
+    "target": "C09",
+    "source_row": 170,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C09",
+    "target": "C04",
+    "source_row": 171,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C04",
+    "target": "C10",
+    "source_row": 172,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C10",
+    "target": "C04",
+    "source_row": 173,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C04",
+    "target": "C11",
+    "source_row": 174,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C11",
+    "target": "C04",
+    "source_row": 175,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C04",
+    "target": "C12",
+    "source_row": 176,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C12",
+    "target": "C04",
+    "source_row": 177,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C04",
+    "target": "C13",
+    "source_row": 178,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Geographical and temporal differences in obstetric services and delivery practice may affect perinatal outcomes beyond maternal visit counts.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C13",
+    "target": "C04",
+    "source_row": 179,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C04",
+    "target": "C14",
+    "source_row": 180,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C14",
+    "target": "C04",
+    "source_row": 181,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C04",
+    "target": "C15",
+    "source_row": 182,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Geographical and temporal differences in pathogens and sanitation may affect childhood infection beyond specific chemical exposures.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C15",
+    "target": "C04",
+    "source_row": 183,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C04",
+    "target": "C16",
+    "source_row": 184,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C16",
+    "target": "C04",
+    "source_row": 185,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C04",
+    "target": "C17",
+    "source_row": 186,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C17",
+    "target": "C04",
+    "source_row": 187,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C05",
+    "target": "C06",
+    "source_row": 188,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Established psychiatric conditions may affect physical and metabolic health through neuroendocrine pathways not fully mediated by behaviors or medications. This is a working assumption.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C06",
+    "target": "C05",
+    "source_row": 189,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C05",
+    "target": "C07",
+    "source_row": 190,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C07",
+    "target": "C05",
+    "source_row": 191,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C05",
+    "target": "C08",
+    "source_row": 192,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Early-onset, persistent neuropsychiatric conditions may affect reproductive decisions and pregnancy processes when they clearly precede the relevant previous pregnancy.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C08",
+    "target": "C05",
+    "source_row": 193,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C05",
+    "target": "C09",
+    "source_row": 194,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Established neuropsychiatric conditions may affect later stress responses, smoking and alcohol use. The assumed ordering places established conditions before subsequent behaviors.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C09",
+    "target": "C05",
+    "source_row": 195,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": "Fail",
+    "effective_decision": "Fail",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Stress or behavior during the target pregnancy cannot cause a previously established psychiatric condition. Earlier cumulative exposures require a separate temporal definition.",
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C05",
+    "target": "C10",
+    "source_row": 196,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C10",
+    "target": "C05",
+    "source_row": 197,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C05",
+    "target": "C11",
+    "source_row": 198,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C11",
+    "target": "C05",
+    "source_row": 199,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C05",
+    "target": "C12",
+    "source_row": 200,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C12",
+    "target": "C05",
+    "source_row": 201,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Fail",
+    "effective_decision": "Fail",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Environmental exposure has not been shown to precede established psychiatric conditions in these definitions. Current pregnancy exposure cannot explain a prior condition in reverse time.",
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C05",
+    "target": "C13",
+    "source_row": 202,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C13",
+    "target": "C05",
+    "source_row": 203,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C05",
+    "target": "C14",
+    "source_row": 204,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Psychiatric symptoms persisting postpartum may affect breastfeeding intention, ability and continuation. Historical diagnoses alone do not establish current symptoms.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C14",
+    "target": "C05",
+    "source_row": 205,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C05",
+    "target": "C15",
+    "source_row": 206,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Psychiatric symptoms persisting postpartum may affect childhood infection through caregiving and health management. Cohort evidence supports this pathway but allows residual confounding.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C15",
+    "target": "C05",
+    "source_row": 207,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C05",
+    "target": "C16",
+    "source_row": 208,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Persistent maternal psychiatric conditions may affect development through early interactions and caregiving. Shared genetic associations alone do not establish this pathway.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C16",
+    "target": "C05",
+    "source_row": 209,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C05",
+    "target": "C17",
+    "source_row": 210,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C17",
+    "target": "C05",
+    "source_row": 211,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C06",
+    "target": "C07",
+    "source_row": 212,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C07",
+    "target": "C06",
+    "source_row": 213,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C06",
+    "target": "C08",
+    "source_row": 214,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Fail",
+    "effective_decision": "Fail",
+    "decision_source": "user_adjudication",
+    "author_rationale": "C06 does not separately define health before previous pregnancies. Health in or immediately before the target pregnancy cannot cause completed obstetric history.",
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C08",
+    "target": "C06",
+    "source_row": 215,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Previous pregnancies may leave persistent weight retention, pelvic-floor injury or other health changes. Predictive associations with later chronic disease alone do not establish causation.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C06",
+    "target": "C09",
+    "source_row": 216,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C09",
+    "target": "C06",
+    "source_row": 217,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C06",
+    "target": "C10",
+    "source_row": 218,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C10",
+    "target": "C06",
+    "source_row": 219,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C06",
+    "target": "C11",
+    "source_row": 220,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C11",
+    "target": "C06",
+    "source_row": 221,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C06",
+    "target": "C12",
+    "source_row": 222,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C12",
+    "target": "C06",
+    "source_row": 223,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C06",
+    "target": "C13",
+    "source_row": 224,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C13",
+    "target": "C06",
+    "source_row": 225,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C06",
+    "target": "C14",
+    "source_row": 226,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C14",
+    "target": "C06",
+    "source_row": 227,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C06",
+    "target": "C15",
+    "source_row": 228,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Maternal autoantibodies may cross the placenta and cause neonatal skin or immune abnormalities. This concerns specific immune components, not every BMI or chronic-disease component.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C15",
+    "target": "C06",
+    "source_row": 229,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C06",
+    "target": "C16",
+    "source_row": 230,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C16",
+    "target": "C06",
+    "source_row": 231,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C06",
+    "target": "C17",
+    "source_row": 232,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C17",
+    "target": "C06",
+    "source_row": 233,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C07",
+    "target": "C08",
+    "source_row": 234,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C08",
+    "target": "C07",
+    "source_row": 235,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Previous pregnancy or childbirth may leave persistent pelvic or pelvic-floor pain that becomes an indication for target medication use.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C07",
+    "target": "C09",
+    "source_row": 236,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C09",
+    "target": "C07",
+    "source_row": 237,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C07",
+    "target": "C10",
+    "source_row": 238,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C10",
+    "target": "C07",
+    "source_row": 239,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C07",
+    "target": "C11",
+    "source_row": 240,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C11",
+    "target": "C07",
+    "source_row": 241,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C07",
+    "target": "C12",
+    "source_row": 242,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C12",
+    "target": "C07",
+    "source_row": 243,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C07",
+    "target": "C13",
+    "source_row": 244,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C13",
+    "target": "C07",
+    "source_row": 245,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C07",
+    "target": "C14",
+    "source_row": 246,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": "Fail",
+    "effective_decision": "Fail",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Transient pregnancy infection or pain does not establish a postpartum breastfeeding effect. Persistence into lactation has not been specified.",
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C14",
+    "target": "C07",
+    "source_row": 247,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C07",
+    "target": "C15",
+    "source_row": 248,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Pregnancy infections may affect early child health through vertical transmission or immune pathways. This does not extend to every pain indication.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C15",
+    "target": "C07",
+    "source_row": 249,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C07",
+    "target": "C16",
+    "source_row": 250,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C16",
+    "target": "C07",
+    "source_row": 251,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C07",
+    "target": "C17",
+    "source_row": 252,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Fail",
+    "effective_decision": "Fail",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Infection-related inflammation does not establish a change in the post-acetaminophen response. A drug-specific interaction mechanism is lacking.",
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C17",
+    "target": "C07",
+    "source_row": 253,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C08",
+    "target": "C09",
+    "source_row": 254,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C09",
+    "target": "C08",
+    "source_row": 255,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C08",
+    "target": "C10",
+    "source_row": 256,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C10",
+    "target": "C08",
+    "source_row": 257,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C08",
+    "target": "C11",
+    "source_row": 258,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C11",
+    "target": "C08",
+    "source_row": 259,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C08",
+    "target": "C12",
+    "source_row": 260,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C12",
+    "target": "C08",
+    "source_row": 261,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": "User approved temporary omission during acyclic integration; original Pass decision preserved."
+  },
+  {
+    "source": "C08",
+    "target": "C13",
+    "source_row": 262,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C13",
+    "target": "C08",
+    "source_row": 263,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C08",
+    "target": "C14",
+    "source_row": 264,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C14",
+    "target": "C08",
+    "source_row": 265,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C08",
+    "target": "C15",
+    "source_row": 266,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": "Fail",
+    "effective_decision": "Fail",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Parity-related pathways are represented through household composition, current maternal health and perinatal health. No additional direct mechanism is specified.",
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C15",
+    "target": "C08",
+    "source_row": 267,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C08",
+    "target": "C16",
+    "source_row": 268,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Fail",
+    "effective_decision": "Fail",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Prior obstetric history can mark background risk represented through maternal health, perinatal health and family resources. Prediction alone does not support an additional direct edge.",
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C16",
+    "target": "C08",
+    "source_row": 269,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C08",
+    "target": "C17",
+    "source_row": 270,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C17",
+    "target": "C08",
+    "source_row": 271,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C09",
+    "target": "C10",
+    "source_row": 272,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C10",
+    "target": "C09",
+    "source_row": 273,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C09",
+    "target": "C11",
+    "source_row": 274,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Smoking, alcohol use and living conditions before treatment decisions may affect medication choice and adherence.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C11",
+    "target": "C09",
+    "source_row": 275,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C09",
+    "target": "C12",
+    "source_row": 276,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": "Fail",
+    "effective_decision": "Fail",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Active smoking is represented in C09 and cannot be duplicated in C12 to create an edge. Other behavioral and environmental components lack specified timing.",
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C12",
+    "target": "C09",
+    "source_row": 277,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Fail",
+    "effective_decision": "Fail",
+    "decision_source": "user_adjudication",
+    "author_rationale": "External exposures may affect subsequent stress or behavior, but specific components and temporal ordering are unresolved.",
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C09",
+    "target": "C13",
+    "source_row": 278,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C13",
+    "target": "C09",
+    "source_row": 279,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C09",
+    "target": "C14",
+    "source_row": 280,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Fail",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Smoking, alcohol use and psychosocial support persisting into lactation may affect lactation and breastfeeding. Pregnancy-only behaviors cannot be assumed to persist.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C14",
+    "target": "C09",
+    "source_row": 281,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C09",
+    "target": "C15",
+    "source_row": 282,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C15",
+    "target": "C09",
+    "source_row": 283,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C09",
+    "target": "C16",
+    "source_row": 284,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C16",
+    "target": "C09",
+    "source_row": 285,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C09",
+    "target": "C17",
+    "source_row": 286,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C17",
+    "target": "C09",
+    "source_row": 287,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C10",
+    "target": "C11",
+    "source_row": 288,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C11",
+    "target": "C10",
+    "source_row": 289,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C10",
+    "target": "C12",
+    "source_row": 290,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C12",
+    "target": "C10",
+    "source_row": 291,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Known occupational or environmental exposures may trigger consultation, screening and monitoring before symptoms arise. This is a preventive care-seeking pathway.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C10",
+    "target": "C13",
+    "source_row": 292,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C13",
+    "target": "C10",
+    "source_row": 293,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C10",
+    "target": "C14",
+    "source_row": 294,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Breastfeeding advice and support during antenatal care may affect initiation and duration. The pathway is limited to contacts providing those services.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C14",
+    "target": "C10",
+    "source_row": 295,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C10",
+    "target": "C15",
+    "source_row": 296,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C15",
+    "target": "C10",
+    "source_row": 297,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C10",
+    "target": "C16",
+    "source_row": 298,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C16",
+    "target": "C10",
+    "source_row": 299,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C10",
+    "target": "C17",
+    "source_row": 300,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C17",
+    "target": "C10",
+    "source_row": 301,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C11",
+    "target": "C12",
+    "source_row": 302,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C12",
+    "target": "C11",
+    "source_row": 303,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C11",
+    "target": "C13",
+    "source_row": 304,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C13",
+    "target": "C11",
+    "source_row": 305,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C11",
+    "target": "C14",
+    "source_row": 306,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Specific serotonergic medications may affect lactation onset when their effects persist through delivery or breastfeeding.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C14",
+    "target": "C11",
+    "source_row": 307,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C11",
+    "target": "C15",
+    "source_row": 308,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Perinatal antibiotics may affect infant microbial colonization within relevant drug classes and exposure windows.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C15",
+    "target": "C11",
+    "source_row": 309,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C11",
+    "target": "C16",
+    "source_row": 310,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Evidence supports offspring developmental effects of particular pregnancy medications, including valproate. This does not imply a uniform effect of all concomitant medications.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C16",
+    "target": "C11",
+    "source_row": 311,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C11",
+    "target": "C17",
+    "source_row": 312,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Some concomitant medications may induce or inhibit metabolic pathways and alter post-acetaminophen responses. Such changes need not increase toxicity.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C17",
+    "target": "C11",
+    "source_row": 313,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C12",
+    "target": "C13",
+    "source_row": 314,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C13",
+    "target": "C12",
+    "source_row": 315,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C12",
+    "target": "C14",
+    "source_row": 316,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Cohort evidence links prenatal PFAS exposure with shorter breastfeeding duration. This candidate pathway remains chemical-specific, with limited mechanistic and causal evidence.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C14",
+    "target": "C12",
+    "source_row": 317,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C12",
+    "target": "C15",
+    "source_row": 318,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C15",
+    "target": "C12",
+    "source_row": 319,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C12",
+    "target": "C16",
+    "source_row": 320,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C16",
+    "target": "C12",
+    "source_row": 321,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C12",
+    "target": "C17",
+    "source_row": 322,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Fail",
+    "effective_decision": "Fail",
+    "decision_source": "user_adjudication",
+    "author_rationale": "General oxidative stress from pollution does not establish an interaction with the post-acetaminophen response. A pollutant-specific drug interaction has not been specified.",
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C17",
+    "target": "C12",
+    "source_row": 323,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C13",
+    "target": "C14",
+    "source_row": 324,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C14",
+    "target": "C13",
+    "source_row": 325,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C13",
+    "target": "C15",
+    "source_row": 326,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C15",
+    "target": "C13",
+    "source_row": 327,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C13",
+    "target": "C16",
+    "source_row": 328,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C16",
+    "target": "C13",
+    "source_row": 329,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C13",
+    "target": "C17",
+    "source_row": 330,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C17",
+    "target": "C13",
+    "source_row": 331,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": "User approved temporary omission during acyclic integration; original Pass decision preserved."
+  },
+  {
+    "source": "C14",
+    "target": "C15",
+    "source_row": 332,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Pass",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": "User approved temporary omission during acyclic integration; original Pass decision preserved."
+  },
+  {
+    "source": "C15",
+    "target": "C14",
+    "source_row": 333,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C14",
+    "target": "C16",
+    "source_row": 334,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C16",
+    "target": "C14",
+    "source_row": 335,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Pass",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Sucking, swallowing or regulatory difficulties preceding a feeding outcome may affect feeding. Later-recognized developmental problems cannot establish an earlier breastfeeding effect.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C14",
+    "target": "C17",
+    "source_row": 336,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C17",
+    "target": "C14",
+    "source_row": 337,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C15",
+    "target": "C16",
+    "source_row": 338,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Early central nervous system infection may affect subsequent development. The pathway requires infection before developmental assessment and does not extend to all infections or allergic conditions.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  },
+  {
+    "source": "C16",
+    "target": "C15",
+    "source_row": 339,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Pass",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": "Fail",
+    "effective_decision": "Fail",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Developmental abnormalities may affect later health, but this reverses the ordering of the proposed forward pathway. Separate early and late nodes are required.",
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C15",
+    "target": "C17",
+    "source_row": 340,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C17",
+    "target": "C15",
+    "source_row": 341,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C16",
+    "target": "C17",
+    "source_row": 342,
+    "model_decisions": {
+      "deepseek": "Fail",
+      "sol": "Fail",
+      "astra": "Fail"
+    },
+    "explicit_final_cell": null,
+    "effective_decision": "Fail",
+    "decision_source": "three_model_consensus",
+    "author_rationale": null,
+    "included_in_DAG132": false,
+    "integration_omission": null
+  },
+  {
+    "source": "C17",
+    "target": "C16",
+    "source_row": 343,
+    "model_decisions": {
+      "deepseek": "Pass",
+      "sol": "Fail",
+      "astra": "Pass"
+    },
+    "explicit_final_cell": "Pass",
+    "effective_decision": "Pass",
+    "decision_source": "user_adjudication",
+    "author_rationale": "Post-exposure biological and pharmacological responses may affect the subsequent developmental environment. This is a candidate mechanism, not established acetaminophen neurotoxicity.",
+    "included_in_DAG132": true,
+    "integration_omission": null
+  }
+]
